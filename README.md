@@ -19,16 +19,20 @@ AI-generated personalized study schedules.
 ## Tech Stack
 
 ### Frontend
-  HTML
-  CSS
-  JavaScript
+ 
+- HTML
+-  CSS 
+- JavaScript
 ### Backend
+
   FastAPI (Python)
 ### Database
+
   JSON file storage (initial MVP)
 ### AI Component
-  Rule-based study plan generation
-  Optional OpenAI/Gemini integration in future
+ 
+- Rule-based study plan generation
+-  Optional OpenAI/Gemini integration in future
 
 ## Future Scope
 
