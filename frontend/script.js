@@ -1,23 +1,80 @@
 async function generatePlan() {
 
-    const exam = document.getElementById("exam").value;
+    const exam =
+        document.getElementById("exam").value;
 
-    const subjects = document
-        .getElementById("subjects")
-        .value
-        .split(",");
+    const hours =
+        parseInt(
+            document.getElementById("hours").value
+        );
 
-    const hours = parseInt(
-        document.getElementById("hours").value
-    );
+    const subjects = [
 
-    const examDate =
-        document.getElementById("examDate").value;
+        {
+            name:
+                document.getElementById("subject1").value,
 
-    if (!exam || !hours || !examDate) {
-        alert("Please fill all fields.");
+            exam_date:
+                document.getElementById("date1").value,
+
+            priority:
+                document.getElementById("priority1").value,
+
+            preparation:
+                document.getElementById("prep1").value
+        },
+
+        {
+            name:
+                document.getElementById("subject2").value,
+
+            exam_date:
+                document.getElementById("date2").value,
+
+            priority:
+                document.getElementById("priority2").value,
+
+            preparation:
+                document.getElementById("prep2").value
+        },
+
+        {
+            name:
+                document.getElementById("subject3").value,
+
+            exam_date:
+                document.getElementById("date3").value,
+
+            priority:
+                document.getElementById("priority3").value,
+
+            preparation:
+                document.getElementById("prep3").value
+        }
+
+    ];
+
+    // Validation
+
+    if (!exam || !hours) {
+        alert("Please fill Exam Name and Hours Per Day.");
         return;
     }
+
+    if (
+        !subjects[0].name ||
+        !subjects[1].name ||
+        !subjects[2].name
+    ) {
+        alert("Please enter all subject names.");
+        return;
+    }
+
+    console.log({
+        exam,
+        subjects,
+        hours_per_day: hours
+    });
 
     try {
 
@@ -25,9 +82,11 @@ async function generatePlan() {
             "http://127.0.0.1:8000/generate-plan",
             {
                 method: "POST",
+
                 headers: {
                     "Content-Type": "application/json"
                 },
+
                 body: JSON.stringify({
                     exam: exam,
                     subjects: subjects,
@@ -36,19 +95,16 @@ async function generatePlan() {
             }
         );
 
+        if (!response.ok) {
+            throw new Error(
+                `Server Error: ${response.status}`
+            );
+        }
+
         const data = await response.json();
 
-        const today = new Date();
-        const examDay = new Date(examDate);
-
-        const daysLeft = Math.ceil(
-            (examDay - today) /
-            (1000 * 60 * 60 * 24)
-        );
-
         let html = `
-            <h2>📅 Personalized Study Plan</h2>
-            <h3>⏳ ${daysLeft} days left until exam</h3>
+            <h2>📚 Personalized Study Plan</h2>
 
             <div class="progress">
                 📈 Progress: 0% Completed
@@ -59,11 +115,13 @@ async function generatePlan() {
 
             html += `
                 <div class="plan-card">
+
                     <input
                         type="checkbox"
                         class="task-checkbox">
 
                     <span>${item}</span>
+
                 </div>
             `;
 
@@ -90,7 +148,7 @@ async function generatePlan() {
 
         document.getElementById("result").innerHTML = `
             <div class="plan-card">
-                ❌ Backend API is not running.
+                ❌ ${error.message}
             </div>
         `;
     }
@@ -99,32 +157,38 @@ async function generatePlan() {
 function updateProgress() {
 
     const checkboxes =
-        document.querySelectorAll(".task-checkbox");
+        document.querySelectorAll(
+            ".task-checkbox"
+        );
 
     checkboxes.forEach((checkbox) => {
 
-        checkbox.addEventListener("change", () => {
+        checkbox.addEventListener(
+            "change",
+            () => {
 
-            const total =
-                document.querySelectorAll(
-                    ".task-checkbox"
-                ).length;
+                const total =
+                    document.querySelectorAll(
+                        ".task-checkbox"
+                    ).length;
 
-            const completed =
-                document.querySelectorAll(
-                    ".task-checkbox:checked"
-                ).length;
+                const completed =
+                    document.querySelectorAll(
+                        ".task-checkbox:checked"
+                    ).length;
 
-            const percent =
-                Math.round(
-                    (completed / total) * 100
-                );
+                const percent =
+                    Math.round(
+                        (completed / total) * 100
+                    );
 
-            document.querySelector(".progress")
-                .innerHTML =
-                `📈 Progress: ${percent}% Completed`;
+                document.querySelector(
+                    ".progress"
+                ).innerHTML =
+                    `📈 Progress: ${percent}% Completed`;
 
-        });
+            }
+        );
 
     });
 
