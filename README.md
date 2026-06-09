@@ -32,6 +32,6 @@ AI-generated personalized study schedules.
 
 ## Future Scope
 
-Pomodoro
-Calendar Integration
-AI Tutor
+- Pomodoro
+- Calendar Integration
+- AI Tutor
