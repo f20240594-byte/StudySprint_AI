@@ -18,20 +18,20 @@ AI-generated personalized study schedules.
 
 ## Tech Stack
 
-# Frontend
+### Frontend
   HTML
   CSS
   JavaScript
-# Backend
+### Backend
   FastAPI (Python)
-# Database
+### Database
   JSON file storage (initial MVP)
-# AI Component
+### AI Component
   Rule-based study plan generation
   Optional OpenAI/Gemini integration in future
 
 ## Future Scope
 
-Pomodoro
-Calendar Integration
-AI Tutor
+- AI Recommendations
+- Calendar Sync
+- Analytics Dashboard
