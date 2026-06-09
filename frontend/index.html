@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudySprint AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="logo">📚</div>
+
+        <h1>StudySprint AI</h1>
+
+        <p class="subtitle">
+            AI-powered personalized study planner
+        </p>
+
+        <input
+            id="exam"
+            type="text"
+            placeholder="Enter Exam Name">
+
+        <input
+            id="subjects"
+            type="text"
+            placeholder="Subjects (comma separated)">
+
+        <input
+            id="hours"
+            type="number"
+            placeholder="Study Hours Per Day">
+
+        <label for="examDate" class="input-label">
+            📅 Exam Date (when your exam starts)
+        </label>
+
+        <input
+            id="examDate"
+            type="date">
+
+        <button onclick="generatePlan()">
+            Generate Study Plan
+        </button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

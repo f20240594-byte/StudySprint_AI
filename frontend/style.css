@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #e8f0ff,
+        #dfe9f7
+    );
+
+    padding: 30px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #1e293b;
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+.input-label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #334155;
+}
+
+input {
+    width: 100%;
+
+    padding: 16px 18px;
+
+    margin-bottom: 20px;
+
+    border: 2px solid #dbeafe;
+
+    border-radius: 14px;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.15);
+}
+
+button {
+    width: 100%;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+#result {
+    margin-top: 35px;
+}
+
+#result h2 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.plan-card {
+    background: #f8fafc;
+
+    border-left: 5px solid #2563eb;
+
+    padding: 16px;
+
+    margin-bottom: 15px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    color: #334155;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .logo {
+        font-size: 40px;
+    }
+}
