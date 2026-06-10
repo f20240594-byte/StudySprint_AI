@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from datetime import datetime
+from datetime import datetime, timedelta
+from time import sleep
 
 app = FastAPI()
 
@@ -49,6 +50,9 @@ def home():
 @app.post("/generate-plan")
 def generate_plan(data: StudyRequest):
 
+    # Spinner demo delay
+    sleep(3)
+
     priority_map = {
         "High": 3,
         "Medium": 2,
@@ -65,9 +69,9 @@ def generate_plan(data: StudyRequest):
 
     subject_weights = []
 
-    total_weight = 0
-
-    # Calculate weight for every subject
+    # -----------------------------
+    # Calculate subject weights
+    # -----------------------------
     for subject in data.subjects:
 
         exam_date = datetime.strptime(
@@ -96,32 +100,85 @@ def generate_plan(data: StudyRequest):
             (10 / days_left)
         )
 
-        total_weight += weight
-
         subject_weights.append({
-    "name": subject.name,
-    "weight": weight,
-    "days_left": days_left,
-    "priority": subject.priority,
-    "preparation": subject.preparation
-})
+            "name": subject.name,
+            "weight": weight,
+            "exam_date": subject.exam_date,
+            "priority": subject.priority,
+            "preparation": subject.preparation
+        })
 
-    plan = []
+    # -----------------------------
+    # Find last exam date
+    # -----------------------------
+    all_exam_dates = []
 
-    # Allocate hours based on weight
-    for item in subject_weights:
+    for subject in data.subjects:
 
-        allocated_hours = round(
-            data.hours_per_day *
-            (item["weight"] / total_weight),
-            1
+        exam_date = datetime.strptime(
+            subject.exam_date,
+            "%Y-%m-%d"
         )
 
-        plan.append(
-            f"{item['name']} → {allocated_hours} hrs/day"
-        )
+        all_exam_dates.append(exam_date)
 
+    last_exam_date = max(all_exam_dates)
+
+    # -----------------------------
+    # Generate Day-wise Schedule
+    # -----------------------------
+    daily_schedule = []
+
+    current_day = today
+
+    while current_day <= last_exam_date:
+
+        active_subjects = []
+        active_total_weight = 0
+
+        # Keep only subjects whose exams
+        # have not yet happened
+        for item in subject_weights:
+
+            subject_exam_date = datetime.strptime(
+                item["exam_date"],
+                "%Y-%m-%d"
+            )
+
+            if current_day <= subject_exam_date:
+
+                active_subjects.append(item)
+
+                active_total_weight += item["weight"]
+
+        if active_total_weight == 0:
+            break
+
+        day_plan = []
+
+        for item in active_subjects:
+
+            allocated_hours = round(
+                data.hours_per_day *
+                (item["weight"] / active_total_weight),
+                1
+            )
+
+            day_plan.append(
+                f"{item['name']} - {allocated_hours} hrs"
+            )
+
+        daily_schedule.append({
+            "date": current_day.strftime("%d-%m-%Y"),
+            "tasks": day_plan
+        })
+
+        current_day += timedelta(days=1)
+
+    # -----------------------------
+    # Return Response
+    # -----------------------------
     return {
         "exam": data.exam,
-        "study_plan": plan
+        "study_plan": daily_schedule
     }
