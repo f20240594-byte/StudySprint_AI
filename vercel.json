@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "api/index.py",
+      "src": "backend/app.py",
       "use": "@vercel/python"
     },
     {
@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/generate-plan",
-      "dest": "api/index.py"
+      "dest": "backend/app.py"
     },
     {
       "src": "/(.*)",
