@@ -1,5 +1,9 @@
 async function generatePlan() {
-
+const API_URL =
+    location.hostname === "127.0.0.1" ||
+    location.hostname === "localhost"
+        ? "http://127.0.0.1:8000"
+        : "";
 const exam =
     document.getElementById("exam").value;
 
@@ -93,7 +97,7 @@ try {
 `;
 
     const response = await fetch(
-    "/generate-plan",
+    `${API_URL}/generate-plan`, 
         {
             method: "POST",
 
@@ -451,12 +455,13 @@ document.getElementById(
 ).value =
     savedData.book || "";
 
-updateWorkspaceStats();
 
 document.getElementById(
     "workspaceModal"
 ).style.display = "block";
 
+updateWorkspaceStats();
+updateResourcePreview();
 }
 
 function closeWorkspace() {
@@ -501,6 +506,7 @@ localStorage.setItem(
 );
 
 updateWorkspaceStats();
+updateResourcePreview();
 
 }
 
@@ -518,7 +524,7 @@ alert(
 );
 
 closeWorkspace();
-
+updateResourcePreview();
 }
 
 function clearWorkspace() {
@@ -552,7 +558,7 @@ document.getElementById(
 ).value = "";
 
 updateWorkspaceStats();
-
+updateResourcePreview();
 }
 
 function updateWorkspaceStats() {
@@ -622,3 +628,98 @@ document.addEventListener(
 }
 
 );
+function updateResourcePreview() {
+
+    const youtube =
+        document.getElementById(
+            "workspaceYoutube"
+        ).value;
+
+    const pdf =
+        document.getElementById(
+            "workspacePdf"
+        ).value;
+
+    const book =
+        document.getElementById(
+            "workspaceBook"
+        ).value;
+
+    document.getElementById(
+        "resourcePreview"
+    ).innerHTML = `
+
+        ${
+            youtube
+            ?
+            `
+            <a
+                href="${youtube}"
+                target="_blank"
+                class="resource-card">
+                🎥 YouTube Resource
+            </a>
+            `
+            : ""
+        }
+
+        ${
+            pdf
+            ?
+            `
+            <a
+                href="${pdf}"
+                target="_blank"
+                class="resource-card">
+                📄 PDF Resource
+            </a>
+            `
+            : ""
+        }
+
+        ${
+            book
+            ?
+            `
+            <div class="resource-card">
+                📚 ${book}
+            </div>
+            `
+            : ""
+        }
+
+    `;
+}
+const themeBtn = document.getElementById("themeToggle");
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark-mode");
+
+    const isDark =
+        document.body.classList.contains("dark-mode");
+
+    localStorage.setItem("theme", isDark);
+
+    themeBtn.innerHTML =
+        isDark
+            ? "☀️ Light Mode"
+            : "🌙 Dark Mode";
+});
+window.addEventListener("DOMContentLoaded", () => {
+
+    const themeBtn =
+        document.getElementById("themeToggle");
+
+    const isDark =
+        localStorage.getItem("theme") === "true";
+
+    if (isDark) {
+        document.body.classList.add("dark-mode");
+        themeBtn.innerHTML = "☀️ Light Mode";
+    } else {
+        document.body.classList.remove("dark-mode");
+        themeBtn.innerHTML = "🌙 Dark Mode";
+    }
+
+});

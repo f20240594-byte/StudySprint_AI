@@ -6,8 +6,16 @@
     <title>StudySprint AI</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- Theme Toggle -->
+    <div class="header-actions">
+        <button id="themeToggle">
+            🌙 Dark Mode
+        </button>
+    </div>
+ <div class="page-wrapper">
     <div class="container">
 
         <div class="logo">📚</div>
@@ -18,214 +26,226 @@
             AI-powered personalized study planner
         </p>
 
+        <!-- Main Inputs -->
+        <label for="exam">Exam Name</label>
         <input
             id="exam"
             type="text"
             placeholder="Enter Exam Name">
 
+        <label for="hours">Study Hours Per Day</label>
         <input
             id="hours"
             type="number"
             placeholder="Study Hours Per Day">
 
-<h3 class="subject-title">
-    📘 Subject 1
-</h3>
+        <!-- Subject 1 -->
+        <h3 class="subject-title">📘 Subject 1</h3>
 
-<div class="subject-box">
+        <div class="subject-box">
 
-    <label for="subject1">Subject Name</label>
-    <input
-        id="subject1"
-        type="text"
-        placeholder="e.g. DSA">
+            <label for="subject1">Subject Name</label>
+            <input
+                id="subject1"
+                type="text"
+                placeholder="e.g. DSA">
 
-    <label for="date1">Exam Date</label>
-    <input
-        id="date1"
-        type="date">
+            <label for="date1">Exam Date</label>
+            <input
+                id="date1"
+                type="date">
 
-    <label for="priority1">Priority</label>
-    <select id="priority1">
-        <option>High</option>
-        <option>Medium</option>
-        <option>Low</option>
-    </select>
+            <label for="priority1">Priority</label>
+            <select id="priority1">
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
 
-    <label for="prep1">Current Preparation Level</label>
-    <select id="prep1">
-        <option>Poor</option>
-        <option>Average</option>
-        <option>Good</option>
-    </select>
+            <label for="prep1">Current Preparation Level</label>
+            <select id="prep1">
+                <option>Poor</option>
+                <option>Average</option>
+                <option>Good</option>
+            </select>
 
-</div>
-<h3 class="subject-title">
-    📘 Subject 2
-</h3>
+        </div>
 
-<div class="subject-box">
+        <!-- Subject 2 -->
+        <h3 class="subject-title">📘 Subject 2</h3>
 
-    <label for="subject2">Subject Name</label>
-    <input
-        id="subject2"
-        type="text"
-        placeholder="e.g. DSA">
+        <div class="subject-box">
 
-    <label for="date2">Exam Date</label>
-    <input
-        id="date2"
-        type="date">
+            <label for="subject2">Subject Name</label>
+            <input
+                id="subject2"
+                type="text"
+                placeholder="e.g. DSA">
 
-    <label for="priority2">Priority</label>
-    <select id="priority2">
-        <option>High</option>
-        <option>Medium</option>
-        <option>Low</option>
-    </select>
+            <label for="date2">Exam Date</label>
+            <input
+                id="date2"
+                type="date">
 
-    <label for="prep2">Current Preparation Level</label>
-    <select id="prep2">
-        <option>Poor</option>
-        <option>Average</option>
-        <option>Good</option>
-    </select>
+            <label for="priority2">Priority</label>
+            <select id="priority2">
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
 
-</div>
-<h3 class="subject-title">
-    📘 Subject 3
-</h3>
+            <label for="prep2">Current Preparation Level</label>
+            <select id="prep2">
+                <option>Poor</option>
+                <option>Average</option>
+                <option>Good</option>
+            </select>
 
-<div class="subject-box">
+        </div>
 
-    <label for="subject3">Subject Name</label>
-    <input
-        id="subject3"
-        type="text"
-        placeholder="e.g. DSA">
+        <!-- Subject 3 -->
+        <h3 class="subject-title">📘 Subject 3</h3>
 
-    <label for="date3">Exam Date</label>
-    <input
-        id="date3"
-        type="date">
+        <div class="subject-box">
 
-    <label for="priority3">Priority</label>
-    <select id="priority3">
-        <option>High</option>
-        <option>Medium</option>
-        <option>Low</option>
-    </select>
+            <label for="subject3">Subject Name</label>
+            <input
+                id="subject3"
+                type="text"
+                placeholder="e.g. DSA">
 
-    <label for="prep3">Current Preparation Level</label>
-    <select id="prep3">
-        <option>Poor</option>
-        <option>Average</option>
-        <option>Good</option>
-    </select>
+            <label for="date3">Exam Date</label>
+            <input
+                id="date3"
+                type="date">
 
-</div>
+            <label for="priority3">Priority</label>
+            <select id="priority3">
+                <option>High</option>
+                <option>Medium</option>
+                <option>Low</option>
+            </select>
 
-        <button onclick="generatePlan()">
+            <label for="prep3">Current Preparation Level</label>
+            <select id="prep3">
+                <option>Poor</option>
+                <option>Average</option>
+                <option>Good</option>
+            </select>
+
+        </div>
+
+        <!-- Generate Plan Button -->
+        <button
+            id="generateBtn"
+            onclick="generatePlan()">
             Generate Study Plan
         </button>
 
         <div id="result"></div>
 
     </div>
-    <!-- Subject Workspace Modal -->
 
-<div id="workspaceModal" class="modal">
+    <!-- Workspace Modal -->
+    <div
+        id="workspaceModal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="workspaceTitle">
 
-    <div class="modal-content">
+        <div class="modal-content">
 
-        <span
-            class="close-btn"
-            onclick="closeWorkspace()">
-            &times;
-        </span>
+            <span
+                class="close-btn"
+                onclick="closeWorkspace()">
+                &times;
+            </span>
 
-        <h2 id="workspaceTitle">
-            Subject Workspace
-        </h2>
-        <div class="dashboard-grid">
+            <h2 id="workspaceTitle">
+                Subject Workspace
+            </h2>
 
-    <div class="dashboard-card">
+            <!-- Dashboard Cards -->
+            <div class="dashboard-grid">
 
-        <h3>Notes</h3>
+                <div class="dashboard-card">
+                    <h3>Notes</h3>
+                    <p id="notesCount">0</p>
+                </div>
 
-        <p id="notesCount">0</p>
+                <div class="dashboard-card">
+                    <h3>Resources</h3>
+                    <p id="resourceCount">0</p>
+                </div>
+
+            </div>
+
+            <!-- Search Notes -->
+            <label for="searchNotes">🔍 Search Notes</label>
+
+            <input
+                type="text"
+                id="searchNotes"
+                placeholder="Search notes...">
+
+            <!-- Notes -->
+            <label for="workspaceNotes">📝 Notes</label>
+
+            <textarea
+                id="workspaceNotes"
+                rows="6"></textarea>
+
+            <!-- YouTube -->
+            <label for="workspaceYoutube">🎥 YouTube Link</label>
+
+            <input
+                type="text"
+                id="workspaceYoutube"
+                placeholder="Paste YouTube link">
+
+            <!-- PDF -->
+            <label for="workspacePdf">📄 PDF Link</label>
+
+            <input
+                type="text"
+                id="workspacePdf"
+                placeholder="Paste PDF link">
+
+            <!-- Book -->
+            <label for="workspaceBook">📚 Book Name</label>
+
+            <input
+                type="text"
+                id="workspaceBook"
+                placeholder="Enter book name">
+
+            <!-- Save Workspace -->
+            <button onclick="saveWorkspace()">
+                💾 Save Workspace
+            </button>
+
+            <!-- Resource Preview -->
+            <h3>📚 Resource Preview</h3>
+
+            <div id="resourcePreview"></div>
+
+            <!-- Clear Workspace -->
+            <button
+                class="clear-btn"
+                onclick="clearWorkspace()">
+                🗑 Clear Workspace
+            </button>
+
+        </div>
 
     </div>
-
-    <div class="dashboard-card">
-
-        <h3>Resources</h3>
-
-        <p id="resourceCount">0</p>
-
-    </div>
-
 </div>
-         <div class="dashboard-grid">
+    <!-- Footer -->
+    <footer class="footer">
+        🚀 Powered by StudySprint AI
+    </footer>
 
-    <div class="dashboard-card">
-
-        <h3>Notes</h3>
-
-        <p id="notesCount">0</p>
-
-    </div>
-
-    <div class="dashboard-card">
-
-        <h3>Resources</h3>
-
-        <p id="resourceCount">0</p>
-
-    </div>
-
-</div>
-        <label>📝 Notes</label>
-
-        <textarea
-            id="workspaceNotes"
-            rows="6">
-        </textarea>
-
-        <label>🎥 YouTube Link</label>
-
-        <input
-            type="text"
-            id="workspaceYoutube">
-
-        <label>📄 PDF Link</label>
-
-        <input
-            type="text"
-            id="workspacePdf">
-
-        <label>📚 Book Name</label>
-
-        <input
-            type="text"
-            id="workspaceBook">
-
-       <button onclick="saveWorkspace()">
-    💾 Save Workspace
-</button>
-
-<button
-    class="clear-btn"
-    onclick="clearWorkspace()">
-
-    🗑 Clear Workspace
-
-</button>
-
-
-    </div>
-
-</div>
     <script src="script.js"></script>
 
 </body>
