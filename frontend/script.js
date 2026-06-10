@@ -1,197 +1,183 @@
 async function generatePlan() {
 
-    const exam =
-        document.getElementById("exam").value;
+const exam =
+    document.getElementById("exam").value;
 
-    const hours =
-        parseInt(
-            document.getElementById("hours").value
-        );
+const hours =
+    parseInt(
+        document.getElementById("hours").value
+    );
 
-    const subjects = [
+const subjects = [
 
+    {
+        name:
+            document.getElementById("subject1").value,
+
+        exam_date:
+            document.getElementById("date1").value,
+
+        priority:
+            document.getElementById("priority1").value,
+
+        preparation:
+            document.getElementById("prep1").value
+    },
+
+    {
+        name:
+            document.getElementById("subject2").value,
+
+        exam_date:
+            document.getElementById("date2").value,
+
+        priority:
+            document.getElementById("priority2").value,
+
+        preparation:
+            document.getElementById("prep2").value
+    },
+
+    {
+        name:
+            document.getElementById("subject3").value,
+
+        exam_date:
+            document.getElementById("date3").value,
+
+        priority:
+            document.getElementById("priority3").value,
+
+        preparation:
+            document.getElementById("prep3").value
+    }
+
+];
+
+if (!exam || !hours) {
+
+    alert(
+        "Please fill Exam Name and Hours Per Day."
+    );
+
+    return;
+}
+
+if (
+    !subjects[0].name ||
+    !subjects[1].name ||
+    !subjects[2].name
+) {
+
+    alert(
+        "Please enter all subject names."
+    );
+
+    return;
+}
+
+try {
+
+    document.getElementById("result").innerHTML = `
+
+    <div class="loading-card">
+
+        <div class="spinner"></div>
+
+        <p>
+            Generating Study Plan...
+        </p>
+
+    </div>
+
+`;
+
+    const response = await fetch(
+        "http://127.0.0.1:8000/generate-plan",
         {
-            name:
-                document.getElementById("subject1").value,
+            method: "POST",
 
-            exam_date:
-                document.getElementById("date1").value,
+            headers: {
+                "Content-Type":
+                    "application/json"
+            },
 
-            priority:
-                document.getElementById("priority1").value,
-
-            preparation:
-                document.getElementById("prep1").value
-        },
-
-        {
-            name:
-                document.getElementById("subject2").value,
-
-            exam_date:
-                document.getElementById("date2").value,
-
-            priority:
-                document.getElementById("priority2").value,
-
-            preparation:
-                document.getElementById("prep2").value
-        },
-
-        {
-            name:
-                document.getElementById("subject3").value,
-
-            exam_date:
-                document.getElementById("date3").value,
-
-            priority:
-                document.getElementById("priority3").value,
-
-            preparation:
-                document.getElementById("prep3").value
+            body: JSON.stringify({
+                exam,
+                subjects,
+                hours_per_day: hours
+            })
         }
+    );
 
-    ];
+    if (!response.ok) {
 
-    // Validation
-
-    if (!exam || !hours) {
-
-        alert(
-            "Please fill Exam Name and Hours Per Day."
+        throw new Error(
+            `Server Error: ${response.status}`
         );
-
-        return;
     }
 
-    if (
-        !subjects[0].name ||
-        !subjects[1].name ||
-        !subjects[2].name
-    ) {
+    const data =
+        await response.json();
 
-        alert(
-            "Please enter all subject names."
-        );
+    let html = `
 
-        return;
-    }
+        <h2>
+            📚 Personalized Study Plan
+        </h2>
 
-    console.log({
-        exam,
-        subjects,
-        hours_per_day: hours
-    });
+        <div class="progress-container">
 
-    try {
-
-        // Loading Spinner
-
-        document.getElementById("result")
-            .innerHTML = `
-            <div class="loading-card">
-                <div class="spinner"></div>
-                <p>Generating Study Plan...</p>
+            <div class="progress-text">
+                📈 Progress: 0% Completed
             </div>
-        `;
 
-        const response = await fetch(
-            "http://127.0.0.1:8000/generate-plan",
-            {
-                method: "POST",
+            <div class="progress-bar">
 
-                headers: {
-                    "Content-Type":
-                        "application/json"
-                },
-
-                body: JSON.stringify({
-                    exam: exam,
-                    subjects: subjects,
-                    hours_per_day: hours
-                })
-            }
-        );
-
-        if (!response.ok) {
-
-            throw new Error(
-                `Server Error: ${response.status}`
-            );
-        }
-
-        const data =
-            await response.json();
-
-        let html = `
-
-            <h2>
-                📚 Personalized Study Plan
-            </h2>
-
-            <div class="progress-container">
-
-                <div class="progress-text">
-                    📈 Progress: 0% Completed
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        id="progressFill">
-                    </div>
-
+                <div
+                    class="progress-fill"
+                    id="progressFill">
                 </div>
 
             </div>
 
+        </div>
+
+    `;
+
+    data.study_plan.forEach((day) => {
+
+        html += `
+
+            <div class="day-card">
+
+                <h3 class="day-title">
+                    📅 ${day.date}
+                </h3>
+
         `;
 
-        // Day-wise Schedule
-
-        data.study_plan.forEach((day) => {
+        day.tasks.forEach((task) => {
 
             html += `
 
-                <div class="day-card">
+                <div class="plan-card">
 
-                    <h3 class="day-title">
-                        📅 ${day.date}
-                    </h3>
+                    <div class="plan-left">
 
-            `;
+                        <input
+                            type="checkbox"
+                            class="task-checkbox">
 
-            day.tasks.forEach((task) => {
-
-                html += `
-
-                    <div class="plan-card">
-
-                        <div class="plan-left">
-
-                            <input
-                                type="checkbox"
-                                class="task-checkbox">
-
-                            <span class="task-text">
-                                ${task}
-                            </span>
-
-                        </div>
-
-                        <div class="task-badge">
-                            Study
-                        </div>
+                        <span class="task-text">
+                            ${task}
+                        </span>
 
                     </div>
 
-                `;
-
-            });
-
-            html += `
+                    <div class="task-badge">
+                        Study
+                    </div>
 
                 </div>
 
@@ -200,117 +186,439 @@ async function generatePlan() {
         });
 
         html += `
-
-            <div class="quote">
-
-                "Success is the sum of small efforts repeated every day."
-
             </div>
+        `;
 
-            <div class="footer">
+    });
 
-                🚀 Generated by StudySprint AI
+    html += `
 
-            </div>
+        <h2>
+            📚 Subject Workspaces
+        </h2>
+
+        <div class="workspace-section">
+
+    `;
+
+    subjects.forEach((subject) => {
+
+        html += `
+
+            <button
+                class="workspace-btn"
+                onclick="openWorkspace('${subject.name}')">
+
+                📚 ${subject.name} Workspace
+
+            </button>
 
         `;
 
-        document.getElementById("result")
-            .innerHTML = html;
+    });
 
-        updateProgress();
+    html += `
 
-    } catch (error) {
+        </div>
 
-        console.error(error);
+        <div class="quote">
 
-        document.getElementById("result")
-            .innerHTML = `
+            "Success is the sum of small efforts repeated every day."
 
-            <div class="plan-card">
+        </div>
 
-                ❌ ${error.message}
+        <div class="footer">
 
-            </div>
+            🚀 Generated by StudySprint AI
 
-        `;
-    }
+        </div>
+
+    `;
+
+    document.getElementById("result")
+        .innerHTML = html;
+
+    updateProgress();
+
+    loadProgress();
+
+} catch (error) {
+
+    document.getElementById("result")
+        .innerHTML = `
+
+        <div class="plan-card">
+
+            ❌ ${error.message}
+
+        </div>
+
+    `;
+
+}
 
 }
 
 function updateProgress() {
+
+const checkboxes =
+    document.querySelectorAll(
+        ".task-checkbox"
+    );
+
+checkboxes.forEach((checkbox) => {
+
+    checkbox.addEventListener(
+        "change",
+        () => {
+
+            const badge =
+                checkbox
+                    .closest(".plan-card")
+                    .querySelector(
+                        ".task-badge"
+                    );
+
+            if (checkbox.checked) {
+
+                badge.innerHTML =
+                    "Completed";
+
+                badge.classList.add(
+                    "completed-badge"
+                );
+
+            } else {
+
+                badge.innerHTML =
+                    "Study";
+
+                badge.classList.remove(
+                    "completed-badge"
+                );
+
+            }
+
+            const total =
+                document.querySelectorAll(
+                    ".task-checkbox"
+                ).length;
+
+            const completed =
+                document.querySelectorAll(
+                    ".task-checkbox:checked"
+                ).length;
+
+            const percent =
+                total === 0
+                ? 0
+                : Math.round(
+                    (completed / total) * 100
+                );
+
+            document.querySelector(
+                ".progress-text"
+            ).innerHTML =
+                `📈 Progress: ${percent}% Completed`;
+
+            document.getElementById(
+                "progressFill"
+            ).style.width =
+                percent + "%";
+
+            saveProgress();
+
+        }
+    );
+
+});
+
+}
+
+function saveProgress() {
 
     const checkboxes =
         document.querySelectorAll(
             ".task-checkbox"
         );
 
+    const progressData = [];
+
     checkboxes.forEach((checkbox) => {
-
-        checkbox.addEventListener(
-            "change",
-            () => {
-
-                const badge =
-                    checkbox
-                        .closest(".plan-card")
-                        .querySelector(
-                            ".task-badge"
-                        );
-
-                if (
-                    checkbox.checked
-                ) {
-
-                    badge.innerHTML =
-                        "Completed";
-
-                    badge.classList.add(
-                        "completed-badge"
-                    );
-
-                } else {
-
-                    badge.innerHTML =
-                        "Study";
-
-                    badge.classList.remove(
-                        "completed-badge"
-                    );
-
-                }
-
-                const total =
-                    document.querySelectorAll(
-                        ".task-checkbox"
-                    ).length;
-
-                const completed =
-                    document.querySelectorAll(
-                        ".task-checkbox:checked"
-                    ).length;
-
-                const percent =
-                    Math.round(
-                        (
-                            completed /
-                            total
-                        ) * 100
-                    );
-
-                document.querySelector(
-                    ".progress-text"
-                ).innerHTML =
-                    `📈 Progress: ${percent}% Completed`;
-
-                document.getElementById(
-                    "progressFill"
-                ).style.width =
-                    percent + "%";
-
-            }
+        progressData.push(
+            checkbox.checked
         );
+    });
+
+    const studyKey =
+        "studyProgress_" +
+        document.getElementById("exam").value +
+        "_" +
+        document.getElementById("subject1").value +
+        "_" +
+        document.getElementById("subject2").value +
+        "_" +
+        document.getElementById("subject3").value;
+
+    localStorage.setItem(
+        studyKey,
+        JSON.stringify(progressData)
+    );
+}
+
+function loadProgress() {
+
+    const studyKey =
+        "studyProgress_" +
+        document.getElementById("exam").value +
+        "_" +
+        document.getElementById("subject1").value +
+        "_" +
+        document.getElementById("subject2").value +
+        "_" +
+        document.getElementById("subject3").value;
+
+    const savedData =
+        localStorage.getItem(studyKey);
+
+    if (!savedData) {
+        return;
+    }
+
+    const progressData =
+        JSON.parse(savedData);
+
+    const checkboxes =
+        document.querySelectorAll(
+            ".task-checkbox"
+        );
+
+    checkboxes.forEach(
+        (checkbox, index) => {
+
+            checkbox.checked =
+                progressData[index] || false;
+
+        }
+    );
+
+    document
+        .querySelectorAll(".task-checkbox")
+        .forEach((cb) => {
+
+            cb.dispatchEvent(
+                new Event("change")
+            );
+
+        });
+}
+
+let currentSubject = "";
+
+function openWorkspace(subject) {
+
+currentSubject = subject;
+
+document.getElementById(
+    "workspaceTitle"
+).innerHTML =
+    `📚 ${subject} Workspace`;
+
+const savedData =
+    JSON.parse(
+        localStorage.getItem(
+            `workspace_${subject}`
+        )
+    ) || {};
+
+document.getElementById(
+    "workspaceNotes"
+).value =
+    savedData.notes || "";
+
+document.getElementById(
+    "workspaceYoutube"
+).value =
+    savedData.youtube || "";
+
+document.getElementById(
+    "workspacePdf"
+).value =
+    savedData.pdf || "";
+
+document.getElementById(
+    "workspaceBook"
+).value =
+    savedData.book || "";
+
+updateWorkspaceStats();
+
+document.getElementById(
+    "workspaceModal"
+).style.display = "block";
+
+}
+
+function closeWorkspace() {
+
+document.getElementById(
+    "workspaceModal"
+).style.display = "none";
+
+}
+
+function autoSaveWorkspace() {
+
+if (!currentSubject) return;
+
+const workspaceData = {
+
+    notes:
+        document.getElementById(
+            "workspaceNotes"
+        ).value,
+
+    youtube:
+        document.getElementById(
+            "workspaceYoutube"
+        ).value,
+
+    pdf:
+        document.getElementById(
+            "workspacePdf"
+        ).value,
+
+    book:
+        document.getElementById(
+            "workspaceBook"
+        ).value
+
+};
+
+localStorage.setItem(
+    `workspace_${currentSubject}`,
+    JSON.stringify(workspaceData)
+);
+
+updateWorkspaceStats();
+
+}
+
+function saveWorkspace() {
+
+autoSaveWorkspace();
+
+localStorage.setItem(
+    "lastOpenedWorkspace",
+    currentSubject
+);
+
+alert(
+    `✅ ${currentSubject} Workspace Saved!`
+);
+
+closeWorkspace();
+
+}
+
+function clearWorkspace() {
+
+if (
+    !confirm(
+        `Delete all data for ${currentSubject}?`
+    )
+) {
+    return;
+}
+
+localStorage.removeItem(
+    `workspace_${currentSubject}`
+);
+
+document.getElementById(
+    "workspaceNotes"
+).value = "";
+
+document.getElementById(
+    "workspaceYoutube"
+).value = "";
+
+document.getElementById(
+    "workspacePdf"
+).value = "";
+
+document.getElementById(
+    "workspaceBook"
+).value = "";
+
+updateWorkspaceStats();
+
+}
+
+function updateWorkspaceStats() {
+
+const notes =
+    document.getElementById(
+        "workspaceNotes"
+    ).value;
+
+let resources = 0;
+
+if (
+    document.getElementById(
+        "workspaceYoutube"
+    ).value
+) resources++;
+
+if (
+    document.getElementById(
+        "workspacePdf"
+    ).value
+) resources++;
+
+if (
+    document.getElementById(
+        "workspaceBook"
+    ).value
+) resources++;
+
+document.getElementById(
+    "notesCount"
+).innerHTML =
+    notes.length;
+
+document.getElementById(
+    "resourceCount"
+).innerHTML =
+    resources;
+
+}
+
+document.addEventListener(
+"DOMContentLoaded",
+() => {
+
+    [
+        "workspaceNotes",
+        "workspaceYoutube",
+        "workspacePdf",
+        "workspaceBook"
+    ].forEach((id) => {
+
+        const element =
+            document.getElementById(id);
+
+        if (element) {
+
+            element.addEventListener(
+                "input",
+                autoSaveWorkspace
+            );
+
+        }
 
     });
 
 }
+
+);

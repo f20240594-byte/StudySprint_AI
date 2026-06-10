@@ -132,7 +132,100 @@
         <div id="result"></div>
 
     </div>
+    <!-- Subject Workspace Modal -->
 
+<div id="workspaceModal" class="modal">
+
+    <div class="modal-content">
+
+        <span
+            class="close-btn"
+            onclick="closeWorkspace()">
+            &times;
+        </span>
+
+        <h2 id="workspaceTitle">
+            Subject Workspace
+        </h2>
+        <div class="dashboard-grid">
+
+    <div class="dashboard-card">
+
+        <h3>Notes</h3>
+
+        <p id="notesCount">0</p>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>Resources</h3>
+
+        <p id="resourceCount">0</p>
+
+    </div>
+
+</div>
+         <div class="dashboard-grid">
+
+    <div class="dashboard-card">
+
+        <h3>Notes</h3>
+
+        <p id="notesCount">0</p>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <h3>Resources</h3>
+
+        <p id="resourceCount">0</p>
+
+    </div>
+
+</div>
+        <label>📝 Notes</label>
+
+        <textarea
+            id="workspaceNotes"
+            rows="6">
+        </textarea>
+
+        <label>🎥 YouTube Link</label>
+
+        <input
+            type="text"
+            id="workspaceYoutube">
+
+        <label>📄 PDF Link</label>
+
+        <input
+            type="text"
+            id="workspacePdf">
+
+        <label>📚 Book Name</label>
+
+        <input
+            type="text"
+            id="workspaceBook">
+
+       <button onclick="saveWorkspace()">
+    💾 Save Workspace
+</button>
+
+<button
+    class="clear-btn"
+    onclick="clearWorkspace()">
+
+    🗑 Clear Workspace
+
+</button>
+
+
+    </div>
+
+</div>
     <script src="script.js"></script>
 
 </body>
