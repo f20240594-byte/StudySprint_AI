@@ -210,11 +210,11 @@ http://127.0.0.1:5500
 
 ### Home Screen
 
-![StudySprint AI Home](screenshots/home.png.png)
+![StudySprint AI Home](screenshots/home.png)
 
 ### Generated Study Plan
 
-![Generated Study Plan](screenshots/study-plan.png.png)
+![Generated Study Plan](screenshots/study-plan.png)
 
 ---
 
