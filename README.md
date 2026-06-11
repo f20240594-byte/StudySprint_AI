@@ -147,6 +147,17 @@ Along with:
 - Interactive checklist
 
 ---
+## Internationalization (i18n)
+
+StudySprint AI supports:
+
+- English
+- Hindi
+- Telugu
+
+The selected language is saved using browser localStorage.
+
+---
 
 ## 🎯 Future Improvements
 

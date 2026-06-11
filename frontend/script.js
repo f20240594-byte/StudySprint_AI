@@ -651,9 +651,13 @@ themeBtn.addEventListener("click", () => {
     localStorage.setItem("theme", isDark);
 
     themeBtn.innerHTML =
-        isDark
-            ? "☀️ Light Mode"
-            : "🌙 Dark Mode";
+    isDark
+        ? (lang === "hi" ? "☀️ लाइट मोड" :
+           lang === "te" ? "☀️ లైట్ మోడ్" :
+           "☀️ Light Mode")
+        : (lang === "hi" ? "🌙 डार्क मोड" :
+           lang === "te" ? "🌙 డార్క్ మోడ్" :
+           "🌙 Dark Mode");
 });
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -693,24 +697,24 @@ document.getElementById("addSubjectBtn")
 
             <div class="subject-box">
 
-                <label>Subject Name</label>
+                <label class="subject-name-label">Subject Name</label>
                 <input
                     id="subject${subjectCount}"
                     type="text">
 
-                <label>Exam Date</label>
+                <label class="exam-date-label">Exam Date</label>
                 <input
                     id="date${subjectCount}"
                     type="date">
 
-                <label>Priority</label>
+                <label class="priority-label">Priority</label>
                 <select id="priority${subjectCount}">
                     <option>High</option>
                     <option>Medium</option>
                     <option>Low</option>
                 </select>
 
-                <label>Preparation Level</label>
+                <label class="prep-label">Preparation Level</label>
                 <select id="prep${subjectCount}">
                     <option>Poor</option>
                     <option>Average</option>
@@ -720,4 +724,136 @@ document.getElementById("addSubjectBtn")
             </div>
             `
         );
+        changeLanguage();
     });
+    const translations = {
+    en: {
+        title: "StudySprint AI",
+        subtitle: "AI-powered personalized study planner",
+        exam: "Exam Name",
+        hours: "Study Hours Per Day",
+        generate: "Generate Study Plan",
+        addSubject: "Add Subject",
+        subject: "Subject",
+        subjectName: "Subject Name",
+        examDate: "Exam Date",
+        priority: "Priority",
+        preparation: "Current Preparation Level",
+
+        high: "High",
+        medium: "Medium",
+        low: "Low",
+
+        poor: "Poor",
+        average: "Average",
+        good: "Good"
+
+    },
+
+    hi: {
+        title: "स्टडीस्प्रिंट एआई",
+        subtitle: "AI आधारित व्यक्तिगत अध्ययन योजनाकार",
+        exam: "परीक्षा का नाम",
+        hours: "प्रतिदिन अध्ययन घंटे",
+        generate: "अध्ययन योजना बनाएं",
+        addSubject: "विषय जोड़ें",
+        subject: "विषय",
+        subjectName: "विषय का नाम",
+        examDate: "परीक्षा तिथि",
+        priority: "प्राथमिकता",
+        preparation: "वर्तमान तैयारी स्तर",
+
+        high: "उच्च",
+        medium: "मध्यम",
+        low: "कम",
+
+        poor: "कमज़ोर",
+        average: "औसत",
+        good: "अच्छा"
+        
+    },
+
+    te: {
+        title: "స్టడీస్ప్రింట్ AI",
+        subtitle: "AI ఆధారిత వ్యక్తిగత అధ్యయన ప్రణాళిక",
+        exam: "పరీక్ష పేరు",
+        hours: "రోజుకు చదివే గంటలు",
+        generate: "స్టడీ ప్లాన్ రూపొందించండి",
+        addSubject: "సబ్జెక్ట్ జోడించండి",
+        subject: "సబ్జెక్ట్",
+        subjectName: "సబ్జెక్ట్ పేరు",
+        examDate: "పరీక్ష తేదీ",
+        priority: "ప్రాధాన్యత",
+        preparation: "ప్రస్తుత సిద్ధత స్థాయి",
+
+        high: "అధిక",
+        medium: "మధ్యస్థ",
+        low: "తక్కువ",
+
+        poor: "బలహీనంగా",
+        average: "సగటు",
+        good: "మంచిది"
+
+    }
+};
+function changeLanguage() {
+
+    const lang =
+        document.getElementById("languageSelect").value;
+
+    document.getElementById("title").textContent =
+        translations[lang].title;
+
+    document.getElementById("subtitle").textContent =
+        translations[lang].subtitle;
+
+    document.getElementById("examLabel").textContent =
+        translations[lang].exam;
+
+    document.getElementById("hoursLabel").textContent =
+        translations[lang].hours;
+
+    document.getElementById("generateBtn").textContent =
+        translations[lang].generate;
+
+    document.getElementById("addSubjectBtn").textContent =
+        translations[lang].addSubject;
+        
+        document.querySelectorAll(".subject-name-label")
+          .forEach(el => {
+            el.textContent =
+        translations[lang].subjectName;
+    });
+
+        document.querySelectorAll(".exam-date-label")
+            .forEach(el => {
+                el.textContent =
+        translations[lang].examDate;
+        });
+
+        document.querySelectorAll(".priority-label")
+                .forEach(el => {
+                    el.textContent =
+        translations[lang].priority;
+        });
+
+        document.querySelectorAll(".prep-label")
+            .forEach(el => {
+                 el.textContent =
+        translations[lang].preparation;
+        });
+
+        
+
+    localStorage.setItem("language", lang);
+}
+window.onload = () => {
+
+    const savedLang =
+        localStorage.getItem("language") || "en";
+
+    document.getElementById("languageSelect").value =
+        savedLang;
+
+    changeLanguage();
+};
