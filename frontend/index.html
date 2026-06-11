@@ -42,14 +42,14 @@
             placeholder="Study Hours Per Day">
 
             <!-- AI Provider -->
-            <label>AI Provider</label>
+            <label id="aiProviderLabel">AI Provider</label>
 
                 <select id="aiProvider">
-                    <option value="local">
+                    <option id="localAiOption" value="ollama">
                             Local AI (Ollama)
                     </option>
 
-                     <option value="openai">
+                    <option value="openai">
                          OpenAI (BYOK)
                     </option>
                 </select>
@@ -107,17 +107,14 @@
              ➕ Add Subject
         </button>
 
-        <button
-            type="button"
-            onclick="generateAITips()">
-
-                🤖 Generate AI Study Tips
-
-        </button>
+        <button id="generateTipsBtn"
+        onclick="generateAITips()">
+    🤖 Generate AI Study Tips
+</button>
 
         <!-- Generate Plan Button -->
         <button
-            id="generateBtn"
+            id="generatePlanBtn"
             onclick="generatePlan()">
             Generate Study Plan
         </button>
@@ -150,19 +147,21 @@
             <div class="dashboard-grid">
 
                 <div class="dashboard-card">
-                    <h3>Notes</h3>
+                    <h3 id="notesHeading">Notes</h3>
                     <p id="notesCount">0</p>
                 </div>
 
                 <div class="dashboard-card">
-                    <h3>Resources</h3>
+                    <h3 id="resourcesHeading">Resources</h3>
                     <p id="resourceCount">0</p>
                 </div>
 
             </div>
 
             <!-- Search Notes -->
-            <label for="searchNotes">🔍 Search Notes</label>
+            <label id="searchNotesLabel" for="searchNotes">
+🔍 Search Notes
+</label>
 
             <input
                 type="text"
@@ -170,14 +169,18 @@
                 placeholder="Search notes...">
 
             <!-- Notes -->
-            <label for="workspaceNotes">📝 Notes</label>
+           <label id="workspaceNotesLabel" for="workspaceNotes">
+📝 Notes
+</label>
 
             <textarea
                 id="workspaceNotes"
                 rows="6"></textarea>
 
             <!-- YouTube -->
-            <label for="workspaceYoutube">🎥 YouTube Link</label>
+           <label id="youtubeLabel" for="workspaceYoutube">
+🎥 YouTube Link
+</label>
 
             <input
                 type="text"
@@ -185,7 +188,9 @@
                 placeholder="Paste YouTube link">
 
             <!-- PDF -->
-            <label for="workspacePdf">📄 PDF Link</label>
+            <label id="pdfLabel" for="workspacePdf">
+📄 PDF Link
+</label>
 
             <input
                 type="text"
@@ -193,7 +198,9 @@
                 placeholder="Paste PDF link">
 
             <!-- Book -->
-            <label for="workspaceBook">📚 Book Name</label>
+            <label id="bookLabel" for="workspaceBook">
+📚 Book Name
+</label>
 
             <input
                 type="text"
@@ -201,28 +208,30 @@
                 placeholder="Enter book name">
 
             <!-- Save Workspace -->
-            <button onclick="saveWorkspace()">
-                💾 Save Workspace
-            </button>
+            <button id="saveWorkspaceBtn" onclick="saveWorkspace()">
+💾 Save Workspace
+</button>
 
             <!-- Resource Preview -->
-            <h3>📚 Resource Preview</h3>
+            <h3 id="resourcePreviewTitle">
+📚 Resource Preview
+</h3>
 
             <div id="resourcePreview"></div>
 
             <!-- Clear Workspace -->
-            <button
-                class="clear-btn"
-                onclick="clearWorkspace()">
-                🗑 Clear Workspace
-            </button>
+           <button id="clearWorkspaceBtn"
+        class="clear-btn"
+        onclick="clearWorkspace()">
+🗑 Clear Workspace
+</button>
 
         </div>
 
     </div>
 </div>
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="footerText">
         🚀 Powered by StudySprint AI
     </footer>
 
