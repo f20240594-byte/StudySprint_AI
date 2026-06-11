@@ -39,7 +39,9 @@
             type="number"
             placeholder="Study Hours Per Day">
 
-        <!-- Subject 1 -->
+
+        <div id="subjectsContainer">
+             <!-- Subject 1 -->
         <h3 class="subject-title">📘 Subject 1</h3>
 
         <div class="subject-box">
@@ -70,71 +72,13 @@
             </select>
 
         </div>
-
-        <!-- Subject 2 -->
-        <h3 class="subject-title">📘 Subject 2</h3>
-
-        <div class="subject-box">
-
-            <label for="subject2">Subject Name</label>
-            <input
-                id="subject2"
-                type="text"
-                placeholder="e.g. DSA">
-
-            <label for="date2">Exam Date</label>
-            <input
-                id="date2"
-                type="date">
-
-            <label for="priority2">Priority</label>
-            <select id="priority2">
-                <option>High</option>
-                <option>Medium</option>
-                <option>Low</option>
-            </select>
-
-            <label for="prep2">Current Preparation Level</label>
-            <select id="prep2">
-                <option>Poor</option>
-                <option>Average</option>
-                <option>Good</option>
-            </select>
-
         </div>
 
-        <!-- Subject 3 -->
-        <h3 class="subject-title">📘 Subject 3</h3>
-
-        <div class="subject-box">
-
-            <label for="subject3">Subject Name</label>
-            <input
-                id="subject3"
-                type="text"
-                placeholder="e.g. DSA">
-
-            <label for="date3">Exam Date</label>
-            <input
-                id="date3"
-                type="date">
-
-            <label for="priority3">Priority</label>
-            <select id="priority3">
-                <option>High</option>
-                <option>Medium</option>
-                <option>Low</option>
-            </select>
-
-            <label for="prep3">Current Preparation Level</label>
-            <select id="prep3">
-                <option>Poor</option>
-                <option>Average</option>
-                <option>Good</option>
-            </select>
-
-        </div>
-
+         <button
+            type="button"
+            id="addSubjectBtn">
+             ➕ Add Subject
+        </button>
         <!-- Generate Plan Button -->
         <button
             id="generateBtn"

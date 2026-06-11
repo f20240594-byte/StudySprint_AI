@@ -12,69 +12,37 @@ const hours =
         document.getElementById("hours").value
     );
 
-const subjects = [
+const subjects = [];
 
-    {
-        name:
-            document.getElementById("subject1").value,
+for (let i = 1; i <= subjectCount; i++) {
 
-        exam_date:
-            document.getElementById("date1").value,
+    const subjectInput =
+        document.getElementById(`subject${i}`);
 
-        priority:
-            document.getElementById("priority1").value,
+    if (!subjectInput) continue;
 
-        preparation:
-            document.getElementById("prep1").value
-    },
+    const name = subjectInput.value.trim();
 
-    {
-        name:
-            document.getElementById("subject2").value,
-
-        exam_date:
-            document.getElementById("date2").value,
-
-        priority:
-            document.getElementById("priority2").value,
-
-        preparation:
-            document.getElementById("prep2").value
-    },
-
-    {
-        name:
-            document.getElementById("subject3").value,
-
-        exam_date:
-            document.getElementById("date3").value,
-
-        priority:
-            document.getElementById("priority3").value,
-
-        preparation:
-            document.getElementById("prep3").value
+    if (name !== "") {
+        subjects.push({
+            name,
+            exam_date:
+                document.getElementById(`date${i}`).value,
+            priority:
+                document.getElementById(`priority${i}`).value,
+            preparation:
+                document.getElementById(`prep${i}`).value
+        });
     }
-
-];
-
+}
+if (subjects.length === 0) {
+    alert("Please enter at least one subject.");
+    return;
+}
 if (!exam || !hours) {
 
     alert(
         "Please fill Exam Name and Hours Per Day."
-    );
-
-    return;
-}
-
-if (
-    !subjects[0].name ||
-    !subjects[1].name ||
-    !subjects[2].name
-) {
-
-    alert(
-        "Please enter all subject names."
     );
 
     return;
@@ -342,27 +310,17 @@ checkboxes.forEach((checkbox) => {
 function saveProgress() {
 
     const checkboxes =
-        document.querySelectorAll(
-            ".task-checkbox"
-        );
+        document.querySelectorAll(".task-checkbox");
 
     const progressData = [];
 
     checkboxes.forEach((checkbox) => {
-        progressData.push(
-            checkbox.checked
-        );
+        progressData.push(checkbox.checked);
     });
 
     const studyKey =
         "studyProgress_" +
-        document.getElementById("exam").value +
-        "_" +
-        document.getElementById("subject1").value +
-        "_" +
-        document.getElementById("subject2").value +
-        "_" +
-        document.getElementById("subject3").value;
+        document.getElementById("exam").value;
 
     localStorage.setItem(
         studyKey,
@@ -374,13 +332,7 @@ function loadProgress() {
 
     const studyKey =
         "studyProgress_" +
-        document.getElementById("exam").value +
-        "_" +
-        document.getElementById("subject1").value +
-        "_" +
-        document.getElementById("subject2").value +
-        "_" +
-        document.getElementById("subject3").value;
+        document.getElementById("exam").value;
 
     const savedData =
         localStorage.getItem(studyKey);
@@ -393,9 +345,7 @@ function loadProgress() {
         JSON.parse(savedData);
 
     const checkboxes =
-        document.querySelectorAll(
-            ".task-checkbox"
-        );
+        document.querySelectorAll(".task-checkbox");
 
     checkboxes.forEach(
         (checkbox, index) => {
@@ -416,7 +366,6 @@ function loadProgress() {
 
         });
 }
-
 let currentSubject = "";
 
 function openWorkspace(subject) {
@@ -723,3 +672,52 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+let subjectCount = 1;
+
+document.getElementById("addSubjectBtn")
+    .addEventListener("click", () => {
+
+        subjectCount++;
+
+        const container =
+            document.getElementById(
+                "subjectsContainer"
+            );
+
+        container.insertAdjacentHTML(
+            "beforeend",
+            `
+            <h3 class="subject-title">
+                📘 Subject ${subjectCount}
+            </h3>
+
+            <div class="subject-box">
+
+                <label>Subject Name</label>
+                <input
+                    id="subject${subjectCount}"
+                    type="text">
+
+                <label>Exam Date</label>
+                <input
+                    id="date${subjectCount}"
+                    type="date">
+
+                <label>Priority</label>
+                <select id="priority${subjectCount}">
+                    <option>High</option>
+                    <option>Medium</option>
+                    <option>Low</option>
+                </select>
+
+                <label>Preparation Level</label>
+                <select id="prep${subjectCount}">
+                    <option>Poor</option>
+                    <option>Average</option>
+                    <option>Good</option>
+                </select>
+
+            </div>
+            `
+        );
+    });
