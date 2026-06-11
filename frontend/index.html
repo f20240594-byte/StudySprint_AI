@@ -41,6 +41,31 @@
             type="number"
             placeholder="Study Hours Per Day">
 
+            <!-- AI Provider -->
+            <label>AI Provider</label>
+
+                <select id="aiProvider">
+                    <option value="local">
+                            Local AI (Ollama)
+                    </option>
+
+                     <option value="openai">
+                         OpenAI (BYOK)
+                    </option>
+                </select>
+
+            <!-- API Key -->
+            <div id="apiKeyContainer" style="display:none;">
+
+                <label>API Key</label>
+
+                    <input
+                         type="password"
+                         id="apiKey"
+                         placeholder="Enter your OpenAI API Key">
+
+            </div>
+
 
         <div id="subjectsContainer">
              <!-- Subject 1 -->
@@ -81,6 +106,15 @@
             id="addSubjectBtn">
              ➕ Add Subject
         </button>
+
+        <button
+            type="button"
+            onclick="generateAITips()">
+
+                🤖 Generate AI Study Tips
+
+        </button>
+
         <!-- Generate Plan Button -->
         <button
             id="generateBtn"

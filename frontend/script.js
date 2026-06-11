@@ -843,7 +843,25 @@ function changeLanguage() {
         translations[lang].preparation;
         });
 
-        
+        const aiProvider =
+    document.getElementById("aiProvider");
+
+if (aiProvider) {
+
+    aiProvider.addEventListener(
+        "change",
+        function () {
+
+            document.getElementById(
+                "apiKeyContainer"
+            ).style.display =
+                this.value === "openai"
+                    ? "block"
+                    : "none";
+
+        }
+    );
+}
 
     localStorage.setItem("language", lang);
 }
@@ -857,3 +875,22 @@ window.onload = () => {
 
     changeLanguage();
 };
+function generateAITips() {
+
+    const subject =
+        document.getElementById("subject1").value;
+
+    if (!subject) {
+
+        alert(
+            "Enter a subject first."
+        );
+
+        return;
+    }
+
+    alert(
+        `AI Study Tip:\n\nFocus on ${subject} daily and revise regularly.`
+    );
+
+}
