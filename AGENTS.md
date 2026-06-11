@@ -1,91 +1,224 @@
 # AGENTS.md
 
-## Project Name
-StudySprint AI
+# StudySprint AI - Agent Architecture
 
-## Purpose
-StudySprint AI helps students create personalized study plans based on:
+## Overview
 
-- Exam name
-- Daily study hours
-- Subject-wise exam dates
-- Subject priority
-- Current preparation level
+StudySprint AI is an intelligent study planning system that generates personalized study schedules based on exam dates, subject priorities, and preparation levels.
 
-The system analyzes the urgency and importance of each subject and allocates study hours accordingly.
+The application consists of several logical agents that work together to deliver the user experience.
 
 ---
 
-## Frontend Agent
+# 1. Input Agent
 
-### Responsibilities
-- Collect user inputs
-- Validate form fields
-- Send requests to backend API
-- Display generated study plan
-- Track progress using checkboxes
+## Responsibility
 
-### Files
-- frontend/index.html
-- frontend/style.css
-- frontend/script.js
+Collects and validates user input from the frontend.
 
----
+## Inputs
 
-## Backend Agent
+* Exam Name
+* Hours Available Per Day
+* Subject Name(s)
+* Exam Date(s)
+* Priority Level(s)
+* Preparation Level(s)
 
-### Responsibilities
-- Receive study planning requests
-- Calculate subject weights
-- Analyze:
-  - Exam dates
-  - Priority levels
-  - Preparation levels
-- Generate optimized study hour allocation
+## Validation
 
-### Files
-- backend/app.py
+* Required fields must not be empty
+* At least one subject must be provided
+* Hours per day must be greater than zero
+* Valid exam dates must be selected
 
 ---
 
-## API Endpoint
+# 2. Planning Agent
 
-### Generate Study Plan
+## Responsibility
 
-POST
+Generates a personalized study plan.
 
-/generate-plan
+## Inputs
 
-Request:
+* Subject priorities
+* Preparation levels
+* Exam deadlines
+* Daily study hours
+
+## Tasks
+
+* Calculate subject weights
+* Allocate study hours proportionally
+* Prioritize urgent subjects
+* Generate day-wise schedules
+
+## Output
+
+Daily study plan containing:
+
+* Date
+* Subject
+* Allocated study hours
+
+---
+
+# 3. Progress Tracking Agent
+
+## Responsibility
+
+Tracks user completion status.
+
+## Features
+
+* Task completion tracking
+* Progress percentage calculation
+* Progress bar updates
+* Local storage persistence
+
+## Storage
+
+Browser Local Storage
+
+---
+
+# 4. Workspace Agent
+
+## Responsibility
+
+Manages subject-specific workspaces.
+
+## Features
+
+* Notes management
+* YouTube resource links
+* PDF resource links
+* Book references
+* Auto-save functionality
+
+## Storage
+
+Local Storage
+
+---
+
+# 5. Theme Management Agent
+
+## Responsibility
+
+Controls UI themes.
+
+## Features
+
+* Dark Mode
+* Light Mode
+* Theme persistence
+* Automatic preference loading
+
+---
+
+# 6. API Agent
+
+## Responsibility
+
+Handles communication between frontend and backend.
+
+## Endpoint
+
+POST /generate-plan
+
+## Request
 
 {
-  "exam": "End Semester",
-  "hours_per_day": 5,
-  "subjects": [
-    {
-      "name": "DSA",
-      "exam_date": "2026-06-24",
-      "priority": "High",
-      "preparation": "Average"
-    }
-  ]
+"exam": "Semester Exams",
+"subjects": [],
+"hours_per_day": 5
 }
 
-Response:
+## Response
 
 {
-  "study_plan": [
-    "DSA → 2.1 hrs/day"
-  ]
+"exam": "Semester Exams",
+"study_plan": []
 }
 
 ---
 
-## Future Enhancements
+# 7. Backend Agent
 
-- Dynamic subject creation
-- Day-wise study schedule
-- Progress persistence
-- AI-powered schedule generation
-- Analytics dashboard
-- Calendar integration
+## Technology
+
+FastAPI
+
+## Responsibilities
+
+* Request processing
+* Study plan generation
+* Weight calculation
+* Schedule generation
+* JSON response handling
+
+---
+
+# 8. Deployment Agent
+
+## Platform
+
+Vercel
+
+## Responsibilities
+
+* Static frontend hosting
+* FastAPI backend deployment
+* Route management
+* Production builds
+
+---
+
+# Technology Stack
+
+Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+Backend
+
+* FastAPI
+* Python
+
+Deployment
+
+* Vercel
+
+Storage
+
+* Browser Local Storage
+
+Version Control
+
+* Git
+* GitHub
+
+---
+
+# Future Agents
+
+Potential future enhancements:
+
+* AI Recommendation Agent
+* Pomodoro Agent
+* Calendar Integration Agent
+* Analytics Agent
+* Notification Agent
+* Authentication Agent
+
+---
+
+# Project Maintainer
+
+Rohit Fogla
+
+StudySprint AI v1.0
