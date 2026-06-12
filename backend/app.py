@@ -176,7 +176,7 @@ def generate_plan(data: StudyRequest):
 
         current_day += timedelta(days=1)
 
-    # -----------------------------
+   # -----------------------------
     # Generate AI Tips using Ollama
     # -----------------------------
 
@@ -199,7 +199,11 @@ Study hours per day:
 Keep each tip short.
 """
 
+    print("Reached AI section")
+
     try:
+
+        print("Calling Ollama...")
 
         response = chat(
             model="mistral",
@@ -211,9 +215,13 @@ Keep each tip short.
             ]
         )
 
+        print("Ollama returned")
+
         ai_tips = response["message"]["content"]
 
-    except Exception:
+    except Exception as e:
+
+        print("ERROR:", e)
 
         ai_tips = "AI tips unavailable."
 
