@@ -223,17 +223,32 @@ Keep each tip short.
 
       print("ERROR:", e)
 
+    high_priority = [
+    s.name for s in data.subjects
+    if s.priority == "High"
+]
+
+    poor_prep = [
+    s.name for s in data.subjects
+    if s.preparation == "Poor"
+]
+
     ai_tips = f"""
-                1. Prioritize difficult topics first and revise them daily.
+    🎯 Focus Area:
+    Give extra attention to {', '.join(poor_prep) if poor_prep else 'your weaker subjects'} as they currently require the most improvement.
 
-                2. Divide your study hours into focused sessions with short breaks.
+    📚 Priority Subjects:
+    Allocate additional revision time to {', '.join(high_priority) if high_priority else 'high-priority topics'} to maximize exam readiness.
 
-                3. Solve previous year questions to improve exam confidence.
+    📝 Active Learning:
+    Spend at least one hour daily solving problems, mock tests, or PYQs instead of only reading notes.
 
-                4. Allocate extra time to subjects marked as High Priority.
+    ⏳ Smart Revision:
+    Use spaced repetition and quick revision sessions every evening to strengthen retention.
 
-                5. Review mistakes regularly and maintain concise revision notes.
-            """
+    🚀 Exam Strategy:
+    Complete difficult chapters first and reserve the final days before the exam for revision and practice tests.
+ """
 
     # -----------------------------
     # Return Response
