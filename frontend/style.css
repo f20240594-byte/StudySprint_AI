@@ -713,3 +713,27 @@ body.dark-mode {
         #1e293b
     );
 }
+.feedback-section {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+}
+
+.feedback-section input,
+.feedback-section select,
+.feedback-section textarea {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.feedback-section button {
+    width: 100%;
+}
+
+.feedback-card {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+}

@@ -54,7 +54,7 @@ if (!exam || !hours) {
 try {
 
     document.getElementById("result").innerHTML = `
-
+    
     <div class="loading-card">
 
         <div class="spinner"></div>
@@ -64,7 +64,7 @@ try {
         </p>
 
     </div>
-
+   
 `;
 
     const response = await fetch(
@@ -214,6 +214,10 @@ try {
 
     document.getElementById("result")
         .innerHTML = html;
+    
+    document.getElementById(
+    "feedbackBtn"
+).style.display = "block";
 
     updateProgress();
 
@@ -1236,4 +1240,12 @@ function generateAITips() {
     });
 
     alert(output);
+}
+function openFeedbackForm() {
+
+    window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSfRVG1FBYap7IRtuy82rgunVGe87TBJZEniRuO65A-Lh-5Mxw/viewform?usp=publish-editor",
+        "_blank"
+    );
+
 }
