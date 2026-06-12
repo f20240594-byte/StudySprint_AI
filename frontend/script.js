@@ -1,5 +1,105 @@
+const dailyGoals = [
+    "Complete all scheduled revision tasks today.",
+    "Focus on understanding core concepts before practice.",
+    "Finish pending topics and revise previous lessons.",
+    "Strengthen weak areas identified in earlier sessions.",
+    "Complete today's target without skipping revisions.",
+    "Practice questions after every concept revision.",
+    "Allocate extra time to difficult chapters today.",
+    "Aim to finish all high-priority tasks."
+];
+
+const aiSuggestions = [
+    "Spend more time on subjects with low preparation levels.",
+    "Revise formulas and key concepts before attempting questions.",
+    "Focus on accuracy rather than speed today.",
+    "Prioritize subjects with upcoming exam dates.",
+    "Practice PYQs to improve exam confidence.",
+    "Review mistakes from previous study sessions.",
+    "Take short breaks to maintain concentration.",
+    "Start with difficult topics when your energy is highest."
+];
+
+const progressMessages = [
+    "You are steadily moving toward your exam goals.",
+    "Consistent effort today will improve overall completion.",
+    "Keep maintaining your study rhythm.",
+    "Small daily improvements lead to big results.",
+    "You are on track if today's targets are completed.",
+    "Regular revision will boost retention significantly.",
+    "Your preparation level is improving day by day.",
+    "Stay focused to maximize syllabus coverage."
+];
+
+const dailyGoalsHi = [
+    "आज की सभी पुनरावृत्ति गतिविधियाँ पूरी करें।",
+    "अभ्यास से पहले मुख्य अवधारणाएँ समझें।",
+    "पिछले विषयों की पुनरावृत्ति करें।",
+    "कमज़ोर क्षेत्रों को मजबूत करें।",
+    "आज का लक्ष्य पूरा करें।",
+    "हर अवधारणा के बाद प्रश्न हल करें।",
+    "कठिन अध्यायों पर अधिक समय दें।",
+    "उच्च प्राथमिकता वाले कार्य पूरे करें।"
+];
+
+const aiSuggestionsHi = [
+    "कम तैयारी वाले विषयों पर अधिक समय दें।",
+    "प्रश्न हल करने से पहले सूत्र दोहराएँ।",
+    "गति से अधिक सटीकता पर ध्यान दें।",
+    "निकट परीक्षा वाले विषयों को प्राथमिकता दें।",
+    "PYQs हल करें।",
+    "पुरानी गलतियों की समीक्षा करें।",
+    "छोटे ब्रेक लें।",
+    "कठिन विषय पहले पढ़ें।"
+];
+
+const progressMessagesHi = [
+    "आप अपने लक्ष्य की ओर बढ़ रहे हैं।",
+    "नियमित प्रयास सफलता दिलाएंगे।",
+    "अपनी पढ़ाई की लय बनाए रखें।",
+    "छोटे सुधार बड़े परिणाम देते हैं।",
+    "आप सही दिशा में हैं।",
+    "नियमित पुनरावृत्ति याददाश्त बढ़ाती है।",
+    "आपकी तैयारी बेहतर हो रही है।",
+    "ध्यान केंद्रित रखें।"
+];
+
+const dailyGoalsTe = [
+    "ఈరోజు షెడ్యూల్ చేసిన అన్ని పునశ్చరణ పనులను పూర్తి చేయండి.",
+    "ప్రాక్టీస్ ప్రారంభించే ముందు ముఖ్యమైన భావాలను అర్థం చేసుకోండి.",
+    "మునుపటి పాఠాలను పునశ్చరణ చేయండి.",
+    "బలహీనమైన అంశాలను మరింత బలోపేతం చేయండి.",
+    "ఈరోజు లక్ష్యాన్ని పూర్తి చేయండి.",
+    "ప్రతి కాన్సెప్ట్ తర్వాత ప్రశ్నలను సాధన చేయండి.",
+    "కఠినమైన అధ్యాయాలకు అదనపు సమయం కేటాయించండి.",
+    "అధిక ప్రాధాన్యత గల పనులను పూర్తి చేయండి."
+];
+
+const aiSuggestionsTe = [
+    "తక్కువ సిద్ధత ఉన్న సబ్జెక్టులకు ఎక్కువ సమయం కేటాయించండి.",
+    "ప్రశ్నలు ప్రయత్నించే ముందు సూత్రాలను పునశ్చరణ చేయండి.",
+    "ఈరోజు వేగం కంటే ఖచ్చితత్వంపై దృష్టి పెట్టండి.",
+    "సమీప పరీక్షలున్న సబ్జెక్టులను ముందుగా చదవండి.",
+    "పరీక్ష నమ్మకాన్ని పెంచడానికి PYQs సాధన చేయండి.",
+    "మునుపటి తప్పులను సమీక్షించండి.",
+    "ఏకాగ్రత కోసం చిన్న విరామాలు తీసుకోండి.",
+    "మీ శక్తి ఎక్కువగా ఉన్నప్పుడు కఠినమైన అంశాలను ప్రారంభించండి."
+];
+
+const progressMessagesTe = [
+    "మీరు మీ పరీక్ష లక్ష్యాల వైపు స్థిరంగా ముందుకు సాగుతున్నారు.",
+    "ఈరోజు క్రమశిక్షణతో చదివితే మొత్తం పురోగతి మెరుగవుతుంది.",
+    "మీ అధ్యయన రిథమ్‌ను కొనసాగించండి.",
+    "రోజువారీ చిన్న మెరుగుదలలు పెద్ద ఫలితాలను ఇస్తాయి.",
+    "ఈరోజు లక్ష్యాలు పూర్తైతే మీరు సరైన మార్గంలో ఉన్నారు.",
+    "నిరంతర పునశ్చరణ జ్ఞాపకశక్తిని గణనీయంగా పెంచుతుంది.",
+    "మీ సిద్ధత స్థాయి రోజురోజుకూ మెరుగవుతోంది.",
+    "సిలబస్‌ను గరిష్టంగా పూర్తి చేయడానికి దృష్టి కేంద్రీకరించండి."
+];
+
 async function generatePlan() {
-const lang =
+
+    const lang =
         document.getElementById("languageSelect").value;
 
 const API_URL =
@@ -98,30 +198,61 @@ try {
 
     let html = `
 
-        <h2>
-            ${translations[lang].personalizedPlan}
-        </h2>
+    <h2>
+        ${translations[lang].personalizedPlan}
+    </h2>
 
-        <div class="progress-container">
+    <div class="progress-container">
+
+        <div class="progress-header">
 
             <div class="progress-text">
-    ${translations[lang].progress}: 0% ${translations[lang].completed}
-</div>
+                ${translations[lang].progress}: 0% ${translations[lang].completed}
+            </div>
 
-            <div class="progress-bar">
-
-                <div
-                    class="progress-fill"
-                    id="progressFill">
-                </div>
-
+            <div class="task-counter">
+                <span id="taskCounter">
+                    0 / 0 ${translations[lang].tasksDone}
+                </span>
             </div>
 
         </div>
 
-    `;
+        <div class="progress-bar">
 
-    data.study_plan.forEach((day) => {
+            <div
+                class="progress-fill"
+                id="progressFill">
+                
+            </div>
+
+        </div>
+
+        <div class="progress-milestones">
+
+            <span>0%<br>${translations[lang].start}</span>
+
+            <span>25%<br>${translations[lang].quarterWay}</span>
+
+            <span>50%<br>${translations[lang].halfWay}</span>
+
+            <span>75%<br>${translations[lang].almostThere}</span>
+
+            <span>100%<br>${translations[lang].completedLabel}</span>
+
+        </div>
+
+        <div class="progress-message">
+            <span id="progressMessage">
+                ${translations[lang].greatJob}
+            </span>
+        </div>
+
+    </div>
+
+`;
+
+    data.study_plan.forEach((day, dayIndex) => { 
 
         html += `
 
@@ -160,7 +291,7 @@ try {
 
                 <span class="task-text">
 
-                    📖 Concept Revision
+                    📖 ${translations[lang].conceptRevision}
 
                 </span>
 
@@ -174,7 +305,7 @@ try {
 
                 <span class="task-text">
 
-                    ✏️ Practice Questions
+                    ✏️ ${translations[lang].practiceQuestions}
 
                 </span>
 
@@ -188,7 +319,7 @@ try {
 
                 <span class="task-text">
 
-                    📝 PYQs
+                    📝 ${translations[lang].pyqs}
 
                 </span>
 
@@ -202,7 +333,7 @@ try {
 
                 <span class="task-text">
 
-                    🔄 Quick Revision
+                    🔄 ${translations[lang].quickRevision}
 
                 </span>
 
@@ -213,16 +344,46 @@ try {
     `;
 
 });
+       const goalArray =
+    lang === "hi"
+        ? dailyGoalsHi
+        : lang === "te"
+        ? dailyGoalsTe
+        : dailyGoals;
+
+const suggestionArray =
+    lang === "hi"
+        ? aiSuggestionsHi
+        : lang === "te"
+        ? aiSuggestionsTe
+        : aiSuggestions;
+
+const progressArray =
+    lang === "hi"
+        ? progressMessagesHi
+        : lang === "te"
+        ? progressMessagesTe
+        : progressMessages;
+
+const randomGoal =
+    goalArray[dayIndex % goalArray.length];
+
+const randomSuggestion =
+    suggestionArray[dayIndex % suggestionArray.length];
+
+const randomProgress =
+    progressArray[dayIndex % progressArray.length];
+
         html += `
 
         <div class="goal-card">
 
             <h4>
-                🎯 Daily Goal
+                🎯 ${translations[lang].dailyGoal}
             </h4>
 
             <p>
-                Complete today's scheduled topics and revision.
+                ${randomGoal}
             </p>
 
         </div>
@@ -230,11 +391,11 @@ try {
         <div class="ai-card">
 
             <h4>
-                💡 AI Suggestion
+                💡 ${translations[lang].aiSuggestion}
             </h4>
 
             <p>
-                Focus more on high-priority subjects today and revise weak areas before moving to new topics.
+             ${randomSuggestion}
             </p>
 
         </div>
@@ -242,11 +403,11 @@ try {
         <div class="forecast-card">
 
             <h4>
-                📊 Expected Progress
+                📊 ${translations[lang].expectedProgress}
             </h4>
 
             <p>
-                Stay consistent to achieve 100% syllabus completion before your exam.
+                ${randomProgress}
             </p>
 
         </div>
@@ -332,7 +493,7 @@ try {
 }
 
 function updateProgress() {
-
+ 
 const checkboxes =
     document.querySelectorAll(
         ".task-checkbox"
@@ -345,32 +506,6 @@ checkboxes.forEach((checkbox) => {
     const lang =
         document.getElementById("languageSelect").value;
 
-    const badge =
-        checkbox
-            .closest(".plan-card")
-            .querySelector(".task-badge");
-
-            if (checkbox.checked) {
-
-                badge.innerHTML =
-                    translations[lang].completed;
-
-                badge.classList.add(
-                    "completed-badge"
-                );
-
-            } else {
-
-    const lang =
-        document.getElementById("languageSelect").value;
-
-    badge.innerHTML =
-        translations[lang].study;
-
-    badge.classList.remove(
-        "completed-badge"
-    );
-}
 
             const total =
                 document.querySelectorAll(
@@ -388,15 +523,22 @@ checkboxes.forEach((checkbox) => {
                 : Math.round(
                     (completed / total) * 100
                 );
+                document.getElementById("progressFill").style.width =
+    percent + "%";
+            document.getElementById("taskCounter").innerHTML =
+    `${completed} / ${total} ${translations[lang].tasksDone}`;
 
             document.querySelector(".progress-text").innerHTML =
     `${translations[lang].progress}: ${percent}% ${translations[lang].completed}`;
 
-            document.getElementById(
-                "progressFill"
-            ).style.width =
-                percent + "%";
+            const progressFill =
+    document.getElementById("progressFill");
 
+progressFill.style.width =
+    percent + "%";
+
+progressFill.innerHTML =
+    percent + "%";
             saveProgress();
 
         }
@@ -894,7 +1036,30 @@ bookName: "Book Name",
 bookPlaceholder: "Enter book name",
 saveWorkspace: "💾 Save Workspace",
 resourcePreview: "📚 Resource Preview",
-clearWorkspace: "🗑 Clear Workspace"
+clearWorkspace: "🗑 Clear Workspace",
+
+        conceptRevision: "Concept Revision",
+practiceQuestions: "Practice Questions",
+pyqs: "PYQs",
+quickRevision: "Quick Revision",
+
+dailyGoal: "Daily Goal",
+aiSuggestion: "AI Suggestion",
+expectedProgress: "Expected Progress",
+dailyGoal: "🎯 Daily Goal",
+aiSuggestion: "💡 AI Suggestion",
+expectedProgress: "📊 Expected Progress",
+
+tasksDone: "Tasks Done",
+
+start: "Start",
+quarterWay: "Quarter Way",
+halfWay: "Half Way",
+almostThere: "Almost There",
+completedLabel: "Completed",
+
+greatJob: "✨ Great job! Keep going, you're doing excellent! 🚀",
+feedback: "⭐ Give Feedback"
     },
 
     hi: {
@@ -958,7 +1123,29 @@ bookName: "पुस्तक का नाम",
 bookPlaceholder: "पुस्तक का नाम दर्ज करें",
 saveWorkspace: "💾 कार्यक्षेत्र सहेजें",
 resourcePreview: "📚 संसाधन पूर्वावलोकन",
-clearWorkspace: "🗑 कार्यक्षेत्र साफ़ करें"
+clearWorkspace: "🗑 कार्यक्षेत्र साफ़ करें",
+conceptRevision: "सिद्धांत पुनरावृत्ति",
+practiceQuestions: "अभ्यास प्रश्न",
+pyqs: "पिछले वर्ष के प्रश्न",
+quickRevision: "त्वरित पुनरावृत्ति",
+
+dailyGoal: "दैनिक लक्ष्य",
+aiSuggestion: "एआई सुझाव",
+expectedProgress: "अपेक्षित प्रगति",
+dailyGoal: "🎯 दैनिक लक्ष्य",
+aiSuggestion: "💡 एआई सुझाव",
+expectedProgress: "📊 अपेक्षित प्रगति",
+
+tasksDone: "कार्य पूर्ण",
+
+start: "शुरुआत",
+quarterWay: "25% पूरा",
+halfWay: "आधा रास्ता",
+almostThere: "लगभग पूरा",
+completedLabel: "पूर्ण",
+
+greatJob: "✨ बहुत बढ़िया! ऐसे ही मेहनत करते रहें! 🚀",
+feedback: "⭐ प्रतिक्रिया दें"
     },
 
     te: {
@@ -1022,7 +1209,29 @@ bookName: "పుస్తకం పేరు",
 bookPlaceholder: "పుస్తకం పేరు నమోదు చేయండి",
 saveWorkspace: "💾 వర్క్‌స్పేస్ సేవ్ చేయండి",
 resourcePreview: "📚 వనరుల ప్రివ్యూ",
-clearWorkspace: "🗑 వర్క్‌స్పేస్ క్లియర్ చేయండి"
+clearWorkspace: "🗑 వర్క్‌స్పేస్ క్లియర్ చేయండి",
+conceptRevision: "సిద్ధాంత పునశ్చరణ",
+practiceQuestions: "అభ్యాస ప్రశ్నలు",
+pyqs: "గత సంవత్సర ప్రశ్నలు",
+quickRevision: "త్వరిత పునశ్చరణ",
+
+dailyGoal: "రోజువారీ లక్ష్యం",
+aiSuggestion: "AI సూచన",
+expectedProgress: "అంచనా పురోగతి",
+dailyGoal: "🎯 రోజువారీ లక్ష్యం",
+aiSuggestion: "💡 AI సూచన",
+expectedProgress: "📊 అంచనా పురోగతి",
+
+tasksDone: "పూర్తైన పనులు",
+
+start: "ప్రారంభం",
+quarterWay: "25% పూర్తైంది",
+halfWay: "సగం పూర్తైంది",
+almostThere: "దాదాపు పూర్తైంది",
+completedLabel: "పూర్తైంది",
+
+greatJob: "✨ అద్భుతం! ఇలాగే కొనసాగించండి! 🚀",
+feedback: "⭐ అభిప్రాయం ఇవ్వండి"
     }
 };
 function getPlanKey() {
@@ -1093,11 +1302,16 @@ function changeLanguage() {
     document.getElementById("generatePlanBtn").textContent =
         translations[lang].generate;
 
+    document.getElementById("feedbackBtn").textContent =
+        translations[lang].feedback;
+
     document.getElementById("addSubjectBtn").textContent =
         translations[lang].addSubject;
 
     document.getElementById("footerText").textContent =
         "🚀 " + translations[lang].poweredBy;
+    
+    
 
     document.getElementById("notesHeading").textContent =
     translations[lang].notes;
