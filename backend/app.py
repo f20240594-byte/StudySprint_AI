@@ -221,15 +221,19 @@ Keep each tip short.
 
     except Exception as e:
 
-     print("ERROR:", e)
+      print("ERROR:", e)
 
-    ai_tips = [
-        f"Spend extra time on {data.subjects[0].name}.",
-        "Revise daily before starting new topics.",
-        "Practice mock tests weekly.",
-        "Focus on weak areas first.",
-        "Maintain a consistent study schedule."
-    ]
+    ai_tips = f"""
+                1. Prioritize difficult topics first and revise them daily.
+
+                2. Divide your study hours into focused sessions with short breaks.
+
+                3. Solve previous year questions to improve exam confidence.
+
+                4. Allocate extra time to subjects marked as High Priority.
+
+                5. Review mistakes regularly and maintain concise revision notes.
+            """
 
     # -----------------------------
     # Return Response
