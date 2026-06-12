@@ -133,36 +133,127 @@ try {
 
         `;
 
-        day.tasks.forEach((task) => {
+        day.tasks.forEach((task, index) => {
 
-            html += `
+    const icons = [
+        "🔴",
+        "🟡",
+        "🟢"
+    ];
 
-                <div class="plan-card">
+    const icon =
+        icons[index % icons.length];
 
-                    <div class="plan-left">
+    html += `
 
-                        <input
-                            type="checkbox"
-                            class="task-checkbox">
+        <div class="plan-card">
 
-                        <span class="task-text">
-                            ${task}
-                        </span>
+            <h4>
+                ${icon} ${task}
+            </h4>
 
-                    </div>
-                    <div class="task-badge">
-                       ${translations[lang].study}
-                    </div>
+            <div class="plan-left">
 
-                </div>
+                <input
+                    type="checkbox"
+                    class="task-checkbox">
 
-            `;
+                <span class="task-text">
 
-        });
+                    📖 Concept Revision
 
-        html += `
+                </span>
+
             </div>
-        `;
+
+            <div class="plan-left">
+
+                <input
+                    type="checkbox"
+                    class="task-checkbox">
+
+                <span class="task-text">
+
+                    ✏️ Practice Questions
+
+                </span>
+
+            </div>
+
+            <div class="plan-left">
+
+                <input
+                    type="checkbox"
+                    class="task-checkbox">
+
+                <span class="task-text">
+
+                    📝 PYQs
+
+                </span>
+
+            </div>
+
+            <div class="plan-left">
+
+                <input
+                    type="checkbox"
+                    class="task-checkbox">
+
+                <span class="task-text">
+
+                    🔄 Quick Revision
+
+                </span>
+
+            </div>
+
+        </div>
+
+    `;
+
+});
+        html += `
+
+        <div class="goal-card">
+
+            <h4>
+                🎯 Daily Goal
+            </h4>
+
+            <p>
+                Complete today's scheduled topics and revision.
+            </p>
+
+        </div>
+
+        <div class="ai-card">
+
+            <h4>
+                💡 AI Suggestion
+            </h4>
+
+            <p>
+                Focus more on high-priority subjects today and revise weak areas before moving to new topics.
+            </p>
+
+        </div>
+
+        <div class="forecast-card">
+
+            <h4>
+                📊 Expected Progress
+            </h4>
+
+            <p>
+                Stay consistent to achieve 100% syllabus completion before your exam.
+            </p>
+
+        </div>
+
+    </div>
+
+`;
 
     });
 
