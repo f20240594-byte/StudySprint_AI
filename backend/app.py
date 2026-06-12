@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from datetime import datetime, timedelta
 from time import sleep
+from ollama import chat
 
 app = FastAPI()
 
@@ -30,7 +31,7 @@ class StudyRequest(BaseModel):
     exam: str
     subjects: list[Subject]
     hours_per_day: float
-
+    language: str = "en"
 
 # -----------------------------
 # Home Route
@@ -176,9 +177,52 @@ def generate_plan(data: StudyRequest):
         current_day += timedelta(days=1)
 
     # -----------------------------
+    # Generate AI Tips using Ollama
+    # -----------------------------
+
+    subject_names = ", ".join(
+        [s.name for s in data.subjects]
+    )
+
+    prompt = f"""
+Generate 5 personalized study tips.
+
+Exam:
+{data.exam}
+
+Subjects:
+{subject_names}
+
+Study hours per day:
+{data.hours_per_day}
+
+Keep each tip short.
+"""
+
+    try:
+
+        response = chat(
+            model="mistral",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+
+        ai_tips = response["message"]["content"]
+
+    except Exception:
+
+        ai_tips = "AI tips unavailable."
+
+    # -----------------------------
     # Return Response
     # -----------------------------
+
     return {
         "exam": data.exam,
-        "study_plan": daily_schedule
+        "study_plan": daily_schedule,
+        "ai_tips": ai_tips
     }

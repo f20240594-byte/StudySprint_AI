@@ -196,6 +196,10 @@ try {
     const data =
         await response.json();
 
+    const aiTipsText =
+    data.ai_tips ||
+    "No AI tips available.";
+
     let html = `
 
     <h2>
@@ -417,7 +421,15 @@ const randomProgress =
 `;
 
     });
+    html += `
+<div class="ai-tips-box">
 
+    <h3>🤖 AI Generated Study Tips</h3>
+
+    <pre>${aiTipsText}</pre>
+
+</div>
+`;
     html += `
 
         <h2>
