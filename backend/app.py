@@ -221,9 +221,15 @@ Keep each tip short.
 
     except Exception as e:
 
-        print("ERROR:", e)
+     print("ERROR:", e)
 
-        ai_tips = "AI tips unavailable."
+    ai_tips = [
+        f"Spend extra time on {data.subjects[0].name}.",
+        "Revise daily before starting new topics.",
+        "Practice mock tests weekly.",
+        "Focus on weak areas first.",
+        "Maintain a consistent study schedule."
+    ]
 
     # -----------------------------
     # Return Response
