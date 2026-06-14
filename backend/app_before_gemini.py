@@ -9,12 +9,8 @@ import google.generativeai as genai
 
 app = FastAPI()
 
-api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
-
-print("API KEY FOUND:", bool(api_key))
-
 genai.configure(
-    api_key=api_key
+    api_key=os.getenv("GEMINI_API_KEY")
 )
 
 app.add_middleware(
@@ -232,19 +228,17 @@ Keep each tip short.
 
     except Exception as e:
 
-     print("ERROR:", e)
-
-     ai_tips = f"AI Error: {str(e)}"
+      print("ERROR:", e)
 
    # high_priority = [
    # s.name for s in data.subjects
    # if s.priority == "High"
-
+]
 
    # poor_prep = [
    # s.name for s in data.subjects
    # if s.preparation == "Poor"
-
+]
 
    # ai_tips = f"""
    # 🎯 Focus Area:
@@ -264,77 +258,8 @@ Keep each tip short.
  # """
 
     # -----------------------------
-    # Generate AI Tips
+    # Return Response
     # -----------------------------
-
-    subject_names = ", ".join(
-        [s.name for s in data.subjects]
-    )
-
-    prompt = f"""
-    You are an expert study coach.
-
-    Exam:
-    {data.exam}
-
-    Subjects:
-    {subject_names}
-
-    Study Hours Per Day:
-    {data.hours_per_day}
-
-    Generate:
-
-    1. Weakness analysis
-    2. Daily study strategy
-    3. Revision strategy
-    4. Memory techniques
-    5. Exam day advice
-
-    Keep it practical and personalized.
-    """
-
-    try:
-
-        if data.provider == "ollama":
-
-            response = chat(
-                model="mistral",
-                messages=[
-                    {
-                     "role": "user",
-                        "content": prompt
-                    }
-                ]
-            )
-
-            ai_tips = response["message"]["content"]
-
-        elif data.provider == "gemini":
-
-            model = genai.GenerativeModel(
-                "gemini-2.5-flash"
-            )
-
-            response = model.generate_content(
-             prompt
-            )
-
-            ai_tips = response.text
-
-        else:
-
-            ai_tips = "Invalid AI provider selected."
-
-    except Exception as e:
-
-            print("AI ERROR:", e)
-
-            ai_tips = f"AI Error: {str(e)}"
-
-        # -----------------------------
-        # Return Response
-        # -----------------------------
 
     return {
         "exam": data.exam,
