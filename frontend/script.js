@@ -928,7 +928,25 @@ themeBtn.addEventListener("click", () => {
            "🌙 Dark Mode");
 });
 window.addEventListener("DOMContentLoaded", () => {
+    const isLocal =
+        location.hostname === "localhost" ||
+        location.hostname === "127.0.0.1";
 
+        if (!isLocal) {
+
+            const ollamaOption =
+            document.querySelector(
+                '#aiProvider option[value="ollama"]'
+            );
+
+        if (ollamaOption) {
+            ollamaOption.remove();
+        }
+
+    document.getElementById(
+        "aiProvider"
+    ).value = "gemini";
+}
     const savedLang =
         localStorage.getItem("language") || "en";
 

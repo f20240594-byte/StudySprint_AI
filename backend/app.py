@@ -301,11 +301,17 @@ Keep each tip short.
 
         if data.provider == "ollama":
 
+         if chat is None:
+
+            ai_tips = "Ollama is unavailable on deployment."
+
+         else:
+
             response = chat(
                 model="mistral",
                 messages=[
                     {
-                     "role": "user",
+                        "role": "user",
                         "content": prompt
                     }
                 ]
