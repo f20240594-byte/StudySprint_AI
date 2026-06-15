@@ -181,7 +181,11 @@ try {
     exam,
     subjects,
     hours_per_day: hours,
-    language: lang
+    language: lang,
+    provider:
+        document.getElementById(
+            "aiProvider"
+        ).value
 })
         }
     );
@@ -1391,7 +1395,7 @@ document.getElementById("workspaceBook").placeholder =
          translations[lang].good;
     });
    
-    document.querySelector('#aiProvider option[value="openai"]')
+    document.querySelector('#aiProvider option[value="gemini"]')
             .textContent =
                 translations[lang].openAI;
 
@@ -1475,7 +1479,7 @@ if (aiProvider) {
             document.getElementById(
                 "apiKeyContainer"
             ).style.display =
-                this.value === "openai"
+                this.value === "gemini"
                     ? "block"
                     : "none";
 

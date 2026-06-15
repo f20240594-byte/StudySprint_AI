@@ -3,7 +3,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from datetime import datetime, timedelta
 from time import sleep
-from ollama import chat
+try:
+    from ollama import chat
+except:
+    chat = None
 import os
 import google.generativeai as genai
 
