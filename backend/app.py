@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from datetime import datetime, timedelta
+from backend.adk_agent import study_agent
 from time import sleep
 try:
     from ollama import chat
@@ -57,6 +58,13 @@ def home():
         "message": "StudySprint AI Running"
     }
 
+@app.get("/agent")
+def agent_demo():
+
+    return {
+        "agent_name": study_agent.name,
+        "status": "Google ADK Integrated Successfully"
+    }
 
 # -----------------------------
 # Generate Plan
