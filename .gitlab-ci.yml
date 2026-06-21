@@ -3,7 +3,6 @@ stages:
 
 quality-checks:
   stage: quality
-  image: python:3.13
 
   before_script:
     - pip install -r requirements.txt
