@@ -1,38 +1,56 @@
 repos:
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
     hooks:
-      - id: trailing-whitespace
-      - id: end-of-file-fixer
-      - id: check-yaml
-      - id: check-json
-      - id: check-merge-conflict
-      - id: detect-private-key
-
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.12.0
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-json
+    -   id: check-merge-conflict
+    -   id: detect-private-key
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.18
     hooks:
-      - id: ruff
-      - id: ruff-format
-
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.17.1
+    -   id: ruff
+    -   id: ruff-format
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v2.1.0
     hooks:
-      - id: mypy
-
-  - repo: https://github.com/PyCQA/bandit
-    rev: 1.8.6
+    -   id: mypy
+-   repo: https://github.com/PyCQA/bandit
+    rev: 1.9.4
     hooks:
-      - id: bandit
-        args: ["-r", "."]
-
-  - repo: https://github.com/jendrikseipp/vulture
-    rev: v2.14
-    hooks:
-      - id: vulture
+    -   id: bandit
         args:
-          - .
-          - --min-confidence
-          - "80"
-          - --exclude
-          - backup/
+        - -r
+        - .
+- repo: https://github.com/jendrikseipp/vulture
+  rev: v2.14
+  hooks:
+    - id: vulture
+      args:
+        - .
+        - --min-confidence
+        - "80"
+        - --exclude
+        - backup/
+- repo: https://github.com/PyCQA/flake8
+  rev: 7.3.0
+  hooks:
+    - id: flake8
+-   repo: https://github.com/PyCQA/pylint
+    rev: v4.0.6
+    hooks:
+    -   id: pylint
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.21.2
+    hooks:
+    -   id: pyupgrade
+        args:
+        - --py313-plus
+-   repo: https://github.com/returntocorp/semgrep
+    rev: v1.165.0
+    hooks:
+    -   id: semgrep
+        args:
+        - --config=auto
