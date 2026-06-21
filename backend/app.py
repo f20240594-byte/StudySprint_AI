@@ -3,10 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from datetime import datetime, timedelta
 from backend.adk_agent import study_agent
+from typing import cast
+from typing import Any
 from time import sleep
+
 try:
     from ollama import chat
-except:
+except ImportError:
     chat = None
 import os
 import google.generativeai as genai
@@ -17,9 +20,7 @@ api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 
 print("API KEY FOUND:", bool(api_key))
 
-genai.configure(
-    api_key=api_key
-)
+genai.configure(api_key=api_key)
 
 app.add_middleware(
     CORSMiddleware,
@@ -33,6 +34,7 @@ app.add_middleware(
 # -----------------------------
 # Models
 # -----------------------------
+
 
 class Subject(BaseModel):
     name: str
@@ -48,88 +50,66 @@ class StudyRequest(BaseModel):
     language: str = "en"
     provider: str = "ollama"
 
+
 # -----------------------------
 # Home Route
 # -----------------------------
 
+
 @app.get("/")
 def home():
-    return {
-        "message": "StudySprint AI Running"
-    }
+    return {"message": "StudySprint AI Running"}
+
 
 @app.get("/agent")
 def agent_demo():
-
     return {
         "agent_name": study_agent.name,
-        "status": "Google ADK Integrated Successfully"
+        "status": "Google ADK Integrated Successfully",
     }
+
 
 # -----------------------------
 # Generate Plan
 # -----------------------------
 
+
 @app.post("/generate-plan")
 def generate_plan(data: StudyRequest):
-
     # Spinner demo delay
     sleep(3)
 
-    priority_map = {
-        "High": 3,
-        "Medium": 2,
-        "Low": 1
-    }
+    priority_map = {"High": 3, "Medium": 2, "Low": 1}
 
-    preparation_map = {
-        "Poor": 3,
-        "Average": 2,
-        "Good": 1
-    }
+    preparation_map = {"Poor": 3, "Average": 2, "Good": 1}
 
     today = datetime.today()
 
-    subject_weights = []
+    subject_weights: list[dict[str, Any]] = []
 
     # -----------------------------
     # Calculate subject weights
     # -----------------------------
     for subject in data.subjects:
+        exam_date = datetime.strptime(subject.exam_date, "%Y-%m-%d")
 
-        exam_date = datetime.strptime(
-            subject.exam_date,
-            "%Y-%m-%d"
+        days_left = max((exam_date - today).days, 1)
+
+        priority_score = priority_map.get(subject.priority, 1)
+
+        preparation_score = preparation_map.get(subject.preparation, 1)
+
+        weight = priority_score + preparation_score + (10 / days_left)
+
+        subject_weights.append(
+            {
+                "name": subject.name,
+                "weight": weight,
+                "exam_date": subject.exam_date,
+                "priority": subject.priority,
+                "preparation": subject.preparation,
+            }
         )
-
-        days_left = max(
-            (exam_date - today).days,
-            1
-        )
-
-        priority_score = priority_map.get(
-            subject.priority,
-            1
-        )
-
-        preparation_score = preparation_map.get(
-            subject.preparation,
-            1
-        )
-
-        weight = (
-            priority_score +
-            preparation_score +
-            (10 / days_left)
-        )
-
-        subject_weights.append({
-            "name": subject.name,
-            "weight": weight,
-            "exam_date": subject.exam_date,
-            "priority": subject.priority,
-            "preparation": subject.preparation
-        })
 
     # -----------------------------
     # Find last exam date
@@ -137,11 +117,7 @@ def generate_plan(data: StudyRequest):
     all_exam_dates = []
 
     for subject in data.subjects:
-
-        exam_date = datetime.strptime(
-            subject.exam_date,
-            "%Y-%m-%d"
-        )
+        exam_date = datetime.strptime(subject.exam_date, "%Y-%m-%d")
 
         all_exam_dates.append(exam_date)
 
@@ -155,24 +131,18 @@ def generate_plan(data: StudyRequest):
     current_day = today
 
     while current_day <= last_exam_date:
-
         active_subjects = []
         active_total_weight = 0
 
         # Keep only subjects whose exams
         # have not yet happened
         for item in subject_weights:
-
-            subject_exam_date = datetime.strptime(
-                item["exam_date"],
-                "%Y-%m-%d"
-            )
+            subject_exam_date = datetime.strptime(str(item["exam_date"]), "%Y-%m-%d")
 
             if current_day <= subject_exam_date:
-
                 active_subjects.append(item)
-
-                active_total_weight += item["weight"]
+                weight = cast(int, item["weight"])
+                active_total_weight += weight
 
         if active_total_weight == 0:
             break
@@ -180,31 +150,26 @@ def generate_plan(data: StudyRequest):
         day_plan = []
 
         for item in active_subjects:
+            weight = cast(int, item["weight"])
 
             allocated_hours = round(
-                data.hours_per_day *
-                (item["weight"] / active_total_weight),
-                1
+                data.hours_per_day * (weight / active_total_weight),
+                1,
             )
 
-            day_plan.append(
-                f"{item['name']} - {allocated_hours} hrs"
-            )
+            day_plan.append(f"{item['name']} - {allocated_hours} hrs")
 
-        daily_schedule.append({
-            "date": current_day.strftime("%d-%m-%Y"),
-            "tasks": day_plan
-        })
+        daily_schedule.append(
+            {"date": current_day.strftime("%d-%m-%Y"), "tasks": day_plan}
+        )
 
         current_day += timedelta(days=1)
 
-   # -----------------------------
+    # -----------------------------
     # Generate AI Tips using Ollama
     # -----------------------------
 
-    subject_names = ", ".join(
-        [s.name for s in data.subjects]
-    )
+    subject_names = ", ".join([s.name for s in data.subjects])
 
     prompt = f"""
 Generate 5 personalized study tips.
@@ -224,63 +189,49 @@ Keep each tip short.
     print("Reached AI section")
 
     try:
-
         print("Calling Ollama...")
 
-        response = chat(
-            model="mistral",
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt
-                }
-            ]
-        )
+        response = chat(model="mistral", messages=[{"role": "user", "content": prompt}])
 
         print("Ollama returned")
 
         ai_tips = response["message"]["content"]
 
     except Exception as e:
+        print("ERROR:", e)
 
-     print("ERROR:", e)
+        ai_tips = f"AI Error: {str(e)}"
 
-     ai_tips = f"AI Error: {str(e)}"
+    # high_priority = [
+    # s.name for s in data.subjects
+    # if s.priority == "High"
 
-   # high_priority = [
-   # s.name for s in data.subjects
-   # if s.priority == "High"
+    # poor_prep = [
+    # s.name for s in data.subjects
+    # if s.preparation == "Poor"
 
+    # ai_tips = f"""
+    # 🎯 Focus Area:
+    # Give extra attention to {', '.join(poor_prep) if poor_prep else 'your weaker subjects'} as they currently require the most improvement.
 
-   # poor_prep = [
-   # s.name for s in data.subjects
-   # if s.preparation == "Poor"
+    # 📚 Priority Subjects:
+    # Allocate additional revision time to {', '.join(high_priority) if high_priority else 'high-priority topics'} to maximize exam readiness.
 
+    #  📝 Active Learning:
+    # Spend at least one hour daily solving problems, mock tests, or PYQs instead of only reading notes.
 
-   # ai_tips = f"""
-   # 🎯 Focus Area:
-   # Give extra attention to {', '.join(poor_prep) if poor_prep else 'your weaker subjects'} as they currently require the most improvement.
+    # ⏳ Smart Revision:
+    # Use spaced repetition and quick revision sessions every evening to strengthen retention.
 
-   # 📚 Priority Subjects:
-   # Allocate additional revision time to {', '.join(high_priority) if high_priority else 'high-priority topics'} to maximize exam readiness.
-
-  #  📝 Active Learning:
-   # Spend at least one hour daily solving problems, mock tests, or PYQs instead of only reading notes.
-
-   # ⏳ Smart Revision:
-   # Use spaced repetition and quick revision sessions every evening to strengthen retention.
-
-   # 🚀 Exam Strategy:
-   # Complete difficult chapters first and reserve the final days before the exam for revision and practice tests.
- # """
+    # 🚀 Exam Strategy:
+    # Complete difficult chapters first and reserve the final days before the exam for revision and practice tests.
+    # """
 
     # -----------------------------
     # Generate AI Tips
     # -----------------------------
 
-    subject_names = ", ".join(
-        [s.name for s in data.subjects]
-    )
+    subject_names = ", ".join([s.name for s in data.subjects])
 
     prompt = f"""
     You are an expert study coach.
@@ -306,55 +257,34 @@ Keep each tip short.
     """
 
     try:
-
         if data.provider == "ollama":
+            if chat is None:
+                ai_tips = "Ollama is unavailable on deployment."
 
-         if chat is None:
+            else:
+                response = chat(
+                    model="mistral", messages=[{"role": "user", "content": prompt}]
+                )
 
-            ai_tips = "Ollama is unavailable on deployment."
-
-         else:
-
-            response = chat(
-                model="mistral",
-                messages=[
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ]
-            )
-
-            ai_tips = response["message"]["content"]
+                ai_tips = response["message"]["content"]
 
         elif data.provider == "gemini":
+            model = genai.GenerativeModel("gemini-2.5-flash")
 
-            model = genai.GenerativeModel(
-                "gemini-2.5-flash"
-            )
-
-            response = model.generate_content(
-             prompt
-            )
+            response = model.generate_content(prompt)
 
             ai_tips = response.text
 
         else:
-
             ai_tips = "Invalid AI provider selected."
 
     except Exception as e:
+        print("AI ERROR:", e)
 
-            print("AI ERROR:", e)
+        ai_tips = f"AI Error: {str(e)}"
 
-            ai_tips = f"AI Error: {str(e)}"
+    # -----------------------------
+    # Return Response
+    # -----------------------------
 
-        # -----------------------------
-        # Return Response
-        # -----------------------------
-
-    return {
-        "exam": data.exam,
-        "study_plan": daily_schedule,
-        "ai_tips": ai_tips
-    }
+    return {"exam": data.exam, "study_plan": daily_schedule, "ai_tips": ai_tips}

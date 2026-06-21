@@ -11,7 +11,7 @@ study_agent = LlmAgent(
     - Generate quizzes
     - Recommend resources
     - Track progress
-    """
+    """,
 )
 
 print("Agent Created Successfully")

@@ -154,7 +154,7 @@ if (!exam || !hours) {
 try {
 
     document.getElementById("result").innerHTML = `
-    
+
     <div class="loading-card">
 
         <div class="spinner"></div>
@@ -164,11 +164,11 @@ try {
         </p>
 
     </div>
-   
+
 `;
 
     const response = await fetch(
-    `${API_URL}/generate-plan`, 
+    `${API_URL}/generate-plan`,
         {
             method: "POST",
 
@@ -231,7 +231,7 @@ try {
             <div
                 class="progress-fill"
                 id="progressFill">
-                
+
             </div>
 
         </div>
@@ -260,7 +260,7 @@ try {
 
 `;
 
-    data.study_plan.forEach((day, dayIndex) => { 
+    data.study_plan.forEach((day, dayIndex) => {
 
         html += `
 
@@ -465,13 +465,13 @@ const randomProgress =
     html += `
 
         </div>
-        
+
         <div class="quote">
 
             "${translations[lang].successQuote}"
 
         </div>
-        
+
         <div class="footer">
 
             🚀 ${translations[lang].generatedBy}
@@ -482,7 +482,7 @@ const randomProgress =
 
     document.getElementById("result")
         .innerHTML = html;
-    
+
     document.getElementById(
     "feedbackBtn"
 ).style.display = "block";
@@ -509,7 +509,7 @@ const randomProgress =
 }
 
 function updateProgress() {
- 
+
 const checkboxes =
     document.querySelectorAll(
         ".task-checkbox"
@@ -1116,7 +1116,7 @@ feedback: "⭐ Give Feedback"
         poor: "कमज़ोर",
         average: "औसत",
         good: "अच्छा",
-        
+
         examPlaceholder: "परीक्षा का नाम दर्ज करें",
         hoursPlaceholder: "प्रतिदिन अध्ययन के घंटे",
         aiProvider: "एआई प्रदाता",
@@ -1143,7 +1143,7 @@ feedback: "⭐ Give Feedback"
         quote: "सफलता छोटे-छोटे प्रयासों का योग है जो हर दिन दोहराए जाते हैं।",
         generatedBy: "🚀 स्टडीस्प्रिंट एआई द्वारा निर्मित",
         deleteWorkspace: "का सारा डेटा हटाएँ",
-        
+
         tipTitle: "एआई अध्ययन सुझाव",
         notes: "नोट्स",
 resources: "संसाधन",
@@ -1344,8 +1344,8 @@ function changeLanguage() {
 
     document.getElementById("footerText").textContent =
         "🚀 " + translations[lang].poweredBy;
-    
-    
+
+
 
     document.getElementById("notesHeading").textContent =
     translations[lang].notes;
@@ -1388,7 +1388,7 @@ document.getElementById("workspacePdf").placeholder =
 
 document.getElementById("workspaceBook").placeholder =
     translations[lang].bookPlaceholder;
-    
+
     document.querySelectorAll('[id^="priority"]').forEach(select => {
 
       select.options[0].text =
@@ -1400,7 +1400,7 @@ document.getElementById("workspaceBook").placeholder =
       select.options[2].text =
          translations[lang].low;
    });
-    
+
    document.querySelectorAll('[id^="prep"]').forEach(select => {
 
       select.options[0].text =
@@ -1412,7 +1412,7 @@ document.getElementById("workspaceBook").placeholder =
       select.options[2].text =
          translations[lang].good;
     });
-   
+
     document.querySelector('#aiProvider option[value="gemini"]')
             .textContent =
                 translations[lang].openAI;
@@ -1444,7 +1444,7 @@ document.getElementById("workspaceBook").placeholder =
                 localOption.textContent =
                 translations[lang].localAI;
             }
-        
+
             document.querySelectorAll(".subject-title")
                 .forEach((title,index)=>{
                 title.textContent =
