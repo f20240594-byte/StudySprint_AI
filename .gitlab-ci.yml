@@ -1,6 +1,3 @@
-default:
-  tags:
-    - shell
 stages:
   - format
   - lint
