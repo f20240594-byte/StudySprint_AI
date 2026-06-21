@@ -10,7 +10,7 @@ from time import sleep
 try:
     from ollama import chat
 except ImportError:
-    chat = None
+    chat = None  # type: ignore
 import os
 import google.generativeai as genai
 
@@ -262,18 +262,18 @@ Keep each tip short.
                 ai_tips = "Ollama is unavailable on deployment."
 
             else:
-                response = chat(
+                ollama_response = chat(
                     model="mistral", messages=[{"role": "user", "content": prompt}]
                 )
 
-                ai_tips = response["message"]["content"]
+                ai_tips = ollama_response["message"]["content"]
 
         elif data.provider == "gemini":
             model = genai.GenerativeModel("gemini-2.5-flash")
 
-            response = model.generate_content(prompt)
+            gemini_response = model.generate_content(prompt)
 
-            ai_tips = response.text
+            ai_tips = gemini_response.text  # type: ignore[attr-defined]
 
         else:
             ai_tips = "Invalid AI provider selected."
