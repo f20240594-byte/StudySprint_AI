@@ -1,0 +1,15 @@
+[MASTER]
+ignore=backup
+
+[MESSAGES CONTROL]
+disable=
+    import-error,
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    too-few-public-methods,
+    too-many-locals,
+    too-many-branches,
+    too-many-statements,
+    broad-exception-caught,
+    wrong-import-order

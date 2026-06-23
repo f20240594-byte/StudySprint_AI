@@ -147,7 +147,10 @@ def generate_plan(data: StudyRequest):
         # Keep only subjects whose exams
         # have not yet happened
         for item in subject_weights:
-            subject_exam_date = datetime.strptime(str(item["exam_date"]), "%Y-%m-%d")
+            subject_exam_date = datetime.strptime(
+                str(item["exam_date"]),
+                "%Y-%m-%d",
+            )
 
             if current_day <= subject_exam_date:
                 active_subjects.append(item)
@@ -174,32 +177,6 @@ def generate_plan(data: StudyRequest):
         )
 
         current_day += timedelta(days=1)
-
-    # high_priority = [
-    # s.name for s in data.subjects
-    # if s.priority == "High"
-
-    # poor_prep = [
-    # s.name for s in data.subjects
-    # if s.preparation == "Poor"
-
-    # ai_tips = f"""
-    # 🎯 Focus Area:
-    # Give extra attention to {', '.join(poor_prep) if poor_prep else 'your weaker subjects'} as they currently require the most improvement.
-
-    # 📚 Priority Subjects:
-    # Allocate additional revision time to {', '.join(high_priority) if high_priority else 'high-priority topics'} to maximize exam readiness.
-
-    #  📝 Active Learning:
-    # Spend at least one hour daily solving problems, mock tests, or PYQs instead of only reading notes.
-
-    # ⏳ Smart Revision:
-    # Use spaced repetition and quick revision sessions every evening to strengthen retention.
-
-    # 🚀 Exam Strategy:
-    # Complete difficult chapters first and reserve the final days before the exam for revision and practice tests.
-    # """
-
     # -----------------------------
     # Generate AI Tips
     # -----------------------------
@@ -207,8 +184,6 @@ def generate_plan(data: StudyRequest):
     subject_names = ", ".join([s.name for s in data.subjects])
 
     prompt = f"""
-    ```
-
     You are an expert study coach.
 
     IMPORTANT:
@@ -242,7 +217,13 @@ def generate_plan(data: StudyRequest):
                 ai_tips = "Ollama is unavailable on deployment."
             else:
                 ollama_response = chat(
-                    model="mistral", messages=[{"role": "user", "content": prompt}]
+                    model="mistral",
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": prompt,
+                        }
+                    ],
                 )
                 ai_tips = ollama_response["message"]["content"]
 
@@ -258,4 +239,8 @@ def generate_plan(data: StudyRequest):
         print("AI ERROR:", e)
         ai_tips = f"AI Error: {str(e)}"
 
-    return {"exam": data.exam, "study_plan": daily_schedule, "ai_tips": ai_tips}
+    return {
+        "exam": data.exam,
+        "study_plan": daily_schedule,
+        "ai_tips": ai_tips,
+    }
