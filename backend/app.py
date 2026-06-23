@@ -76,10 +76,6 @@ def debug():
     }
 
 
-@app.post("/generate-plan")
-def generate_plan(data: StudyRequest):
-
-
 # -----------------------------
 # Generate Plan
 # -----------------------------
