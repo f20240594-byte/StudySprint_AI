@@ -10,17 +10,25 @@
     }
   ],
   "routes": [
-    {
-      "src": "/generate-plan",
-      "dest": "backend/app.py"
-    },
-    {
-      "src": "/",
-      "dest": "/frontend/index.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
-    }
-  ]
+  {
+    "src": "/generate-plan",
+    "dest": "backend/app.py"
+  },
+  {
+    "src": "/agent",
+    "dest": "backend/app.py"
+  },
+  {
+    "src": "/debug",
+    "dest": "backend/app.py"
+  },
+  {
+    "src": "/",
+    "dest": "/frontend/index.html"
+  },
+  {
+    "src": "/(.*)",
+    "dest": "/frontend/$1"
+  }
+]
 }
