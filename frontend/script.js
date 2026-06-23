@@ -1059,41 +1059,41 @@ document.getElementById("addSubjectBtn")
         tipTitle: "AI Study Tip",
 
         notes: "Notes",
-resources: "Resources",
-searchNotes: "Search Notes",
-searchPlaceholder: "Search notes...",
-youtubeLink: "YouTube Link",
-youtubePlaceholder: "Paste YouTube link",
-pdfLink: "PDF Link",
-pdfPlaceholder: "Paste PDF link",
-bookName: "Book Name",
-bookPlaceholder: "Enter book name",
-saveWorkspace: "💾 Save Workspace",
-resourcePreview: "📚 Resource Preview",
-clearWorkspace: "🗑 Clear Workspace",
+        resources: "Resources",
+        searchNotes: "Search Notes",
+        searchPlaceholder: "Search notes...",
+        youtubeLink: "YouTube Link",
+        youtubePlaceholder: "Paste YouTube link",
+        pdfLink: "PDF Link",
+        pdfPlaceholder: "Paste PDF link",
+        bookName: "Book Name",
+        bookPlaceholder: "Enter book name",
+        saveWorkspace: "💾 Save Workspace",
+        resourcePreview: "📚 Resource Preview",
+        clearWorkspace: "🗑 Clear Workspace",
 
         conceptRevision: "Concept Revision",
-practiceQuestions: "Practice Questions",
-pyqs: "PYQs",
-quickRevision: "Quick Revision",
+        practiceQuestions: "Practice Questions",
+        pyqs: "PYQs",
+        quickRevision: "Quick Revision",
 
-dailyGoal: "Daily Goal",
-aiSuggestion: "AI Suggestion",
-expectedProgress: "Expected Progress",
-dailyGoal: "🎯 Daily Goal",
-aiSuggestion: "💡 AI Suggestion",
-expectedProgress: "📊 Expected Progress",
+        dailyGoal: "Daily Goal",
+        aiSuggestion: "AI Suggestion",
+        expectedProgress: "Expected Progress",
+        dailyGoal: "🎯 Daily Goal",
+        aiSuggestion: "💡 AI Suggestion",
+        expectedProgress: "📊 Expected Progress",
 
-tasksDone: "Tasks Done",
+        tasksDone: "Tasks Done",
 
-start: "Start",
-quarterWay: "Quarter Way",
-halfWay: "Half Way",
-almostThere: "Almost There",
-completedLabel: "Completed",
+        start: "Start",
+        quarterWay: "Quarter Way",
+        halfWay: "Half Way",
+        almostThere: "Almost There",
+        completedLabel: "Completed",
 
-greatJob: "✨ Great job! Keep going, you're doing excellent! 🚀",
-feedback: "⭐ Give Feedback"
+        greatJob: "✨ Great job! Keep going, you're doing excellent! 🚀",
+        feedback: "⭐ Give Feedback"
     },
 
     hi: {
@@ -1146,40 +1146,40 @@ feedback: "⭐ Give Feedback"
 
         tipTitle: "एआई अध्ययन सुझाव",
         notes: "नोट्स",
-resources: "संसाधन",
-searchNotes: "नोट्स खोजें",
-searchPlaceholder: "नोट्स खोजें...",
-youtubeLink: "यूट्यूब लिंक",
-youtubePlaceholder: "यूट्यूब लिंक पेस्ट करें",
-pdfLink: "PDF लिंक",
-pdfPlaceholder: "PDF लिंक पेस्ट करें",
-bookName: "पुस्तक का नाम",
-bookPlaceholder: "पुस्तक का नाम दर्ज करें",
-saveWorkspace: "💾 कार्यक्षेत्र सहेजें",
-resourcePreview: "📚 संसाधन पूर्वावलोकन",
-clearWorkspace: "🗑 कार्यक्षेत्र साफ़ करें",
-conceptRevision: "सिद्धांत पुनरावृत्ति",
-practiceQuestions: "अभ्यास प्रश्न",
-pyqs: "पिछले वर्ष के प्रश्न",
-quickRevision: "त्वरित पुनरावृत्ति",
+        resources: "संसाधन",
+        searchNotes: "नोट्स खोजें",
+        searchPlaceholder: "नोट्स खोजें...",
+        youtubeLink: "यूट्यूब लिंक",
+        youtubePlaceholder: "यूट्यूब लिंक पेस्ट करें",
+        pdfLink: "PDF लिंक",
+        pdfPlaceholder: "PDF लिंक पेस्ट करें",
+        bookName: "पुस्तक का नाम",
+        bookPlaceholder: "पुस्तक का नाम दर्ज करें",
+        saveWorkspace: "💾 कार्यक्षेत्र सहेजें",
+        resourcePreview: "📚 संसाधन पूर्वावलोकन",
+        clearWorkspace: "🗑 कार्यक्षेत्र साफ़ करें",
+        conceptRevision: "सिद्धांत पुनरावृत्ति",
+        practiceQuestions: "अभ्यास प्रश्न",
+        pyqs: "पिछले वर्ष के प्रश्न",
+        quickRevision: "त्वरित पुनरावृत्ति",
 
-dailyGoal: "दैनिक लक्ष्य",
-aiSuggestion: "एआई सुझाव",
-expectedProgress: "अपेक्षित प्रगति",
-dailyGoal: "🎯 दैनिक लक्ष्य",
-aiSuggestion: "💡 एआई सुझाव",
-expectedProgress: "📊 अपेक्षित प्रगति",
+        dailyGoal: "दैनिक लक्ष्य",
+        aiSuggestion: "एआई सुझाव",
+        expectedProgress: "अपेक्षित प्रगति",
+        dailyGoal: "🎯 दैनिक लक्ष्य",
+        aiSuggestion: "💡 एआई सुझाव",
+        expectedProgress: "📊 अपेक्षित प्रगति",
 
-tasksDone: "कार्य पूर्ण",
+        tasksDone: "कार्य पूर्ण",
 
-start: "शुरुआत",
-quarterWay: "25% पूरा",
-halfWay: "आधा रास्ता",
-almostThere: "लगभग पूरा",
-completedLabel: "पूर्ण",
+        start: "शुरुआत",
+        quarterWay: "25% पूरा",
+        halfWay: "आधा रास्ता",
+        almostThere: "लगभग पूरा",
+        completedLabel: "पूर्ण",
 
-greatJob: "✨ बहुत बढ़िया! ऐसे ही मेहनत करते रहें! 🚀",
-feedback: "⭐ प्रतिक्रिया दें"
+        greatJob: "✨ बहुत बढ़िया! ऐसे ही मेहनत करते रहें! 🚀",
+        feedback: "⭐ प्रतिक्रिया दें"
     },
 
     te: {
@@ -1232,41 +1232,564 @@ feedback: "⭐ प्रतिक्रिया दें"
         tipTitle: "AI అధ్యయన సూచన",
 
         notes: "నోట్స్",
-resources: "వనరులు",
-searchNotes: "నోట్స్ వెతకండి",
-searchPlaceholder: "నోట్స్ వెతకండి...",
-youtubeLink: "యూట్యూబ్ లింక్",
-youtubePlaceholder: "యూట్యూబ్ లింక్ అతికించండి",
-pdfLink: "PDF లింక్",
-pdfPlaceholder: "PDF లింక్ అతికించండి",
-bookName: "పుస్తకం పేరు",
-bookPlaceholder: "పుస్తకం పేరు నమోదు చేయండి",
-saveWorkspace: "💾 వర్క్‌స్పేస్ సేవ్ చేయండి",
-resourcePreview: "📚 వనరుల ప్రివ్యూ",
-clearWorkspace: "🗑 వర్క్‌స్పేస్ క్లియర్ చేయండి",
-conceptRevision: "సిద్ధాంత పునశ్చరణ",
-practiceQuestions: "అభ్యాస ప్రశ్నలు",
-pyqs: "గత సంవత్సర ప్రశ్నలు",
-quickRevision: "త్వరిత పునశ్చరణ",
+        resources: "వనరులు",
+        searchNotes: "నోట్స్ వెతకండి",
+        searchPlaceholder: "నోట్స్ వెతకండి...",
+        youtubeLink: "యూట్యూబ్ లింక్",
+        youtubePlaceholder: "యూట్యూబ్ లింక్ అతికించండి",
+        pdfLink: "PDF లింక్",
+        pdfPlaceholder: "PDF లింక్ అతికించండి",
+        bookName: "పుస్తకం పేరు",
+        bookPlaceholder: "పుస్తకం పేరు నమోదు చేయండి",
+        saveWorkspace: "💾 వర్క్‌స్పేస్ సేవ్ చేయండి",
+        resourcePreview: "📚 వనరుల ప్రివ్యూ",
+        clearWorkspace: "🗑 వర్క్‌స్పేస్ క్లియర్ చేయండి",
+        conceptRevision: "సిద్ధాంత పునశ్చరణ",
+        practiceQuestions: "అభ్యాస ప్రశ్నలు",
+        pyqs: "గత సంవత్సర ప్రశ్నలు",
+        quickRevision: "త్వరిత పునశ్చరణ",
 
-dailyGoal: "రోజువారీ లక్ష్యం",
-aiSuggestion: "AI సూచన",
-expectedProgress: "అంచనా పురోగతి",
-dailyGoal: "🎯 రోజువారీ లక్ష్యం",
-aiSuggestion: "💡 AI సూచన",
-expectedProgress: "📊 అంచనా పురోగతి",
+        dailyGoal: "రోజువారీ లక్ష్యం",
+        aiSuggestion: "AI సూచన",
+        expectedProgress: "అంచనా పురోగతి",
+        dailyGoal: "🎯 రోజువారీ లక్ష్యం",
+        aiSuggestion: "💡 AI సూచన",
+        expectedProgress: "📊 అంచనా పురోగతి",
 
-tasksDone: "పూర్తైన పనులు",
+        tasksDone: "పూర్తైన పనులు",
 
-start: "ప్రారంభం",
-quarterWay: "25% పూర్తైంది",
-halfWay: "సగం పూర్తైంది",
-almostThere: "దాదాపు పూర్తైంది",
-completedLabel: "పూర్తైంది",
+        start: "ప్రారంభం",
+        quarterWay: "25% పూర్తైంది",
+        halfWay: "సగం పూర్తైంది",
+        almostThere: "దాదాపు పూర్తైంది",
+        completedLabel: "పూర్తైంది",
 
-greatJob: "✨ అద్భుతం! ఇలాగే కొనసాగించండి! 🚀",
-feedback: "⭐ అభిప్రాయం ఇవ్వండి"
-    }
+        greatJob: "✨ అద్భుతం! ఇలాగే కొనసాగించండి! 🚀",
+        feedback: "⭐ అభిప్రాయం ఇవ్వండి"
+    },
+
+    od: {
+        title: "ଷ୍ଟଡିସ୍ପ୍ରିଣ୍ଟ AI",
+        subtitle: "AI ଦ୍ୱାରା ଚାଳିତ ବ୍ୟକ୍ତିଗତ ଅଧ୍ୟୟନ ଯୋଜନାକାରୀ",
+
+        exam: "ପରୀକ୍ଷାର ନାମ",
+        hours: "ପ୍ରତିଦିନ ଅଧ୍ୟୟନ ସମୟ",
+        generate: "ଅଧ୍ୟୟନ ଯୋଜନା ତିଆରି କରନ୍ତୁ",
+
+        addSubject: "➕ ବିଷୟ ଯୋଡନ୍ତୁ",
+        subject: "ବିଷୟ",
+        subjectName: "ବିଷୟର ନାମ",
+        examDate: "ପରୀକ୍ଷା ତାରିଖ",
+        priority: "ପ୍ରାଥମିକତା",
+        preparation: "ବର୍ତ୍ତମାନ ପ୍ରସ୍ତୁତି ସ୍ତର",
+
+        high: "ଉଚ୍ଚ",
+        medium: "ମଧ୍ୟମ",
+        low: "ନିମ୍ନ",
+
+        poor: "ଦୁର୍ବଳ",
+        average: "ମଧ୍ୟମ",
+        good: "ଭଲ",
+
+        examPlaceholder: "ପରୀକ୍ଷାର ନାମ ଲେଖନ୍ତୁ",
+        hoursPlaceholder: "ପ୍ରତିଦିନ ଅଧ୍ୟୟନ ସମୟ",
+
+        aiProvider: "AI ପ୍ରଦାନକାରୀ",
+        localAI: "ଲୋକାଲ AI (Ollama)",
+
+        generateBtn: "AI ଅଧ୍ୟୟନ ଯୋଜନା ତିଆରି କରନ୍ତୁ",
+
+        lightMode: "☀️ ଲାଇଟ୍ ମୋଡ୍",
+        darkMode: "🌙 ଡାର୍କ ମୋଡ୍",
+
+        openAI: "OpenAI (BYOK)",
+
+        workspaceTitle: "ବିଷୟ ୱର୍କସ୍ପେସ୍",
+
+        successQuote: "ପ୍ରତିଦିନ ଛୋଟ ଛୋଟ ପ୍ରୟାସର ଯୋଗଫଳ ହେଉଛି ସଫଳତା।",
+
+        poweredBy: "StudySprint AI ଦ୍ୱାରା ଚାଳିତ",
+
+        personalizedPlan: "📚 ବ୍ୟକ୍ତିଗତ ଅଧ୍ୟୟନ ଯୋଜନା",
+        studyPlan: "📚 ବ୍ୟକ୍ତିଗତ ଅଧ୍ୟୟନ ଯୋଜନା",
+
+        progress: "📈 ପ୍ରଗତି",
+        completed: "ସମ୍ପୂର୍ଣ୍ଣ",
+        study: "ଅଧ୍ୟୟନ",
+
+        workspaces: "📚 ବିଷୟ ୱର୍କସ୍ପେସ୍",
+        workspace: "ୱର୍କସ୍ପେସ୍",
+
+        quote: "ପ୍ରତିଦିନ ଛୋଟ ଛୋଟ ପ୍ରୟାସର ଯୋଗଫଳ ହେଉଛି ସଫଳତା।",
+
+        generatedBy: "🚀 StudySprint AI ଦ୍ୱାରା ସୃଷ୍ଟ",
+
+        deleteWorkspace: "ଏହି ବିଷୟର ସମସ୍ତ ତଥ୍ୟ ବିଲୋପ କରନ୍ତୁ",
+
+        tipTitle: "AI ଅଧ୍ୟୟନ ପରାମର୍ଶ",
+
+        notes: "ଟିପ୍ପଣୀ",
+        resources: "ସମ୍ପଦ",
+
+        searchNotes: "ଟିପ୍ପଣୀ ଖୋଜନ୍ତୁ",
+        searchPlaceholder: "ଟିପ୍ପଣୀ ଖୋଜନ୍ତୁ...",
+
+        youtubeLink: "YouTube ଲିଙ୍କ",
+        youtubePlaceholder: "YouTube ଲିଙ୍କ ପେଷ୍ଟ କରନ୍ତୁ",
+
+        pdfLink: "PDF ଲିଙ୍କ",
+        pdfPlaceholder: "PDF ଲିଙ୍କ ପେଷ୍ଟ କରନ୍ତୁ",
+
+        bookName: "ପୁସ୍ତକର ନାମ",
+        bookPlaceholder: "ପୁସ୍ତକର ନାମ ଲେଖନ୍ତୁ",
+
+        saveWorkspace: "💾 ୱର୍କସ୍ପେସ୍ ସଂରକ୍ଷଣ କରନ୍ତୁ",
+
+        resourcePreview: "📚 ସମ୍ପଦ ପ୍ରିଭ୍ୟୁ",
+
+        clearWorkspace: "🗑 ୱର୍କସ୍ପେସ୍ ସଫା କରନ୍ତୁ",
+
+        conceptRevision: "ଧାରଣା ପୁନରାବୃତ୍ତି",
+        practiceQuestions: "ଅଭ୍ୟାସ ପ୍ରଶ୍ନ",
+        pyqs: "ପୂର୍ବବର୍ଷ ପ୍ରଶ୍ନ",
+        quickRevision: "ଦ୍ରୁତ ପୁନରାବୃତ୍ତି",
+
+        dailyGoal: "🎯 ଦୈନିକ ଲକ୍ଷ୍ୟ",
+
+        aiSuggestion: "💡 AI ପରାମର୍ଶ",
+
+        expectedProgress: "📊 ଆଶାକରା ପ୍ରଗତି",
+
+        tasksDone: "ସମ୍ପୂର୍ଣ୍ଣ କାର୍ଯ୍ୟ",
+
+        start: "ଆରମ୍ଭ",
+        quarterWay: "ଚତୁର୍ଥାଂଶ ପଥ",
+        halfWay: "ଅର୍ଦ୍ଧ ପଥ",
+        almostThere: "ପ୍ରାୟ ସମ୍ପୂର୍ଣ୍ଣ",
+        completedLabel: "ସମ୍ପୂର୍ଣ୍ଣ",
+
+        greatJob: "✨ ଅତ୍ୟନ୍ତ ଭଲ! ଏଭଳି ଚାଲୁ ରଖନ୍ତୁ! 🚀",
+
+        feedback: "⭐ ମତାମତ ଦିଅନ୍ତୁ"
+    },
+    bn: {
+    title: "স্টাডিস্প্রিন্ট AI",
+    subtitle: "AI-চালিত ব্যক্তিগত অধ্যয়ন পরিকল্পনাকারী",
+
+    exam: "পরীক্ষার নাম",
+    hours: "প্রতিদিন অধ্যয়নের সময়",
+    generate: "অধ্যয়ন পরিকল্পনা তৈরি করুন",
+
+    addSubject: "➕ বিষয় যোগ করুন",
+    subject: "বিষয়",
+    subjectName: "বিষয়ের নাম",
+    examDate: "পরীক্ষার তারিখ",
+    priority: "অগ্রাধিকার",
+    preparation: "বর্তমান প্রস্তুতির স্তর",
+
+    high: "উচ্চ",
+    medium: "মাঝারি",
+    low: "নিম্ন",
+
+    poor: "দুর্বল",
+    average: "গড়",
+    good: "ভাল",
+
+    examPlaceholder: "পরীক্ষার নাম লিখুন",
+    hoursPlaceholder: "প্রতিদিন পড়ার সময়",
+
+    aiProvider: "AI প্রদানকারী",
+    localAI: "লোকাল AI (Ollama)",
+
+    generateBtn: "AI অধ্যয়ন পরিকল্পনা তৈরি করুন",
+
+    lightMode: "☀️ লাইট মোড",
+    darkMode: "🌙 ডার্ক মোড",
+
+    openAI: "OpenAI (BYOK)",
+
+    workspaceTitle: "বিষয় ওয়ার্কস্পেস",
+
+    successQuote: "সাফল্য হল প্রতিদিনের ছোট ছোট প্রচেষ্টার সমষ্টি।",
+
+    poweredBy: "StudySprint AI দ্বারা পরিচালিত",
+
+    personalizedPlan: "📚 ব্যক্তিগত অধ্যয়ন পরিকল্পনা",
+    studyPlan: "📚 ব্যক্তিগত অধ্যয়ন পরিকল্পনা",
+
+    progress: "📈 অগ্রগতি",
+    completed: "সম্পন্ন",
+    study: "অধ্যয়ন",
+
+    workspaces: "📚 বিষয় ওয়ার্কস্পেস",
+    workspace: "ওয়ার্কস্পেস",
+
+    quote: "সাফল্য হল প্রতিদিনের ছোট ছোট প্রচেষ্টার সমষ্টি।",
+
+    generatedBy: "🚀 StudySprint AI দ্বারা তৈরি",
+
+    deleteWorkspace: "এর সমস্ত তথ্য মুছে ফেলুন",
+
+    tipTitle: "AI অধ্যয়ন পরামর্শ",
+
+    notes: "নোট",
+    resources: "রিসোর্স",
+
+    searchNotes: "নোট খুঁজুন",
+    searchPlaceholder: "নোট খুঁজুন...",
+
+    youtubeLink: "YouTube লিঙ্ক",
+    youtubePlaceholder: "YouTube লিঙ্ক পেস্ট করুন",
+
+    pdfLink: "PDF লিঙ্ক",
+    pdfPlaceholder: "PDF লিঙ্ক পেস্ট করুন",
+
+    bookName: "বইয়ের নাম",
+    bookPlaceholder: "বইয়ের নাম লিখুন",
+
+    saveWorkspace: "💾 ওয়ার্কস্পেস সংরক্ষণ করুন",
+
+    resourcePreview: "📚 রিসোর্স প্রিভিউ",
+
+    clearWorkspace: "🗑 ওয়ার্কস্পেস পরিষ্কার করুন",
+
+    conceptRevision: "ধারণা পুনরাবৃত্তি",
+    practiceQuestions: "অনুশীলনী প্রশ্ন",
+    pyqs: "পূর্ববর্তী বছরের প্রশ্ন",
+    quickRevision: "দ্রুত পুনরাবৃত্তি",
+
+    dailyGoal: "🎯 দৈনিক লক্ষ্য",
+
+    aiSuggestion: "💡 AI পরামর্শ",
+
+    expectedProgress: "📊 প্রত্যাশিত অগ্রগতি",
+
+    tasksDone: "সম্পন্ন কাজ",
+
+    start: "শুরু",
+    quarterWay: "এক-চতুর্থাংশ পথ",
+    halfWay: "অর্ধেক পথ",
+    almostThere: "প্রায় সম্পন্ন",
+    completedLabel: "সম্পন্ন",
+
+    greatJob: "✨ দারুণ কাজ! এভাবেই চালিয়ে যান, আপনি অসাধারণ করছেন! 🚀",
+
+    feedback: "⭐ মতামত দিন"
+},
+   mr: {
+    title: "स्टडीस्प्रिंट AI",
+    subtitle: "AI-आधारित वैयक्तिक अभ्यास नियोजक",
+
+    exam: "परीक्षेचे नाव",
+    hours: "दररोज अभ्यासाचे तास",
+    generate: "अभ्यास योजना तयार करा",
+
+    addSubject: "➕ विषय जोडा",
+    subject: "विषय",
+    subjectName: "विषयाचे नाव",
+    examDate: "परीक्षेची तारीख",
+    priority: "प्राधान्य",
+    preparation: "सध्याची तयारी पातळी",
+
+    high: "उच्च",
+    medium: "मध्यम",
+    low: "कमी",
+
+    poor: "कमकुवत",
+    average: "सरासरी",
+    good: "चांगले",
+
+    examPlaceholder: "परीक्षेचे नाव प्रविष्ट करा",
+    hoursPlaceholder: "दररोज अभ्यासाचे तास",
+
+    aiProvider: "AI प्रदाता",
+    localAI: "स्थानिक AI (Ollama)",
+
+    generateBtn: "AI अभ्यास योजना तयार करा",
+
+    lightMode: "☀️ लाईट मोड",
+    darkMode: "🌙 डार्क मोड",
+
+    openAI: "OpenAI (BYOK)",
+
+    workspaceTitle: "विषय कार्यक्षेत्रे",
+
+    successQuote: "यश म्हणजे दररोज केलेल्या छोट्या प्रयत्नांची बेरीज आहे.",
+
+    poweredBy: "StudySprint AI द्वारे समर्थित",
+
+    personalizedPlan: "📚 वैयक्तिक अभ्यास योजना",
+    studyPlan: "📚 वैयक्तिक अभ्यास योजना",
+
+    progress: "📈 प्रगती",
+    completed: "पूर्ण",
+    study: "अभ्यास",
+
+    workspaces: "📚 विषय कार्यक्षेत्रे",
+    workspace: "कार्यक्षेत्र",
+
+    quote: "यश म्हणजे दररोज केलेल्या छोट्या प्रयत्नांची बेरीज आहे.",
+
+    generatedBy: "🚀 StudySprint AI द्वारे तयार",
+
+    deleteWorkspace: "साठी सर्व डेटा हटवा",
+
+    tipTitle: "AI अभ्यास सूचना",
+
+    notes: "नोंदी",
+    resources: "संसाधने",
+
+    searchNotes: "नोंदी शोधा",
+    searchPlaceholder: "नोंदी शोधा...",
+
+    youtubeLink: "YouTube लिंक",
+    youtubePlaceholder: "YouTube लिंक पेस्ट करा",
+
+    pdfLink: "PDF लिंक",
+    pdfPlaceholder: "PDF लिंक पेस्ट करा",
+
+    bookName: "पुस्तकाचे नाव",
+    bookPlaceholder: "पुस्तकाचे नाव प्रविष्ट करा",
+
+    saveWorkspace: "💾 कार्यक्षेत्र जतन करा",
+
+    resourcePreview: "📚 संसाधन पूर्वावलोकन",
+
+    clearWorkspace: "🗑 कार्यक्षेत्र साफ करा",
+
+    conceptRevision: "संकल्पना पुनरावलोकन",
+    practiceQuestions: "सराव प्रश्न",
+    pyqs: "मागील वर्षांचे प्रश्न",
+    quickRevision: "जलद पुनरावलोकन",
+
+    dailyGoal: "🎯 दैनंदिन उद्दिष्ट",
+
+    aiSuggestion: "💡 AI सूचना",
+
+    expectedProgress: "📊 अपेक्षित प्रगती",
+
+    tasksDone: "पूर्ण केलेली कामे",
+
+    start: "सुरुवात",
+    quarterWay: "चतुर्थांश मार्ग",
+    halfWay: "अर्धा मार्ग",
+    almostThere: "जवळपास पूर्ण",
+    completedLabel: "पूर्ण",
+
+    greatJob: "✨ उत्तम काम! असेच सुरू ठेवा, तुम्ही उत्कृष्ट काम करत आहात! 🚀",
+
+    feedback: "⭐ अभिप्राय द्या"
+},
+gu: {
+    title: "સ્ટડીસ્પ્રિન્ટ AI",
+    subtitle: "AI આધારિત વ્યક્તિગત અભ્યાસ આયોજનકર્તા",
+
+    exam: "પરીક્ષાનું નામ",
+    hours: "દિવસના અભ્યાસ કલાકો",
+    generate: "અભ્યાસ યોજના બનાવો",
+
+    addSubject: "➕ વિષય ઉમેરો",
+    subject: "વિષય",
+    subjectName: "વિષયનું નામ",
+    examDate: "પરીક્ષાની તારીખ",
+    priority: "પ્રાથમિકતા",
+    preparation: "વર્તમાન તૈયારી સ્તર",
+
+    high: "ઉચ્ચ",
+    medium: "મધ્યમ",
+    low: "નીચું",
+
+    poor: "નબળું",
+    average: "સરેરાશ",
+    good: "સારું",
+
+    examPlaceholder: "પરીક્ષાનું નામ દાખલ કરો",
+    hoursPlaceholder: "દિવસના અભ્યાસ કલાકો",
+
+    aiProvider: "AI પ્રદાતા",
+    localAI: "લોકલ AI (Ollama)",
+
+    generateBtn: "AI અભ્યાસ યોજના બનાવો",
+
+    lightMode: "☀️ લાઇટ મોડ",
+    darkMode: "🌙 ડાર્ક મોડ",
+
+    openAI: "OpenAI (BYOK)",
+
+    workspaceTitle: "વિષય કાર્યસ્થળો",
+
+    successQuote: "સફળતા એ દરરોજ કરાયેલા નાના પ્રયત્નોનું સરવાળું છે.",
+
+    poweredBy: "StudySprint AI દ્વારા સંચાલિત",
+
+    personalizedPlan: "📚 વ્યક્તિગત અભ્યાસ યોજના",
+    studyPlan: "📚 વ્યક્તિગત અભ્યાસ યોજના",
+
+    progress: "📈 પ્રગતિ",
+    completed: "પૂર્ણ",
+    study: "અભ્યાસ",
+
+    workspaces: "📚 વિષય કાર્યસ્થળો",
+    workspace: "કાર્યસ્થળ",
+
+    quote: "સફળતા એ દરરોજ કરાયેલા નાના પ્રયત્નોનું સરવાળું છે.",
+
+    generatedBy: "🚀 StudySprint AI દ્વારા જનરેટ કરાયેલ",
+
+    deleteWorkspace: "માટેનો બધો ડેટા કાઢી નાખો",
+
+    tipTitle: "AI અભ્યાસ સૂચન",
+
+    notes: "નોંધો",
+    resources: "સંસાધનો",
+
+    searchNotes: "નોંધો શોધો",
+    searchPlaceholder: "નોંધો શોધો...",
+
+    youtubeLink: "YouTube લિંક",
+    youtubePlaceholder: "YouTube લિંક પેસ્ટ કરો",
+
+    pdfLink: "PDF લિંક",
+    pdfPlaceholder: "PDF લિંક પેસ્ટ કરો",
+
+    bookName: "પુસ્તકનું નામ",
+    bookPlaceholder: "પુસ્તકનું નામ દાખલ કરો",
+
+    saveWorkspace: "💾 કાર્યસ્થળ સાચવો",
+
+    resourcePreview: "📚 સંસાધન પૂર્વદર્શન",
+
+    clearWorkspace: "🗑 કાર્યસ્થળ સાફ કરો",
+
+    conceptRevision: "સિદ્ધાંત પુનરાવર્તન",
+    practiceQuestions: "અભ્યાસ પ્રશ્નો",
+    pyqs: "પાછલા વર્ષોના પ્રશ્નો",
+    quickRevision: "ઝડપી પુનરાવર્તન",
+
+    dailyGoal: "🎯 દૈનિક લક્ષ્ય",
+
+    aiSuggestion: "💡 AI સૂચન",
+
+    expectedProgress: "📊 અપેક્ષિત પ્રગતિ",
+
+    tasksDone: "પૂર્ણ થયેલા કાર્યો",
+
+    start: "શરૂઆત",
+    quarterWay: "ચોથાઈ માર્ગ",
+    halfWay: "અડધો માર્ગ",
+    almostThere: "લગભગ પૂર્ણ",
+    completedLabel: "પૂર્ણ",
+
+    greatJob: "✨ સરસ કામ! આમ જ ચાલુ રાખો, તમે ઉત્તમ કાર્ય કરી રહ્યા છો! 🚀",
+
+    feedback: "⭐ પ્રતિસાદ આપો"
+},
+pa: {
+    title: "ਸਟਡੀਸਪ੍ਰਿੰਟ AI",
+    subtitle: "AI ਅਧਾਰਿਤ ਨਿੱਜੀ ਅਧਿਐਨ ਯੋਜਕ",
+
+    exam: "ਪਰੀਖਿਆ ਦਾ ਨਾਮ",
+    hours: "ਰੋਜ਼ਾਨਾ ਪੜ੍ਹਾਈ ਦੇ ਘੰਟੇ",
+    generate: "ਅਧਿਐਨ ਯੋਜਨਾ ਬਣਾਓ",
+
+    addSubject: "➕ ਵਿਸ਼ਾ ਸ਼ਾਮਲ ਕਰੋ",
+    subject: "ਵਿਸ਼ਾ",
+    subjectName: "ਵਿਸ਼ੇ ਦਾ ਨਾਮ",
+    examDate: "ਪਰੀਖਿਆ ਦੀ ਤਾਰੀਖ",
+    priority: "ਤਰਜੀਹ",
+    preparation: "ਮੌਜੂਦਾ ਤਿਆਰੀ ਪੱਧਰ",
+
+    high: "ਉੱਚ",
+    medium: "ਦਰਮਿਆਨਾ",
+    low: "ਘੱਟ",
+
+    poor: "ਕਮਜ਼ੋਰ",
+    average: "ਔਸਤ",
+    good: "ਚੰਗਾ",
+
+    examPlaceholder: "ਪਰੀਖਿਆ ਦਾ ਨਾਮ ਦਰਜ ਕਰੋ",
+    hoursPlaceholder: "ਰੋਜ਼ਾਨਾ ਪੜ੍ਹਾਈ ਦੇ ਘੰਟੇ",
+
+    aiProvider: "AI ਪ੍ਰਦਾਤਾ",
+    localAI: "ਲੋਕਲ AI (Ollama)",
+
+    generateBtn: "AI ਅਧਿਐਨ ਯੋਜਨਾ ਬਣਾਓ",
+
+    lightMode: "☀️ ਲਾਈਟ ਮੋਡ",
+    darkMode: "🌙 ਡਾਰਕ ਮੋਡ",
+
+    openAI: "OpenAI (BYOK)",
+
+    workspaceTitle: "ਵਿਸ਼ਾ ਵਰਕਸਪੇਸ",
+
+    successQuote: "ਸਫਲਤਾ ਹਰ ਰੋਜ਼ ਕੀਤੇ ਛੋਟੇ-ਛੋਟੇ ਯਤਨਾਂ ਦਾ ਜੋੜ ਹੈ।",
+
+    poweredBy: "StudySprint AI ਦੁਆਰਾ ਸੰਚਾਲਿਤ",
+
+    personalizedPlan: "📚 ਨਿੱਜੀ ਅਧਿਐਨ ਯੋਜਨਾ",
+    studyPlan: "📚 ਨਿੱਜੀ ਅਧਿਐਨ ਯੋਜਨਾ",
+
+    progress: "📈 ਤਰੱਕੀ",
+    completed: "ਪੂਰਾ",
+    study: "ਅਧਿਐਨ",
+
+    workspaces: "📚 ਵਿਸ਼ਾ ਵਰਕਸਪੇਸ",
+    workspace: "ਵਰਕਸਪੇਸ",
+
+    quote: "ਸਫਲਤਾ ਹਰ ਰੋਜ਼ ਕੀਤੇ ਛੋਟੇ-ਛੋਟੇ ਯਤਨਾਂ ਦਾ ਜੋੜ ਹੈ।",
+
+    generatedBy: "🚀 StudySprint AI ਦੁਆਰਾ ਤਿਆਰ ਕੀਤਾ ਗਿਆ",
+
+    deleteWorkspace: "ਲਈ ਸਾਰਾ ਡਾਟਾ ਮਿਟਾਓ",
+
+    tipTitle: "AI ਅਧਿਐਨ ਸੁਝਾਅ",
+
+    notes: "ਨੋਟਸ",
+    resources: "ਸਰੋਤ",
+
+    searchNotes: "ਨੋਟਸ ਖੋਜੋ",
+    searchPlaceholder: "ਨੋਟਸ ਖੋਜੋ...",
+
+    youtubeLink: "YouTube ਲਿੰਕ",
+    youtubePlaceholder: "YouTube ਲਿੰਕ ਪੇਸਟ ਕਰੋ",
+
+    pdfLink: "PDF ਲਿੰਕ",
+    pdfPlaceholder: "PDF ਲਿੰਕ ਪੇਸਟ ਕਰੋ",
+
+    bookName: "ਕਿਤਾਬ ਦਾ ਨਾਮ",
+    bookPlaceholder: "ਕਿਤਾਬ ਦਾ ਨਾਮ ਦਰਜ ਕਰੋ",
+
+    saveWorkspace: "💾 ਵਰਕਸਪੇਸ ਸੇਵ ਕਰੋ",
+
+    resourcePreview: "📚 ਸਰੋਤ ਝਲਕ",
+
+    clearWorkspace: "🗑 ਵਰਕਸਪੇਸ ਸਾਫ਼ ਕਰੋ",
+
+    conceptRevision: "ਸੰਕਲਪ ਦੁਹਰਾਈ",
+    practiceQuestions: "ਅਭਿਆਸ ਪ੍ਰਸ਼ਨ",
+    pyqs: "ਪਿਛਲੇ ਸਾਲਾਂ ਦੇ ਪ੍ਰਸ਼ਨ",
+    quickRevision: "ਤੇਜ਼ ਦੁਹਰਾਈ",
+
+    dailyGoal: "🎯 ਰੋਜ਼ਾਨਾ ਲਕਸ਼",
+
+    aiSuggestion: "💡 AI ਸੁਝਾਅ",
+
+    expectedProgress: "📊 ਅਨੁਮਾਨਿਤ ਤਰੱਕੀ",
+
+    tasksDone: "ਪੂਰੇ ਕੀਤੇ ਕੰਮ",
+
+    start: "ਸ਼ੁਰੂਆਤ",
+    quarterWay: "ਚੌਥਾਈ ਰਾਹ",
+    halfWay: "ਅੱਧਾ ਰਾਹ",
+    almostThere: "ਲਗਭਗ ਪੂਰਾ",
+    completedLabel: "ਪੂਰਾ",
+
+    greatJob: "✨ ਬਹੁਤ ਵਧੀਆ! ਇਸੇ ਤਰ੍ਹਾਂ ਜਾਰੀ ਰੱਖੋ, ਤੁਸੀਂ ਸ਼ਾਨਦਾਰ ਕੰਮ ਕਰ ਰਹੇ ਹੋ! 🚀",
+
+    feedback: "⭐ ਫੀਡਬੈਕ ਦਿਓ"
+}
+
+
 };
 function getPlanKey() {
 
