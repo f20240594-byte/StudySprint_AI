@@ -4,6 +4,29 @@ StudySprint AI is an AI-powered personalized study planner built using FastAPI, 
 
 ---
 
+## 🎯 Problem Statement
+
+Students often struggle to create effective study schedules while balancing multiple subjects, varying preparation levels, and limited study hours. Traditional planning methods are time-consuming and often fail to adapt to individual needs.
+
+StudySprint AI addresses this challenge by automatically generating personalized study plans based on subject priorities, exam dates, preparation levels, and available study time, helping students study smarter and stay organized.
+
+---
+
+## 💡 Solution
+
+StudySprint AI uses intelligent scheduling logic and AI-powered recommendations to generate customized study plans for students.
+
+The platform:
+
+* Collects academic information from users
+* Analyzes subject priorities and preparation levels
+* Calculates available preparation time
+* Generates daily study schedules
+* Provides personalized AI study tips
+* Tracks progress through interactive checklists
+
+---
+
 ## 🚀 Features
 
 * Personalized study plan generation
