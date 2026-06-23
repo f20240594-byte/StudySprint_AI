@@ -230,7 +230,7 @@ StudySprint_AI/
 
 ### Create a .env file:
 
-GEMINI_API_KEY = your_api_key_here
+GEMINI_API_KEY = AQ.Ab8RN6Lb2WmA-W6loP_UyxKDTyR8uLS-VkwGrvmP4gp7lvbLVQ
 
 ---
 
