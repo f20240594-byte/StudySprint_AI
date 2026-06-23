@@ -1,98 +1,136 @@
 # 📚 StudySprint AI
 
-## AI-Powered Personalized Study Planner for Students
-
-StudySprint AI is an AI-powered study planning platform that helps students generate personalized study schedules based on exam dates, subject priorities, preparation levels, and available study hours. The platform combines intelligent scheduling algorithms with AI-generated recommendations to improve productivity and academic performance.
+StudySprint AI is an AI-powered personalized study planner built using FastAPI, HTML, CSS, and JavaScript. It helps students create structured study schedules based on exam dates, subject priorities, preparation levels, and available study hours.
 
 ---
 
-# 🎯 Problem Statement
+## 🎯 Problem Statement
 
-Students often struggle to create effective study plans while managing multiple subjects, deadlines, and varying levels of preparation. Manual planning is time-consuming and often ineffective.
+Students often struggle to create effective study schedules while balancing multiple subjects, varying preparation levels, and limited study hours. Traditional planning methods are time-consuming and often fail to adapt to individual needs.
 
-StudySprint AI automates this process by generating structured and personalized study schedules, helping students stay organized and focus on their academic goals.
-
----
-
-# 🚀 Features
-
-## Study Planning
-
-* Personalized study plan generation
-* Multiple subject support
-* Subject-wise priority management
-* Preparation level tracking
-* Daily study hour allocation
-* Exam countdown tracking
-* Smart schedule generation
-
-## AI Features
-
-* AI-generated study tips
-* Ollama local AI support
-* Google Gemini integration
-* Google ADK integration
-* BYOK (Bring Your Own API Key)
-
-## User Experience
-
-* Dark Mode / Light Mode
-* Responsive Design
-* Mobile-Friendly Interface
-* Interactive Progress Tracking
-* Multi-Language Support
-
-## Developer Features
-
-* FastAPI Backend
-* REST API Architecture
-* Swagger API Documentation
-* Modular Codebase
-* Easy Deployment
+StudySprint AI addresses this challenge by automatically generating personalized study plans based on subject priorities, exam dates, preparation levels, and available study time, helping students study smarter and stay organized.
 
 ---
 
-# 🌐 Supported Languages
+## 💡 Solution
+
+StudySprint AI uses intelligent scheduling logic and AI-powered recommendations to generate customized study plans for students.
+
+The platform:
+
+* Collects academic information from users
+* Analyzes subject priorities and preparation levels
+* Calculates available preparation time
+* Generates daily study schedules
+* Provides personalized AI study tips
+* Tracks progress through interactive checklists
+
+---
+
+## 🚀 Features
+
+### Study Planning
+- Personalized study plan generation
+- Multiple subject support
+- Subject-wise priority management
+- Preparation level tracking
+- Daily study hour allocation
+- Exam countdown tracking
+- Smart schedule generation
+
+### AI Features
+- AI-generated study tips
+- Ollama local AI support
+- Google Gemini integration
+- BYOK (Bring Your Own API Key)
+- AI-powered recommendations
+
+### User Experience
+- Dark Mode / Light Mode
+- Responsive design
+- Mobile-friendly interface
+- Interactive progress tracking
+- Multi-language support
+
+### Developer Features
+- FastAPI backend
+- REST API architecture
+- Swagger API documentation
+- Modular codebase
+- Easy deployment
+
+---
+
+## 🌐 Internationalization (i18n)
+
+StudySprint AI supports multiple Indian languages:
 
 * English
 * Hindi (हिन्दी)
 * Telugu (తెలుగు)
 
-Language preferences are automatically saved using browser Local Storage.
+The selected language is automatically stored using browser localStorage.
 
 ---
 
-# 🤖 AI Integration
+## 🤖 AI Integration
 
-## Ollama (Local AI)
+### Ollama (Local AI)
 
 Benefits:
-
-* Runs locally on your machine
-* No API costs
-* Better privacy
-* Offline support
+- Runs locally on your machine
+- No API costs
+- Better privacy
+- Offline support
 
 Supported Models:
+- Llama 3
+- Mistral
 
-* Llama 3
-* Mistral
-
-## Google Gemini
+### Google Gemini
 
 Benefits:
+- Cloud-based AI
+- Faster recommendations
+- Personalized study tips
 
-* Cloud-based AI
-* Faster recommendations
-* Personalized study tips
+### BYOK (Bring Your Own Key)
 
-## Google ADK
-
-StudySprint AI integrates Google ADK to support agent-based AI workflows and future autonomous study assistance features.
+Users can optionally connect their own API keys for supported AI providers.
 
 ---
 
-# 🏗️ System Architecture
+## 🦙 Local AI Setup (Ollama)
+
+### Install Ollama
+
+Visit:
+
+https://ollama.com
+
+### Download a Model
+
+```bash
+ollama pull llama3
+```
+
+### Start Ollama
+
+```bash
+ollama serve
+```
+
+Default local endpoint:
+
+```text
+http://localhost:11434
+```
+
+StudySprint AI can connect to locally running models for AI-powered study recommendations.
+
+---
+
+## 🏗️ System Architecture
 
 ```text
 User Input
@@ -110,8 +148,7 @@ FastAPI Backend
     └── AI Recommendation Engine
             │
             ├── Ollama
-            ├── Gemini
-            └── Google ADK
+            └── Gemini
     │
     ▼
 Generated Study Plan
@@ -119,57 +156,56 @@ Generated Study Plan
     ▼
 Progress Tracking & AI Tips
 ```
+---
+
+## 🔄 Workflow
+
+* User enters exam information
+* User adds subjects
+* User selects priorities
+* User selects preparation levels
+* User enters study hours
+* Backend calculates subject weights
+* Study plan is generated
+* AI recommendations are generated
+* User tracks progress
 
 ---
 
-# 🔄 Workflow
+## 🛠️ Tech Stack
 
-1. User enters exam information
-2. User adds subjects
-3. User selects priorities
-4. User selects preparation levels
-5. User enters study hours
-6. Backend calculates subject weights
-7. Study plan is generated
-8. AI recommendations are generated
-9. User tracks progress
-
----
-
-# 🛠️ Tech Stack
-
-## Frontend
+### Frontend
 
 * HTML5
 * CSS3
 * JavaScript
 
-## Backend
+### Backend
 
 * FastAPI
 * Python
 
-## AI
-
-* Ollama
-* Google Gemini
-* Google ADK
-
-## Storage
+### Storage
 
 * Browser Local Storage
-* JSON Persistence
+* JSON-based persistence (MVP)
+
+### AI
+
+* Rule-Based Scheduling Engine
+* Ollama Local AI
+* Gemini AI
+* Google ADK Integration
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
 StudySprint_AI/
 │
 ├── backend/
-│   ├── app.py
-│   └── adk_agent.py
+│   └── app.py
 │
 ├── frontend/
 │   ├── index.html
@@ -178,9 +214,9 @@ StudySprint_AI/
 │
 ├── screenshots/
 │
+├── docs/
+│
 ├── README.md
-├── requirements.txt
-├── vercel.json
 ├── LICENSE
 ├── CONTRIBUTING.md
 ├── SECURITY.md
@@ -190,9 +226,17 @@ StudySprint_AI/
 
 ---
 
-# ⚙️ Installation
+## 🔐 Environment Variables
 
-## Clone Repository
+### Create a .env file:
+
+GEMINI_API_KEY = YOUR_GEMINI_API_KEY
+
+---
+
+## ⚙️ Installation
+
+### Clone Repository
 
 ```bash
 git clone https://github.com/f20240594-byte/StudySprint_AI.git
@@ -200,7 +244,7 @@ git clone https://github.com/f20240594-byte/StudySprint_AI.git
 cd StudySprint_AI
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -208,43 +252,7 @@ pip install -r requirements.txt
 
 ---
 
-# 🔐 Environment Variables
-
-Create a `.env` file:
-
-```env
-GEMINI_API_KEY=YOUR_GEMINI_API_KEY
-```
-
----
-
-# 🦙 Ollama Setup
-
-Install Ollama:
-
-https://ollama.com
-
-Pull a model:
-
-```bash
-ollama pull mistral
-```
-
-Start Ollama:
-
-```bash
-ollama serve
-```
-
-Default endpoint:
-
-```text
-http://localhost:11434
-```
-
----
-
-# ▶️ Running the Backend
+## ▶️ Running the Backend
 
 ```bash
 cd backend
@@ -266,7 +274,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# ▶️ Running the Frontend
+## ▶️ Running the Frontend
 
 Open:
 
@@ -284,65 +292,6 @@ http://127.0.0.1:5500
 
 ---
 
-# 🔌 API Endpoints
-
-## Generate Study Plan
-
-```http
-POST /generate-plan
-```
-
-## Agent Information
-
-```http
-GET /agent
-```
-
-Returns information about the integrated Google ADK Agent.
-
----
-
-# 📋 Sample Input
-
-```json
-{
-  "exam": "Semester Exams",
-  "hours_per_day": 5,
-  "subjects": [
-    {
-      "name": "DSA",
-      "priority": "High",
-      "preparation": "Poor",
-      "exam_date": "2026-06-23"
-    }
-  ]
-}
-```
-
----
-
-# 📋 Sample Output
-
-```text
-DSA - 0.6 hrs
-CP - 0.6 hrs
-OOPS - 0.6 hrs
-OS - 0.6 hrs
-EM - 0.6 hrs
-EMT - 0.6 hrs
-MPI - 0.6 hrs
-DD - 0.6 hrs
-```
-
-Additional Features:
-
-* Exam Countdown
-* AI-Generated Study Tips
-* Progress Tracking
-* Interactive Checklist
-
----
-
 ## 📸 Screenshots
 
 ### Home Screen
@@ -355,18 +304,85 @@ Additional Features:
 
 ---
 
-# 🚀 Deployment
+## 📋 Sample Input
 
-Supported Platforms:
+### Exam Name
+
+```text
+SEMESTER
+```
+
+### Subjects
+
+```text
+DSA
+CP
+OOPS
+OS
+EM
+EMT
+MPI
+DD
+```
+
+### Study Hours Per Day
+
+```text
+5
+```
+
+### Exam Date
+
+```text
+23-06-2026
+```
+
+---
+
+## 📋 Sample Output
+
+```text
+DSA - 0.6 hrs
+CP - 0.6 hrs
+OOPS - 0.6 hrs
+OS - 0.6 hrs
+EM - 0.6 hrs
+EMT - 0.6 hrs
+MPI - 0.6 hrs
+DD - 0.6 hrs
+```
+
+Additional features:
+
+* Exam countdown
+* Progress tracking
+* Interactive checklist
+* Personalized schedule generation
+
+---
+
+## 🌙 User Experience Features
+
+* Dark Mode
+* Light Mode
+* Mobile Responsive Layout
+* Language Switching
+* Interactive Progress Tracking
+
+---
+
+## 🚀 Deployment
+
+StudySprint AI can be deployed on:
 
 * Vercel
-* Railway
 * Render
+* Railway
 * Localhost
 
 ---
 
-# 🗺️ Future Roadmap
+## 🗺️ Future Roadmap
 
 * Authentication System
 * Cloud Database Integration
@@ -379,54 +395,21 @@ Supported Platforms:
 
 ---
 
-# 🤝 Contributing
+## 🤝 Contributing
 
 Contributions are welcome.
 
-```bash
-git checkout -b feature/new-feature
+Please read:
 
-git commit -m "Add new feature"
+* CONTRIBUTING.md
+* CODE_OF_CONDUCT.md
+* SECURITY.md
 
-git push origin feature/new-feature
-```
-
-Then create a Pull Request.
+before submitting pull requests.
 
 ---
 
-# 🙏 Acknowledgements
-
-* FastAPI
-* Ollama
-* Google Gemini
-* Google ADK
-* OpenAI
-* Python Community
-* Swecha Hackathon Program
-
----
-
-# 📜 License
-
-Licensed under the AGPL-3.0 License.
-
-See the LICENSE file for details.
-
----
-
-# 👨‍💻 Author
-
-**Rohit Fogla**
-
-B.Tech Student | Aspiring Software Development Engineer
-
-Built during Hackathon 2 🚀
-
----
-
-# ⭐ Why StudySprint AI?
-
+## ⭐ Why StudySprint AI?
 * Personalized study planning
 * AI-powered recommendations
 * Local AI support
@@ -435,3 +418,31 @@ Built during Hackathon 2 🚀
 * Modern responsive UI
 * Open-source and extensible
 * Designed for students, by a student
+
+---
+
+## 🙏 Acknowledgements
+
+FastAPI
+Ollama
+Google Gemini
+Google ADK
+OpenAI
+Python Community
+Swecha Hackathon Program
+
+---
+
+## 📜 License
+
+This project is licensed under the AGPL-3.0 License.
+
+See the LICENSE file for details.
+
+---
+
+## 👨‍💻 Author
+
+**Rohit Fogla**
+
+Built during Hackathon 2 🚀
