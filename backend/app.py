@@ -66,6 +66,18 @@ def agent_demo():
         "agent_name": study_agent.name,
         "status": "Google ADK Integrated Successfully",
     }
+@app.get("/debug")
+def debug():
+    key = os.getenv("GOOGLE_API_KEY")
+
+    return {
+        "found": bool(key),
+        "prefix": key[:6] if key else None,
+    }
+
+
+@app.post("/generate-plan")
+def generate_plan(data: StudyRequest):
 
 
 # -----------------------------
