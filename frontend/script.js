@@ -97,6 +97,126 @@ const progressMessagesTe = [
     "సిలబస్‌ను గరిష్టంగా పూర్తి చేయడానికి దృష్టి కేంద్రీకరించండి."
 ];
 
+const dailyGoalsOr = [
+    "ଆଜି 1ଟି ଅଧ୍ୟାୟ ସମାପ୍ତ କର",
+    "20ଟି MCQ ସମାଧାନ କର",
+    "ଗତକାଲିର ବିଷୟ ପୁନରାବୃତ୍ତି କର",
+    "1 ଘଣ୍ଟା ଧାରଣା ଅଭ୍ୟାସ କର",
+    "1ଟି ମକ୍ ଟେଷ୍ଟ ଦିଅ"
+];
+
+const aiSuggestionsOr = [
+    "କଠିନ ବିଷୟରୁ ଆରମ୍ଭ କର",
+    "25 ମିନିଟ୍ ପୋମୋଡୋରୋ ପ୍ରଣାଳୀ ବ୍ୟବହାର କର",
+    "ଛୋଟ ଟିପ୍ସ ତିଆରି କର",
+    "ଦୁର୍ବଳ ବିଷୟରେ ଅଧିକ ସମୟ ଦିଅ",
+    "ପ୍ରତିଦିନ ନିୟମିତ ପୁନରାବୃତ୍ତି କର"
+];
+
+const progressMessagesOr = [
+    "ଭଲ ଆରମ୍ଭ! 🚀",
+    "ତୁମେ ଭଲ ଗତିରେ ଅଛ! 📚",
+    "ଅଧା ରାସ୍ତା ଆସିଗଲା! 💪",
+    "ସଫଳତା ନିକଟରେ! 🌟",
+    "ଅଭିନନ୍ଦନ! ଲକ୍ଷ୍ୟ ସମାପ୍ତ! 🎉"
+];
+
+const dailyGoalsBn = [
+    "আজ ১টি অধ্যায় শেষ কর",
+    "২০টি MCQ সমাধান কর",
+    "গতকালের বিষয় পুনরাবৃত্তি কর",
+    "১ ঘণ্টা ধারণা অনুশীলন কর",
+    "১টি মক টেস্ট দাও"
+];
+
+const aiSuggestionsBn = [
+    "কঠিন বিষয় দিয়ে শুরু কর",
+    "২৫ মিনিট পোমোডোরো পদ্ধতি ব্যবহার কর",
+    "সংক্ষিপ্ত নোট তৈরি কর",
+    "দুর্বল বিষয়ে বেশি সময় দাও",
+    "প্রতিদিন নিয়মিত রিভিশন কর"
+];
+
+const progressMessagesBn = [
+    "দারুণ শুরু! 🚀",
+    "তুমি ভালো গতিতে এগোচ্ছ! 📚",
+    "অর্ধেক পথ পেরিয়ে গেছ! 💪",
+    "সাফল্য খুব কাছে! 🌟",
+    "অভিনন্দন! লক্ষ্য সম্পন্ন! 🎉"
+];
+
+const dailyGoalsMr = [
+    "आज १ प्रकरण पूर्ण करा",
+    "२० MCQ सोडवा",
+    "कालचा विषय पुन्हा अभ्यास करा",
+    "१ तास संकल्पना सराव करा",
+    "१ मॉक टेस्ट द्या"
+];
+
+const aiSuggestionsMr = [
+    "कठीण विषयापासून सुरुवात करा",
+    "२५ मिनिटांची पोमोडोरो पद्धत वापरा",
+    "लहान नोट्स तयार करा",
+    "कमकुवत विषयांना अधिक वेळ द्या",
+    "दररोज पुनरावलोकन करा"
+];
+
+const progressMessagesMr = [
+    "छान सुरुवात! 🚀",
+    "तुम्ही उत्तम प्रगती करत आहात! 📚",
+    "अर्धा प्रवास पूर्ण झाला! 💪",
+    "यश जवळ आले आहे! 🌟",
+    "अभिनंदन! लक्ष्य पूर्ण झाले! 🎉"
+];
+
+const dailyGoalsGu = [
+    "આજે 1 અધ્યાય પૂર્ણ કરો",
+    "20 MCQ ઉકેલો",
+    "ગઈકાલનો વિષય પુનરાવર્તન કરો",
+    "1 કલાક સંકલ્પનાઓનો અભ્યાસ કરો",
+    "1 મોક ટેસ્ટ આપો"
+];
+
+const aiSuggestionsGu = [
+    "મુશ્કેલ વિષયથી શરૂઆત કરો",
+    "25 મિનિટની પોમોડોરો પદ્ધતિ અપનાવો",
+    "ટૂંકી નોંધો બનાવો",
+    "નબળા વિષયોને વધુ સમય આપો",
+    "દરરોજ પુનરાવર્તન કરો"
+];
+
+const progressMessagesGu = [
+    "શાનદાર શરૂઆત! 🚀",
+    "તમે સારી પ્રગતિ કરી રહ્યા છો! 📚",
+    "અડધો રસ્તો પૂર્ણ થયો! 💪",
+    "સફળતા હવે નજીક છે! 🌟",
+    "અભિનંદન! લક્ષ્ય પૂર્ણ થયું! 🎉"
+];
+
+const dailyGoalsPa = [
+    "ਅੱਜ 1 ਅਧਿਆਇ ਪੂਰਾ ਕਰੋ",
+    "20 MCQ ਹੱਲ ਕਰੋ",
+    "ਕੱਲ੍ਹ ਦਾ ਵਿਸ਼ਾ ਦੁਹਰਾਓ",
+    "1 ਘੰਟਾ ਸੰਕਲਪਾਂ ਦਾ ਅਭਿਆਸ ਕਰੋ",
+    "1 ਮੌਕ ਟੈਸਟ ਦਿਓ"
+];
+
+const aiSuggestionsPa = [
+    "ਮੁਸ਼ਕਲ ਵਿਸ਼ੇ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ",
+    "25 ਮਿੰਟ ਦੀ ਪੋਮੋਡੋਰੋ ਤਕਨੀਕ ਵਰਤੋ",
+    "ਛੋਟੇ ਨੋਟ ਬਣਾਓ",
+    "ਕਮਜ਼ੋਰ ਵਿਸ਼ਿਆਂ ਨੂੰ ਵਧੇਰੇ ਸਮਾਂ ਦਿਓ",
+    "ਰੋਜ਼ਾਨਾ ਦੁਹਰਾਈ ਕਰੋ"
+];
+
+const progressMessagesPa = [
+    "ਸ਼ਾਨਦਾਰ ਸ਼ੁਰੂਆਤ! 🚀",
+    "ਤੁਸੀਂ ਵਧੀਆ ਤਰੱਕੀ ਕਰ ਰਹੇ ਹੋ! 📚",
+    "ਅੱਧਾ ਸਫ਼ਰ ਪੂਰਾ ਹੋ ਗਿਆ! 💪",
+    "ਕਾਮਯਾਬੀ ਬਹੁਤ ਨੇੜੇ ਹੈ! 🌟",
+    "ਮੁਬਾਰਕਾਂ! ਲਕਸ਼ ਪੂਰਾ ਹੋ ਗਿਆ! 🎉"
+];
+
 async function generatePlan() {
 
     const lang =
@@ -139,14 +259,14 @@ for (let i = 1; i <= subjectCount; i++) {
     }
 }
 if (subjects.length === 0) {
-    alert("Please enter at least one subject.");
+    alert(translations[lang].enterSubject);
     return;
 }
 if (!exam || !hours) {
 
     alert(
-        "Please fill Exam Name and Hours Per Day."
-    );
+    translations[lang].fillExamHours
+);
 
     return;
 }
@@ -159,14 +279,15 @@ try {
 
         <div class="spinner"></div>
 
-        <p>
-            Generating Study Plan...
-        </p>
+            <p>
+    ${translations[lang].loadingPlan}
+</p>
 
     </div>
 
 `;
-
+    const currentLang =
+    document.getElementById("languageSelect").value;
     const response = await fetch(
     `${API_URL}/generate-plan`,
         {
@@ -181,7 +302,7 @@ try {
     exam,
     subjects,
     hours_per_day: hours,
-    language: lang,
+    language: currentLang,
     provider:
         document.getElementById(
             "aiProvider"
@@ -353,25 +474,34 @@ try {
 
 });
        const goalArray =
-    lang === "hi"
-        ? dailyGoalsHi
-        : lang === "te"
-        ? dailyGoalsTe
-        : dailyGoals;
+    lang === "hi" ? dailyGoalsHi :
+    lang === "te" ? dailyGoalsTe :
+    lang === "od" ? dailyGoalsOr :
+    lang === "bn" ? dailyGoalsBn :
+    lang === "mr" ? dailyGoalsMr :
+    lang === "gu" ? dailyGoalsGu :
+    lang === "pa" ? dailyGoalsPa :
+    dailyGoals;
 
 const suggestionArray =
-    lang === "hi"
-        ? aiSuggestionsHi
-        : lang === "te"
-        ? aiSuggestionsTe
-        : aiSuggestions;
+    lang === "hi" ? aiSuggestionsHi :
+    lang === "te" ? aiSuggestionsTe :
+    lang === "od" ? aiSuggestionsOr :
+    lang === "bn" ? aiSuggestionsBn :
+    lang === "mr" ? aiSuggestionsMr :
+    lang === "gu" ? aiSuggestionsGu :
+    lang === "pa" ? aiSuggestionsPa :
+    aiSuggestions;
 
 const progressArray =
-    lang === "hi"
-        ? progressMessagesHi
-        : lang === "te"
-        ? progressMessagesTe
-        : progressMessages;
+    lang === "hi" ? progressMessagesHi :
+    lang === "te" ? progressMessagesTe :
+    lang === "od" ? progressMessagesOr :
+    lang === "bn" ? progressMessagesBn :
+    lang === "mr" ? progressMessagesMr :
+    lang === "gu" ? progressMessagesGu :
+    lang === "pa" ? progressMessagesPa :
+    progressMessages;
 
 const randomGoal =
     goalArray[dayIndex % goalArray.length];
@@ -428,7 +558,7 @@ const randomProgress =
     html += `
 <div class="ai-tips-box">
 
-    <h3>🤖 AI Generated Study Tips</h3>
+    <h3>🤖 ${translations[lang].aiStudyTips}</h3>
 
     <pre>${aiTipsText}</pre>
 
@@ -498,7 +628,7 @@ const randomProgress =
 
         <div class="plan-card">
 
-            ❌ ${error.message}
+            ❌ ${translations[lang].fetchError}: ${error.message}
 
         </div>
 
@@ -507,6 +637,8 @@ const randomProgress =
 }
 
 }
+
+window.generatePlan = generatePlan;
 
 function updateProgress() {
 
@@ -733,9 +865,19 @@ const lang =
 alert(
     lang === "hi"
         ? `✅ ${currentSubject} कार्यक्षेत्र सहेजा गया`
-        : lang === "te"
+    : lang === "te"
         ? `✅ ${currentSubject} కార్యక్షేత్రం సేవ్ చేయబడింది`
-        : `✅ ${currentSubject} Workspace Saved`
+    : lang === "od"
+        ? `✅ ${currentSubject} ୱର୍କସ୍ପେସ୍ ସେଭ୍ ହୋଇଛି`
+    : lang === "bn"
+        ? `✅ ${currentSubject} ওয়ার্কস্পেস সংরক্ষিত হয়েছে`
+    : lang === "mr"
+        ? `✅ ${currentSubject} कार्यक्षेत्र जतन केले गेले`
+    : lang === "gu"
+        ? `✅ ${currentSubject} વર્કસ્પેસ સેવ થયું`
+    : lang === "pa"
+        ? `✅ ${currentSubject} ਵਰਕਸਪੇਸ ਸੇਵ ਹੋ ਗਿਆ`
+    : `✅ ${currentSubject} Workspace Saved`
 );
 
 closeWorkspace();
@@ -907,7 +1049,23 @@ function updateResourcePreview() {
 
     `;
 }
-const themeBtn = document.getElementById("themeToggle");
+const themeBtn =
+    document.getElementById("themeToggle");
+
+
+function updateThemeButtonText() {
+
+    const lang =
+        document.getElementById("languageSelect").value;
+
+    const isDark =
+        document.body.classList.contains("dark-mode");
+
+    themeBtn.textContent =
+        isDark
+            ? translations[lang].lightMode
+            : translations[lang].darkMode;
+}
 
 themeBtn.addEventListener("click", () => {
 
@@ -917,17 +1075,21 @@ themeBtn.addEventListener("click", () => {
         document.body.classList.contains("dark-mode");
 
     localStorage.setItem("theme", isDark);
-    const lang = document.getElementById("languageSelect").value;
-    themeBtn.innerHTML =
-    isDark
-        ? (lang === "hi" ? "☀️ लाइट मोड" :
-           lang === "te" ? "☀️ లైట్ మోడ్" :
-           "☀️ Light Mode")
-        : (lang === "hi" ? "🌙 डार्क मोड" :
-           lang === "te" ? "🌙 డార్క్ మోడ్" :
-           "🌙 Dark Mode");
+    updateThemeButtonText();
+
 });
+
 window.addEventListener("DOMContentLoaded", () => {
+    const generatePlanBtn =
+        document.getElementById("generatePlanBtn");
+
+    if (generatePlanBtn) {
+        generatePlanBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            generatePlan();
+        });
+    }
+
     const isLocal =
         location.hostname === "localhost" ||
         location.hostname === "127.0.0.1";
@@ -966,6 +1128,8 @@ let subjectCount = 1;
 
 document.getElementById("addSubjectBtn")
     .addEventListener("click", () => {
+        const currentLang =
+    document.getElementById("languageSelect").value;
 
         subjectCount++;
 
@@ -982,30 +1146,59 @@ document.getElementById("addSubjectBtn")
             </h3>
 
             <div class="subject-box">
-
-                <label class="subject-name-label">Subject Name</label>
+                <h3 class="subject-title">
+                    📘 ${translations[currentLang].subject}
+                    ${subjectCount}
+                </h3>
+                <label class="subject-name-label">${translations[currentLang].subjectName}</label>
                 <input
                     id="subject${subjectCount}"
-                    type="text">
+                    type="text"
+                    placeholder="${translations[currentLang].subjectName}">
 
-                <label class="exam-date-label">Exam Date</label>
+                <label class="exam-date-label">${translations[currentLang].examDate}</label>
                 <input
                     id="date${subjectCount}"
                     type="date">
 
-                <label class="priority-label">Priority</label>
-                <select id="priority${subjectCount}">
-                    <option>High</option>
-                    <option>Medium</option>
-                    <option>Low</option>
-                </select>
+                <label class="priority-label">
+                    ${translations[currentLang].priority}
+                </label>
+                <select
+    id="priority${subjectCount}"
+    class="priority">
+            <option value="High">
+                ${translations[currentLang].high}
+            </option>
 
-                <label class="prep-label">Preparation Level</label>
-                <select id="prep${subjectCount}">
-                    <option>Poor</option>
-                    <option>Average</option>
-                    <option>Good</option>
-                </select>
+            <option value="Medium">
+                ${translations[currentLang].medium}
+            </option>
+
+            <option value="Low">
+                ${translations[currentLang].low}
+            </option>
+        </select>
+
+                <label class="prep-label">
+            ${translations[currentLang].preparation}
+        </label>
+
+        <select
+    id="prep${subjectCount}"
+    class="preparation">
+            <option value="Poor">
+                ${translations[currentLang].poor}
+            </option>
+
+            <option value="Average">
+                ${translations[currentLang].average}
+            </option>
+
+            <option value="Good">
+                ${translations[currentLang].good}
+            </option>
+        </select>
 
             </div>
             `
@@ -1093,7 +1286,15 @@ document.getElementById("addSubjectBtn")
         completedLabel: "Completed",
 
         greatJob: "✨ Great job! Keep going, you're doing excellent! 🚀",
-        feedback: "⭐ Give Feedback"
+        feedback: "⭐ Give Feedback",
+fetchError: "Failed to fetch",
+loadingPlan: "Generating Study Plan...",
+aiStudyTips: "AI Generated Study Tips",
+youtubeResource: "🎥 YouTube Resource",
+pdfResource: "📄 PDF Resource",
+enterSubject: "Enter at least one subject first.",
+fillExamHours: "Please fill Exam Name and Hours Per Day.",
+workspaceSaved: "Workspace Saved"
     },
 
     hi: {
@@ -1179,7 +1380,15 @@ document.getElementById("addSubjectBtn")
         completedLabel: "पूर्ण",
 
         greatJob: "✨ बहुत बढ़िया! ऐसे ही मेहनत करते रहें! 🚀",
-        feedback: "⭐ प्रतिक्रिया दें"
+        feedback: "⭐ प्रतिक्रिया दें",
+fetchError: "डेटा प्राप्त करने में विफल",
+loadingPlan: "अध्ययन योजना बनाई जा रही है...",
+aiStudyTips: "AI अध्ययन सुझाव",
+youtubeResource: "🎥 YouTube संसाधन",
+pdfResource: "📄 PDF संसाधन",
+enterSubject: "पहले कम से कम एक विषय दर्ज करें।",
+fillExamHours: "कृपया परीक्षा का नाम और अध्ययन घंटे भरें।",
+workspaceSaved: "कार्यक्षेत्र सहेजा गया"
     },
 
     te: {
@@ -1265,7 +1474,15 @@ document.getElementById("addSubjectBtn")
         completedLabel: "పూర్తైంది",
 
         greatJob: "✨ అద్భుతం! ఇలాగే కొనసాగించండి! 🚀",
-        feedback: "⭐ అభిప్రాయం ఇవ్వండి"
+        feedback: "⭐ అభిప్రాయం ఇవ్వండి",
+fetchError: "డేటా పొందడంలో విఫలమైంది",
+loadingPlan: "అధ్యయన ప్రణాళిక రూపొందించబడుతోంది...",
+aiStudyTips: "AI అధ్యయన సూచనలు",
+youtubeResource: "🎥 YouTube వనరు",
+pdfResource: "📄 PDF వనరు",
+enterSubject: "దయచేసి ముందుగా కనీసం ఒక సబ్జెక్ట్ నమోదు చేయండి.",
+fillExamHours: "దయచేసి పరీక్ష పేరు మరియు రోజువారీ అధ్యయన గంటలు నమోదు చేయండి.",
+workspaceSaved: "వర్క్‌స్పేస్ సేవ్ చేయబడింది"
     },
 
     od: {
@@ -1370,7 +1587,15 @@ document.getElementById("addSubjectBtn")
 
         greatJob: "✨ ଅତ୍ୟନ୍ତ ଭଲ! ଏଭଳି ଚାଲୁ ରଖନ୍ତୁ! 🚀",
 
-        feedback: "⭐ ମତାମତ ଦିଅନ୍ତୁ"
+        feedback: "⭐ ମତାମତ ଦିଅନ୍ତୁ",
+fetchError: "ଡାଟା ଆଣିବାରେ ବିଫଳ",
+loadingPlan: "ଅଧ୍ୟୟନ ଯୋଜନା ତିଆରି କରାଯାଉଛି...",
+aiStudyTips: "AI ଅଧ୍ୟୟନ ପରାମର୍ଶ",
+youtubeResource: "🎥 YouTube ସମ୍ବଳ",
+pdfResource: "📄 PDF ସମ୍ବଳ",
+enterSubject: "ପ୍ରଥମେ କମ୍ ସେ କମ୍ ଗୋଟିଏ ବିଷୟ ଲେଖନ୍ତୁ।",
+fillExamHours: "ଦୟାକରି ପରୀକ୍ଷା ନାମ ଏବଂ ଦୈନିକ ଅଧ୍ୟୟନ ଘଣ୍ଟା ପୂରଣ କରନ୍ତୁ।",
+workspaceSaved: "ୱର୍କସ୍ପେସ୍ ସେଭ୍ ହୋଇଛି"
     },
     bn: {
     title: "স্টাডিস্প্রিন্ট AI",
@@ -1474,7 +1699,15 @@ document.getElementById("addSubjectBtn")
 
     greatJob: "✨ দারুণ কাজ! এভাবেই চালিয়ে যান, আপনি অসাধারণ করছেন! 🚀",
 
-    feedback: "⭐ মতামত দিন"
+    feedback: "⭐ মতামত দিন",
+fetchError: "ডেটা আনতে ব্যর্থ",
+loadingPlan: "স্টাডি প্ল্যান তৈরি করা হচ্ছে...",
+aiStudyTips: "AI স্টাডি টিপস",
+youtubeResource: "🎥 ইউটিউব রিসোর্স",
+pdfResource: "📄 PDF রিসোর্স",
+enterSubject: "প্রথমে অন্তত একটি বিষয় লিখুন।",
+fillExamHours: "অনুগ্রহ করে পরীক্ষার নাম এবং দৈনিক পড়ার সময় পূরণ করুন।",
+workspaceSaved: "ওয়ার্কস্পেস সংরক্ষিত হয়েছে"
 },
    mr: {
     title: "स्टडीस्प्रिंट AI",
@@ -1578,7 +1811,15 @@ document.getElementById("addSubjectBtn")
 
     greatJob: "✨ उत्तम काम! असेच सुरू ठेवा, तुम्ही उत्कृष्ट काम करत आहात! 🚀",
 
-    feedback: "⭐ अभिप्राय द्या"
+    feedback: "⭐ अभिप्राय द्या",
+fetchError: "डेटा आणण्यात अयशस्वी",
+loadingPlan: "अभ्यास योजना तयार केली जात आहे...",
+aiStudyTips: "AI अभ्यास टिप्स",
+youtubeResource: "🎥 YouTube संसाधन",
+pdfResource: "📄 PDF संसाधन",
+enterSubject: "कृपया प्रथम किमान एक विषय प्रविष्ट करा.",
+fillExamHours: "कृपया परीक्षेचे नाव आणि दररोजचे अभ्यास तास भरा.",
+workspaceSaved: "कार्यक्षेत्र जतन केले गेले"
 },
 gu: {
     title: "સ્ટડીસ્પ્રિન્ટ AI",
@@ -1682,7 +1923,15 @@ gu: {
 
     greatJob: "✨ સરસ કામ! આમ જ ચાલુ રાખો, તમે ઉત્તમ કાર્ય કરી રહ્યા છો! 🚀",
 
-    feedback: "⭐ પ્રતિસાદ આપો"
+    feedback: "⭐ પ્રતિસાદ આપો",
+fetchError: "ડેટા મેળવવામાં નિષ્ફળ",
+loadingPlan: "અભ્યાસ યોજના તૈયાર થઈ રહી છે...",
+aiStudyTips: "AI અભ્યાસ સૂચનો",
+youtubeResource: "🎥 YouTube સંસાધન",
+pdfResource: "📄 PDF સંસાધન",
+enterSubject: "કૃપા કરીને પહેલા ઓછામાં ઓછો એક વિષય દાખલ કરો.",
+fillExamHours: "કૃપા કરીને પરીક્ષાનું નામ અને દૈનિક અભ્યાસ કલાકો ભરો.",
+workspaceSaved: "વર્કસ્પેસ સેવ થયું"
 },
 pa: {
     title: "ਸਟਡੀਸਪ੍ਰਿੰਟ AI",
@@ -1786,7 +2035,15 @@ pa: {
 
     greatJob: "✨ ਬਹੁਤ ਵਧੀਆ! ਇਸੇ ਤਰ੍ਹਾਂ ਜਾਰੀ ਰੱਖੋ, ਤੁਸੀਂ ਸ਼ਾਨਦਾਰ ਕੰਮ ਕਰ ਰਹੇ ਹੋ! 🚀",
 
-    feedback: "⭐ ਫੀਡਬੈਕ ਦਿਓ"
+    feedback: "⭐ ਫੀਡਬੈਕ ਦਿਓ",
+fetchError: "ਡਾਟਾ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਅਸਫਲ",
+loadingPlan: "ਅਧਿਐਨ ਯੋਜਨਾ ਤਿਆਰ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ...",
+aiStudyTips: "AI ਅਧਿਐਨ ਸੁਝਾਅ",
+youtubeResource: "🎥 YouTube ਸਰੋਤ",
+pdfResource: "📄 PDF ਸਰੋਤ",
+enterSubject: "ਕਿਰਪਾ ਕਰਕੇ ਪਹਿਲਾਂ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਵਿਸ਼ਾ ਦਰਜ ਕਰੋ।",
+fillExamHours: "ਕਿਰਪਾ ਕਰਕੇ ਪਰੀਖਿਆ ਦਾ ਨਾਮ ਅਤੇ ਰੋਜ਼ਾਨਾ ਅਧਿਐਨ ਘੰਟੇ ਭਰੋ।",
+workspaceSaved: "ਵਰਕਸਪੇਸ ਸੇਵ ਹੋ ਗਿਆ"
 }
 
 
@@ -1855,12 +2112,70 @@ function changeLanguage() {
 
     document.getElementById("generateTipsBtn").textContent =
         translations[lang].generateBtn;
+    document.getElementById("addSubjectBtn").textContent =
+    translations[lang].addSubject;
 
     document.getElementById("generatePlanBtn").textContent =
         translations[lang].generate;
 
+    document.querySelectorAll(".subject-title").forEach((title, index) => {
+    title.textContent =
+        `📘 ${translations[lang].subject} ${index + 1}`;
+});
+
+document.querySelectorAll(".subject-name-label").forEach(label => {
+    label.textContent =
+        translations[lang].subjectName;
+});
+
+document.querySelectorAll(".exam-date-label").forEach(label => {
+    label.textContent =
+        translations[lang].examDate;
+});
+
+document.querySelectorAll(".priority-label").forEach(label => {
+    label.textContent =
+        translations[lang].priority;
+});
+
+document.querySelectorAll(".prep-label").forEach(label => {
+    label.textContent =
+        translations[lang].preparation;
+});
+
+document.querySelectorAll(".subject-name").forEach(input => {
+    input.placeholder =
+        translations[lang].subjectName;
+});
+document.querySelectorAll(".youtube-link").forEach(input => {
+    input.placeholder =
+        translations[lang].youtubePlaceholder;
+});
+document.querySelectorAll(".pdf-link").forEach(input => {
+    input.placeholder =
+        translations[lang].pdfPlaceholder;
+});
+document.querySelectorAll(".book-name").forEach(input => {
+    input.placeholder =
+        translations[lang].bookPlaceholder;
+});
+
+
+document.querySelectorAll(".subject-name").forEach(input => {
+    input.placeholder =
+        translations[lang].subjectName;
+});
+
     document.getElementById("feedbackBtn").textContent =
         translations[lang].feedback;
+
+    const feedbackText =
+        document.getElementById("feedbackText");
+
+    if (feedbackText) {
+        feedbackText.textContent =
+            translations[lang].feedback;
+    }
 
     document.getElementById("addSubjectBtn").textContent =
         translations[lang].addSubject;
@@ -1875,6 +2190,11 @@ function changeLanguage() {
 
 document.getElementById("resourcesHeading").textContent =
     translations[lang].resources;
+
+document.querySelectorAll('[id^="subject"]').forEach(input => {
+    input.placeholder =
+        translations[lang].subjectName;
+});
 
 document.getElementById("searchNotesLabel").textContent =
     "🔍 " + translations[lang].searchNotes;
@@ -1911,6 +2231,9 @@ document.getElementById("workspacePdf").placeholder =
 
 document.getElementById("workspaceBook").placeholder =
     translations[lang].bookPlaceholder;
+
+document.getElementById("footerText").textContent =
+    "🚀 " + translations[lang].poweredBy;
 
     document.querySelectorAll('[id^="priority"]').forEach(select => {
 
@@ -1955,11 +2278,7 @@ document.getElementById("workspaceBook").placeholder =
     document.getElementById("aiProviderLabel").innerText =
         translations[lang].aiProvider;
 
-        const themeBtn = document.getElementById("themeToggle");
-        const isDark = document.body.classList.contains("dark-mode");
-          themeBtn.textContent = isDark
-        ? translations[lang].lightMode
-        : translations[lang].darkMode;
+        updateThemeButtonText();
 
         const localOption = document.getElementById("localAiOption");
 
@@ -2053,12 +2372,22 @@ function generateAITips() {
     if (subjects.length === 0) {
 
         alert(
-            lang === "hi"
-                ? "पहले कम से कम एक विषय दर्ज करें।"
-                : lang === "te"
-                ? "ముందుగా కనీసం ఒక సబ్జెక్ట్ నమోదు చేయండి."
-                : "Enter at least one subject first."
-        );
+    lang === "hi"
+        ? "पहले कम से कम एक विषय दर्ज करें।"
+    : lang === "te"
+        ? "ముందుగా కనీసం ఒక సబ్జెక్ట్ నమోదు చేయండి."
+    : lang === "od"
+        ? "ପ୍ରଥମେ କମ୍ ସେ କମ୍ ଗୋଟିଏ ବିଷୟ ଲେଖନ୍ତୁ।"
+    : lang === "bn"
+        ? "প্রথমে অন্তত একটি বিষয় লিখুন।"
+    : lang === "mr"
+        ? "कृपया प्रथम किमान एक विषय प्रविष्ट करा."
+    : lang === "gu"
+        ? "કૃપા કરીને પહેલા ઓછામાં ઓછો એક વિષય દાખલ કરો."
+    : lang === "pa"
+        ? "ਕਿਰਪਾ ਕਰਕੇ ਪਹਿਲਾਂ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਵਿਸ਼ਾ ਦਰਜ ਕਰੋ।"
+    : "Enter at least one subject first."
+);
 
         return;
     }
@@ -2070,31 +2399,77 @@ function generateAITips() {
 
         const tips = [
 
-            lang === "hi"
-                ? `${subject} के लिए प्रतिदिन 2 घंटे अध्ययन करें।`
-                : lang === "te"
-                ? `${subject} కోసం ప్రతిరోజూ 2 గంటలు చదవండి.`
-                : `Study ${subject} for 2 hours daily.`,
+    lang === "hi"
+        ? `${subject} के लिए प्रतिदिन 2 घंटे अध्ययन करें।`
+    : lang === "te"
+        ? `${subject} కోసం ప్రతిరోజూ 2 గంటలు చదవండి.`
+    : lang === "od"
+        ? `${subject} ପାଇଁ ପ୍ରତିଦିନ ୨ ଘଣ୍ଟା ଅଧ୍ୟୟନ କରନ୍ତୁ।`
+    : lang === "bn"
+        ? `${subject} এর জন্য প্রতিদিন ২ ঘণ্টা অধ্যয়ন করুন।`
+    : lang === "mr"
+        ? `${subject} साठी दररोज २ तास अभ्यास करा.`
+    : lang === "gu"
+        ? `${subject} માટે દરરોજ ૨ કલાક અભ્યાસ કરો.`
+    : lang === "pa"
+        ? `${subject} ਲਈ ਹਰ ਰੋਜ਼ 2 ਘੰਟੇ ਪੜ੍ਹਾਈ ਕਰੋ।`
+    : `Study ${subject} for 2 hours daily.`,
 
-            lang === "hi"
-                ? `${subject} के 20 प्रश्न रोज़ हल करें।`
-                : lang === "te"
-                ? `${subject} పై రోజుకు 20 ప్రశ్నలు సాధన చేయండి.`
-                : `Solve 20 questions of ${subject} daily.`,
 
-            lang === "hi"
-                ? `${subject} के छोटे नोट्स बनाएं।`
-                : lang === "te"
-                ? `${subject} కోసం చిన్న నోట్స్ తయారు చేయండి.`
-                : `Prepare short notes for ${subject}.`,
 
-            lang === "hi"
-                ? `${subject} के पिछले वर्षों के प्रश्न हल करें।`
-                : lang === "te"
-                ? `${subject} గత ప్రశ్నాపత్రాలు సాధన చేయండి.`
-                : `Practice previous year questions of ${subject}.`
+    lang === "hi"
+        ? `${subject} के 20 प्रश्न रोज़ हल करें।`
+    : lang === "te"
+        ? `${subject} పై రోజుకు 20 ప్రశ్నలు సాధన చేయండి.`
+    : lang === "od"
+        ? `${subject} ର 20ଟି ପ୍ରଶ୍ନ ପ୍ରତିଦିନ ସମାଧାନ କରନ୍ତୁ।`
+    : lang === "bn"
+        ? `${subject} এর ২০টি প্রশ্ন প্রতিদিন সমাধান করুন।`
+    : lang === "mr"
+        ? `${subject} चे २० प्रश्न दररोज सोडवा.`
+    : lang === "gu"
+        ? `${subject} ના 20 પ્રશ્નો દરરોજ ઉકેલો.`
+    : lang === "pa"
+        ? `${subject} ਦੇ 20 ਪ੍ਰਸ਼ਨ ਹਰ ਰੋਜ਼ ਹੱਲ ਕਰੋ।`
+    : `Solve 20 questions of ${subject} daily.`,
 
-        ];
+
+
+    lang === "hi"
+        ? `${subject} के छोटे नोट्स बनाएं।`
+    : lang === "te"
+        ? `${subject} కోసం చిన్న నోట్స్ తయారు చేయండి.`
+    : lang === "od"
+        ? `${subject} ପାଇଁ ଛୋଟ ଛୋଟ ଟିପ୍ପଣୀ ତିଆରି କରନ୍ତୁ।`
+    : lang === "bn"
+        ? `${subject} এর জন্য সংক্ষিপ্ত নোট তৈরি করুন।`
+    : lang === "mr"
+        ? `${subject} साठी लहान नोट्स तयार करा.`
+    : lang === "gu"
+        ? `${subject} માટે ટૂંકી નોંધો બનાવો.`
+    : lang === "pa"
+        ? `${subject} ਲਈ ਛੋਟੇ ਨੋਟ ਬਣਾਓ।`
+    : `Prepare short notes for ${subject}.`,
+
+
+
+    lang === "hi"
+        ? `${subject} के पिछले वर्षों के प्रश्न हल करें।`
+    : lang === "te"
+        ? `${subject} గత ప్రశ్నాపత్రాలు సాధన చేయండి.`
+    : lang === "od"
+        ? `${subject} ର ପୂର୍ବବର୍ଷର ପ୍ରଶ୍ନପତ୍ର ଅଭ୍ୟାସ କରନ୍ତୁ।`
+    : lang === "bn"
+        ? `${subject} এর পূর্ববর্তী বছরের প্রশ্ন অনুশীলন করুন।`
+    : lang === "mr"
+        ? `${subject} चे मागील वर्षांचे प्रश्न सोडवा.`
+    : lang === "gu"
+        ? `${subject} ના અગાઉના વર્ષોના પ્રશ્નોનો અભ્યાસ કરો.`
+    : lang === "pa"
+        ? `${subject} ਦੇ ਪਿਛਲੇ ਸਾਲਾਂ ਦੇ ਪ੍ਰਸ਼ਨਾਂ ਦਾ ਅਭਿਆਸ ਕਰੋ।`
+    : `Practice previous year questions of ${subject}.`
+
+];
 
         output +=
             `📘 ${subject}\n${tips[Math.floor(Math.random() * tips.length)]}\n\n`;

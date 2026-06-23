@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from datetime import datetime, timedelta
 from backend.adk_agent import study_agent
-from typing import cast
 from typing import Any
 from time import sleep
 
@@ -73,6 +72,17 @@ def agent_demo():
 # Generate Plan
 # -----------------------------
 
+language_names = {
+    "en": "English",
+    "hi": "Hindi",
+    "te": "Telugu",
+    "od": "Odia",
+    "bn": "Bengali",
+    "mr": "Marathi",
+    "gu": "Gujarati",
+    "pa": "Punjabi",
+}
+
 
 @app.post("/generate-plan")
 def generate_plan(data: StudyRequest):
@@ -141,16 +151,16 @@ def generate_plan(data: StudyRequest):
 
             if current_day <= subject_exam_date:
                 active_subjects.append(item)
-                weight = cast(int, item["weight"])
+                weight = float(item["weight"])
                 active_total_weight += weight
 
-        if active_total_weight == 0:
+        if active_total_weight == 0.0:
             break
 
         day_plan = []
 
         for item in active_subjects:
-            weight = cast(int, item["weight"])
+            weight = float(item["weight"])
 
             allocated_hours = round(
                 data.hours_per_day * (weight / active_total_weight),
@@ -164,43 +174,6 @@ def generate_plan(data: StudyRequest):
         )
 
         current_day += timedelta(days=1)
-
-    # -----------------------------
-    # Generate AI Tips using Ollama
-    # -----------------------------
-
-    subject_names = ", ".join([s.name for s in data.subjects])
-
-    prompt = f"""
-Generate 5 personalized study tips.
-
-Exam:
-{data.exam}
-
-Subjects:
-{subject_names}
-
-Study hours per day:
-{data.hours_per_day}
-
-Keep each tip short.
-"""
-
-    print("Reached AI section")
-
-    try:
-        print("Calling Ollama...")
-
-        response = chat(model="mistral", messages=[{"role": "user", "content": prompt}])
-
-        print("Ollama returned")
-
-        ai_tips = response["message"]["content"]
-
-    except Exception as e:
-        print("ERROR:", e)
-
-        ai_tips = f"AI Error: {str(e)}"
 
     # high_priority = [
     # s.name for s in data.subjects
@@ -234,7 +207,15 @@ Keep each tip short.
     subject_names = ", ".join([s.name for s in data.subjects])
 
     prompt = f"""
+    ```
+
     You are an expert study coach.
+
+    IMPORTANT:
+    Write the ENTIRE response in
+    {language_names.get(data.language, "English")}.
+
+    Do NOT use English unless English is selected.
 
     Exam:
     {data.exam}
@@ -255,36 +236,26 @@ Keep each tip short.
 
     Keep it practical and personalized.
     """
-
     try:
         if data.provider == "ollama":
             if chat is None:
                 ai_tips = "Ollama is unavailable on deployment."
-
             else:
                 ollama_response = chat(
                     model="mistral", messages=[{"role": "user", "content": prompt}]
                 )
-
                 ai_tips = ollama_response["message"]["content"]
 
         elif data.provider == "gemini":
             model = genai.GenerativeModel("gemini-2.5-flash")
-
             gemini_response = model.generate_content(prompt)
-
-            ai_tips = gemini_response.text  # type: ignore[attr-defined]
+            ai_tips = gemini_response.text
 
         else:
             ai_tips = "Invalid AI provider selected."
 
     except Exception as e:
         print("AI ERROR:", e)
-
         ai_tips = f"AI Error: {str(e)}"
-
-    # -----------------------------
-    # Return Response
-    # -----------------------------
 
     return {"exam": data.exam, "study_plan": daily_schedule, "ai_tips": ai_tips}
