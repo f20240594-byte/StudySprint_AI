@@ -29,21 +29,35 @@ The platform:
 
 ## 🚀 Features
 
-* Personalized study plan generation
-* Multiple subject support
-* Subject-wise priority management
-* Preparation level tracking
-* Daily study hour allocation
-* Exam countdown tracking
-* Progress tracking with interactive checklists
-* Dark / Light mode
-* Multi-language support
-* Responsive user interface
-* FastAPI backend API
-* Swagger API documentation
-* AI-ready architecture
-* Local AI (Ollama) support
-* BYOK (Bring Your Own API Key) support
+### Study Planning
+- Personalized study plan generation
+- Multiple subject support
+- Subject-wise priority management
+- Preparation level tracking
+- Daily study hour allocation
+- Exam countdown tracking
+- Smart schedule generation
+
+### AI Features
+- AI-generated study tips
+- Ollama local AI support
+- Google Gemini integration
+- BYOK (Bring Your Own API Key)
+- AI-powered recommendations
+
+### User Experience
+- Dark Mode / Light Mode
+- Responsive design
+- Mobile-friendly interface
+- Interactive progress tracking
+- Multi-language support
+
+### Developer Features
+- FastAPI backend
+- REST API architecture
+- Swagger API documentation
+- Modular codebase
+- Easy deployment
 
 ---
 
