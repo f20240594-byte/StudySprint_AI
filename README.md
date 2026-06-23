@@ -130,7 +130,7 @@ StudySprint AI can connect to locally running models for AI-powered study recomm
 
 ---
 
-##🏗️ System Architecture
+## 🏗️ System Architecture
 
 ```text
 User Input
@@ -155,7 +155,7 @@ Generated Study Plan
     │
     ▼
 Progress Tracking & AI Tips
-
+```
 ---
 
 ## 🔄 Workflow
@@ -223,6 +223,14 @@ StudySprint_AI/
 ├── CODE_OF_CONDUCT.md
 └── CHANGELOG.md
 ```
+
+---
+
+## 🔐 Environment Variables
+
+### Create a .env file:
+
+GEMINI_API_KEY = your_api_key_here
 
 ---
 
@@ -402,14 +410,14 @@ before submitting pull requests.
 ---
 
 ## ⭐ Why StudySprint AI?
-Personalized study planning
-AI-powered recommendations
-Local AI support
-Multi-language support
-FastAPI backend
-Modern responsive UI
-Open-source and extensible
-Designed for students, by a student
+* Personalized study planning
+* AI-powered recommendations
+* Local AI support
+* Multi-language support
+* FastAPI backend
+* Modern responsive UI
+* Open-source and extensible
+* Designed for students, by a student
 
 ---
 
