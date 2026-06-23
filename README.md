@@ -29,21 +29,35 @@ The platform:
 
 ## 🚀 Features
 
-* Personalized study plan generation
-* Multiple subject support
-* Subject-wise priority management
-* Preparation level tracking
-* Daily study hour allocation
-* Exam countdown tracking
-* Progress tracking with interactive checklists
-* Dark / Light mode
-* Multi-language support
-* Responsive user interface
-* FastAPI backend API
-* Swagger API documentation
-* AI-ready architecture
-* Local AI (Ollama) support
-* BYOK (Bring Your Own API Key) support
+### Study Planning
+- Personalized study plan generation
+- Multiple subject support
+- Subject-wise priority management
+- Preparation level tracking
+- Daily study hour allocation
+- Exam countdown tracking
+- Smart schedule generation
+
+### AI Features
+- AI-generated study tips
+- Ollama local AI support
+- Google Gemini integration
+- BYOK (Bring Your Own API Key)
+- AI-powered recommendations
+
+### User Experience
+- Dark Mode / Light Mode
+- Responsive design
+- Mobile-friendly interface
+- Interactive progress tracking
+- Multi-language support
+
+### Developer Features
+- FastAPI backend
+- REST API architecture
+- Swagger API documentation
+- Modular codebase
+- Easy deployment
 
 ---
 
@@ -59,31 +73,30 @@ The selected language is automatically stored using browser localStorage.
 
 ---
 
-## 🤖 AI Features
+## 🤖 AI Integration
 
-StudySprint AI includes AI-ready functionality and supports multiple AI providers.
-
-### Supported AI Modes
-
-#### Local AI (Mandatory)
-
-The application supports local AI inference through Ollama.
+### Ollama (Local AI)
 
 Benefits:
+- Runs locally on your machine
+- No API costs
+- Better privacy
+- Offline support
 
-* Runs completely on your device
-* No cloud dependency
-* Better privacy
-* No API cost
+Supported Models:
+- Llama 3
+- Mistral
 
-#### BYOK (Bring Your Own Key)
+### Google Gemini
 
-Users may optionally connect their own AI provider API key.
+Benefits:
+- Cloud-based AI
+- Faster recommendations
+- Personalized study tips
 
-Supported providers:
+### BYOK (Bring Your Own Key)
 
-* OpenAI
-* Gemini (Future Support)
+Users can optionally connect their own API keys for supported AI providers.
 
 ---
 
@@ -117,6 +130,48 @@ StudySprint AI can connect to locally running models for AI-powered study recomm
 
 ---
 
+## 🏗️ System Architecture
+
+```text
+User Input
+    │
+    ▼
+Frontend (HTML/CSS/JS)
+    │
+    ▼
+FastAPI Backend
+    │
+    ├── Study Plan Generator
+    ├── Priority Calculator
+    ├── Preparation Analyzer
+    ├── Exam Countdown Logic
+    └── AI Recommendation Engine
+            │
+            ├── Ollama
+            └── Gemini
+    │
+    ▼
+Generated Study Plan
+    │
+    ▼
+Progress Tracking & AI Tips
+```
+---
+
+## 🔄 Workflow
+
+* User enters exam information
+* User adds subjects
+* User selects priorities
+* User selects preparation levels
+* User enters study hours
+* Backend calculates subject weights
+* Study plan is generated
+* AI recommendations are generated
+* User tracks progress
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Frontend
@@ -137,10 +192,10 @@ StudySprint AI can connect to locally running models for AI-powered study recomm
 
 ### AI
 
-* Rule-Based Study Plan Generation
-* Ollama Local AI Support
-* BYOK Support
-* Future OpenAI/Gemini Integration
+* Rule-Based Scheduling Engine
+* Ollama Local AI
+* Gemini AI
+* Google ADK Integration
 
 ---
 
@@ -168,6 +223,14 @@ StudySprint_AI/
 ├── CODE_OF_CONDUCT.md
 └── CHANGELOG.md
 ```
+
+---
+
+## 🔐 Environment Variables
+
+### Create a .env file:
+
+GEMINI_API_KEY = YOUR_GEMINI_API_KEY
 
 ---
 
@@ -319,16 +382,16 @@ StudySprint AI can be deployed on:
 
 ---
 
-## 🎯 Future Improvements
+## 🗺️ Future Roadmap
 
-* AI-generated study tips
-* AI-powered subject difficulty estimation
-* PDF export
-* Authentication system
-* Cloud database integration
-* Calendar synchronization
-* Smart revision scheduling
-* Ollama-powered study recommendations
+* Authentication System
+* Cloud Database Integration
+* Calendar Synchronization
+* Email Reminders
+* PDF Export
+* AI Revision Planner
+* Performance Analytics
+* Mobile Application
 
 ---
 
@@ -343,6 +406,30 @@ Please read:
 * SECURITY.md
 
 before submitting pull requests.
+
+---
+
+## ⭐ Why StudySprint AI?
+* Personalized study planning
+* AI-powered recommendations
+* Local AI support
+* Multi-language support
+* FastAPI backend
+* Modern responsive UI
+* Open-source and extensible
+* Designed for students, by a student
+
+---
+
+## 🙏 Acknowledgements
+
+FastAPI
+Ollama
+Google Gemini
+Google ADK
+OpenAI
+Python Community
+Swecha Hackathon Program
 
 ---
 
