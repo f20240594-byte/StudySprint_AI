@@ -73,31 +73,30 @@ The selected language is automatically stored using browser localStorage.
 
 ---
 
-## 🤖 AI Features
+## 🤖 AI Integration
 
-StudySprint AI includes AI-ready functionality and supports multiple AI providers.
-
-### Supported AI Modes
-
-#### Local AI (Mandatory)
-
-The application supports local AI inference through Ollama.
+### Ollama (Local AI)
 
 Benefits:
+- Runs locally on your machine
+- No API costs
+- Better privacy
+- Offline support
 
-* Runs completely on your device
-* No cloud dependency
-* Better privacy
-* No API cost
+Supported Models:
+- Llama 3
+- Mistral
 
-#### BYOK (Bring Your Own Key)
+### Google Gemini
 
-Users may optionally connect their own AI provider API key.
+Benefits:
+- Cloud-based AI
+- Faster recommendations
+- Personalized study tips
 
-Supported providers:
+### BYOK (Bring Your Own Key)
 
-* OpenAI
-* Gemini (Future Support)
+Users can optionally connect their own API keys for supported AI providers.
 
 ---
 
@@ -131,6 +130,48 @@ StudySprint AI can connect to locally running models for AI-powered study recomm
 
 ---
 
+## 🏗️ System Architecture
+
+```text
+User Input
+    │
+    ▼
+Frontend (HTML/CSS/JS)
+    │
+    ▼
+FastAPI Backend
+    │
+    ├── Study Plan Generator
+    ├── Priority Calculator
+    ├── Preparation Analyzer
+    ├── Exam Countdown Logic
+    └── AI Recommendation Engine
+            │
+            ├── Ollama
+            └── Gemini
+    │
+    ▼
+Generated Study Plan
+    │
+    ▼
+Progress Tracking & AI Tips
+
+---
+
+## 🔄 Workflow
+
+1. User enters exam information
+2. User adds subjects
+3. User selects priorities
+4. User selects preparation levels
+5. User enters study hours
+6. Backend calculates subject weights
+7. Study plan is generated
+8. AI recommendations are generated
+9. User tracks progress
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Frontend
@@ -151,10 +192,10 @@ StudySprint AI can connect to locally running models for AI-powered study recomm
 
 ### AI
 
-* Rule-Based Study Plan Generation
-* Ollama Local AI Support
-* BYOK Support
-* Future OpenAI/Gemini Integration
+* Rule-Based Scheduling Engine
+* Ollama Local AI
+* Gemini AI
+* Google ADK Integration
 
 ---
 
