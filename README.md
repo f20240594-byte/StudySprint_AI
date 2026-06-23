@@ -130,7 +130,7 @@ StudySprint AI can connect to locally running models for AI-powered study recomm
 
 ---
 
-## 🏗️ System Architecture
+##🏗️ System Architecture
 
 ```text
 User Input
@@ -160,15 +160,15 @@ Progress Tracking & AI Tips
 
 ## 🔄 Workflow
 
-1. User enters exam information
-2. User adds subjects
-3. User selects priorities
-4. User selects preparation levels
-5. User enters study hours
-6. Backend calculates subject weights
-7. Study plan is generated
-8. AI recommendations are generated
-9. User tracks progress
+* User enters exam information
+* User adds subjects
+* User selects priorities
+* User selects preparation levels
+* User enters study hours
+* Backend calculates subject weights
+* Study plan is generated
+* AI recommendations are generated
+* User tracks progress
 
 ---
 
@@ -374,16 +374,16 @@ StudySprint AI can be deployed on:
 
 ---
 
-## 🎯 Future Improvements
+## 🗺️ Future Roadmap
 
-* AI-generated study tips
-* AI-powered subject difficulty estimation
-* PDF export
-* Authentication system
-* Cloud database integration
-* Calendar synchronization
-* Smart revision scheduling
-* Ollama-powered study recommendations
+* Authentication System
+* Cloud Database Integration
+* Calendar Synchronization
+* Email Reminders
+* PDF Export
+* AI Revision Planner
+* Performance Analytics
+* Mobile Application
 
 ---
 
@@ -398,6 +398,30 @@ Please read:
 * SECURITY.md
 
 before submitting pull requests.
+
+---
+
+## ⭐ Why StudySprint AI?
+Personalized study planning
+AI-powered recommendations
+Local AI support
+Multi-language support
+FastAPI backend
+Modern responsive UI
+Open-source and extensible
+Designed for students, by a student
+
+---
+
+## 🙏 Acknowledgements
+
+FastAPI
+Ollama
+Google Gemini
+Google ADK
+OpenAI
+Python Community
+Swecha Hackathon Program
 
 ---
 
