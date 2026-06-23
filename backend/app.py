@@ -109,7 +109,7 @@ def generate_plan(data: StudyRequest):
 
         preparation_score = preparation_map.get(subject.preparation, 1)
 
-        weight = priority_score + preparation_score + (10 / days_left)
+        weight: float = priority_score + preparation_score + (10 / days_left)
 
         subject_weights.append(
             {
@@ -142,7 +142,7 @@ def generate_plan(data: StudyRequest):
 
     while current_day <= last_exam_date:
         active_subjects = []
-        active_total_weight = 0
+        active_total_weight = 0.0
 
         # Keep only subjects whose exams
         # have not yet happened
