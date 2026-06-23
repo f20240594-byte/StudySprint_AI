@@ -74,7 +74,7 @@ def debug():
 
     return {
         "found": bool(key),
-        "prefix": key[:6] if key else None,
+        "prefix": key[:10] if key else None,
     }
 
 
