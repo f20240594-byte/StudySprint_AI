@@ -438,13 +438,13 @@ This project is licensed under the MIT License.
 
 ## 🙏 Acknowledgements
 
-FastAPI
-Ollama
-Google Gemini
-Google ADK
-OpenAI
-Python Community
-Swecha Hackathon Program
+* FastAPI
+* Ollama
+* Google Gemini
+* Google ADK
+* OpenAI
+* Python Community
+* Swecha Hackathon Program
 
 ---
 
