@@ -17,8 +17,6 @@ app = FastAPI()
 
 api_key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 
-print("API KEY FOUND:", bool(api_key))
-print("API KEY PREFIX:", api_key[:6] if api_key else "NONE")
 
 genai.configure(api_key=api_key)
 
@@ -66,16 +64,6 @@ def agent_demo():
     return {
         "agent_name": study_agent.name,
         "status": "Google ADK Integrated Successfully",
-    }
-
-
-@app.get("/debug")
-def debug():
-    key = os.getenv("GOOGLE_API_KEY")
-
-    return {
-        "found": bool(key),
-        "prefix": key[:10] if key else None,
     }
 
 
