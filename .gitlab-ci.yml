@@ -38,11 +38,8 @@ coverage:
   script:
     - pytest --cov=backend --cov-report=term --cov-report=xml
   artifacts:
-  reports:
-    coverage_report:
-      coverage_format: cobertura
-      path: coverage.xml
-
+    paths:
+      - coverage.xml
 secret_scan:
   stage: lint
 
