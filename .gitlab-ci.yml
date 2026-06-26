@@ -51,7 +51,6 @@ dependency_audit:
   stage: lint
 
   before_script:
-  -before_script:
   - python3 -m pip install --break-system-packages -r requirements.txt
   - python3 -m pip install --break-system-packages pip-audit
 
