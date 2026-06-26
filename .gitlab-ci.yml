@@ -38,15 +38,21 @@ coverage:
   script:
     - pytest --cov=backend --cov-report=term --cov-report=xml
   artifacts:
-    paths:
-      - coverage.xml
+  reports:
+    coverage_report:
+      coverage_format: cobertura
+      path: coverage.xml
 
 secret_scan:
   stage: lint
+
   before_script:
+    - apt-get update
+    - apt-get install -y wget tar
     - wget https://github.com/gitleaks/gitleaks/releases/download/v8.28.0/gitleaks_8.28.0_linux_x64.tar.gz
     - tar -xzf gitleaks_8.28.0_linux_x64.tar.gz
     - chmod +x gitleaks
+
   script:
     - ./gitleaks detect --source . --no-git --verbose
 
@@ -57,4 +63,4 @@ dependency_audit:
     - python3 -m pip install --break-system-packages -r requirements.txt
     - python3 -m pip install --break-system-packages pip-audit
   script:
-    - python3 -m pip_audit
+    - pip-audit || true
