@@ -33,3 +33,9 @@ coverage:
   stage: coverage
   script:
     - echo "Coverage Stage"
+
+secret_scan:
+  image: zricethezav/gitleaks:latest
+  stage: quality
+  script:
+    - gitleaks detect --source . --verbose
