@@ -3,7 +3,6 @@ stages:
   - lint
   - type_check
   - test
-  - security
   - coverage
 
 format:
@@ -27,26 +26,34 @@ type_check:
 
 test:
   stage: test
+  before_script:
+    - python3 -m pip install --break-system-packages pytest
   script:
-    - echo "Tests Passed"
+    - pytest
 
 coverage:
   stage: coverage
+  before_script:
+    - python3 -m pip install --break-system-packages pytest pytest-cov
   script:
-    - echo "Coverage Stage"
+    - pytest --cov=backend --cov-report=term
 
 secret_scan:
-  image: zricethezav/gitleaks:latest
-  stage: security
+  stage: lint
+  image:
+    name: zricethezav/gitleaks:latest
+    entrypoint: [""]
   script:
     - gitleaks detect --source . --verbose
 
 dependency_audit:
   image: python:3.13
-  stage: security
+  stage: lint
 
   before_script:
-    - pip install pip-audit
+  -before_script:
+  - python3 -m pip install --break-system-packages -r requirements.txt
+  - python3 -m pip install --break-system-packages pip-audit
 
   script:
     - pip-audit
