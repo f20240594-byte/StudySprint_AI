@@ -3,6 +3,7 @@ stages:
   - lint
   - type_check
   - test
+  - security
   - coverage
 
 format:
@@ -36,6 +37,16 @@ coverage:
 
 secret_scan:
   image: zricethezav/gitleaks:latest
-  stage: quality
+  stage: security
   script:
     - gitleaks detect --source . --verbose
+
+dependency_audit:
+  image: python:3.13
+  stage: security
+
+  before_script:
+    - pip install pip-audit
+
+  script:
+    - pip-audit
